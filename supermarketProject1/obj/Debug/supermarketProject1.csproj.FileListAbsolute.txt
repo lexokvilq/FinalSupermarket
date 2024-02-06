@@ -1,0 +1,303 @@
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.SuggestedBindingRedirects.cache
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+E:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.SuggestedBindingRedirects.cache
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+D:\SUPERMARKET PROJECT HOME\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.SuggestedBindingRedirects.cache
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME 2\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.SuggestedBindingRedirects.cache
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+D:\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.WinForms.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.dll
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.pdb
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\maxle\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\ScottPlot.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Drawing.Common.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\bin\Debug\System.ValueTuple.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\supermarketProject1\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\supermarketProject1.exe.config
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\ScottPlot.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\ScottPlot.WinForms.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Drawing.Common.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.ValueTuple.dll
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\ScottPlot.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Drawing.Common.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Drawing.Common.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.ValueTuple.xml
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.Properties.Resources.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.saveGameScreen.resources
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.GenerateResource.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.CoreCompileInputs.cache
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.exe
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.pdb
