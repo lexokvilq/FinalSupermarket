@@ -16,6 +16,10 @@ namespace supermarketProject1
 {
     public partial class mainGameScreenGraph : Form
     {
+        //first i'm going to create two lists
+        //one for the data on the x axis and another for the data on the y axis
+        public static double[] dataX = new double[Program.numOfWeeks];
+        public static double[] dataY = new double[Program.numOfWeeks];
         public mainGameScreenGraph()
         {
             InitializeComponent();
@@ -26,14 +30,11 @@ namespace supermarketProject1
             //set the invalid no more graphs to look at label to be invisible
             labelNoMoreGraphs.ForeColor = Color.WhiteSmoke;
 
-            //first i'm going to create two lists
-            //one for the data on the x axis and another for the data on the y axis
-            double[] dataX = new double[Program.numOfWeeks];
-            double[] dataY = new double[Program.numOfWeeks];
+
 
 
             //create a function that takes in one of the history values and adds the x data and y data into the dataX and dataY
-            addHistoryValuesToGraph(Program.historyWorkerWage,dataX, dataY);
+            addHistoryValuesToGraph(Program.historyWorkerWage);
             //plot the graph
             chartWorkerWage.Plot.AddScatter(dataX, dataY);
             //you need to refresh the graph every time it is plotted
@@ -43,42 +44,42 @@ namespace supermarketProject1
             //repeat this for every one of the graphs
 
             //for the online worker wage
-            addHistoryValuesToGraph(Program.historyOnlineWorkerWage, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyOnlineWorkerWage);
             chartAmountOfDeliveryWorkers.Plot.AddScatter(dataX, dataY);
             chartAmountOfDeliveryWorkers.Refresh();
 
             //for amount of workers
-            addHistoryValuesToGraph(Program.historyAmountOfWorkers, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyAmountOfWorkers);
             chartAmountOfWorkers.Plot.AddScatter(dataX, dataY);
             chartAmountOfWorkers.Refresh();
 
             //for the online amount of workers
-            addHistoryValuesToGraph(Program.historyOnlineAmountOfWorkers, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyOnlineAmountOfWorkers);
             chartDeliveryWorkerWage.Plot.AddScatter(dataX, dataY);  
             chartDeliveryWorkerWage.Refresh();
 
             //for the item prices
-            addHistoryValuesToGraph(Program.historyItemPrices, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyItemPrices);
             chartItemPrices.Plot.AddScatter(dataX, dataY);
             chartItemPrices.Refresh();
 
             //for the number of customers
-            addHistoryValuesToGraph(Program.historyNumOfCustomers, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyNumOfCustomers);
             chartNumberOfCustomers.Plot.AddScatter(dataX, dataY);
             chartNumberOfCustomers.Refresh();
 
             //for the online number of customers
-            addHistoryValuesToGraph(Program.historyOnlineNumOfCustomers, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyOnlineNumOfCustomers);
             chartOnlineNumOfCustomers.Plot.AddScatter(dataX, dataY);
             chartOnlineNumOfCustomers.Refresh();
 
             //for the net profit
-            addHistoryValuesToGraph(Program.historyNetProfit, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyNetProfit);
             chartNetProfit.Plot.AddScatter(dataX, dataY);
             chartNetProfit.Refresh();
 
             //for the current funds
-            addHistoryValuesToGraph(Program.historyCurrentFunds, dataX, dataY);
+            addHistoryValuesToGraph(Program.historyCurrentFunds);
             chartCurrentFunds.Plot.AddScatter(dataX, dataY);
             chartCurrentFunds.Refresh();
 
@@ -96,19 +97,18 @@ namespace supermarketProject1
 
         //a function that adds the history values to the dataX and dataY so that the graphs can be updated
         //note that all the history values need to be a double for the ScottPlot to accept them
-        public static void addHistoryValuesToGraph(double[,] historyValues, double[]x, double[]y)
+        public static void addHistoryValuesToGraph(double[,] historyValues)
         {
-            //x and y represeneting dataX and dataY respectively
             //create a for loop which will go through the number of weeks that have passed
             for (int i = 0; i < Program.numOfWeeks; i++)
             {
                 //then set up the x axis by assigning i to the dataX
-                x[i] = i;
+                dataX[i] = i;
 
                 //then get the data from the historyValues, which represents the y axis
                 //then we need to get the supermarket index to check which supermarket to look into
                 //the supermarket index changes everytime that a new graph is made
-                y[i] = historyValues[Program.supermarketIndex, i];
+                dataY[i] = historyValues[Program.supermarketIndex, i];
             }
         }
        
