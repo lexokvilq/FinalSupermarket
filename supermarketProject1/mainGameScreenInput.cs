@@ -562,7 +562,7 @@ namespace supermarketProject1
             supermarkets[count].calcAmountOfWorkersMultiplier(area.AverageAmountOfWorkers);
             supermarkets[count].calcOnlineAmountOfWorkersMultiplier(area.OnlineAverageAmountOfWorkers);
             supermarkets[count].calcWorkerWageMultiplier();
-            supermarkets[count].calcOnlineWorkerWageMult();
+            supermarkets[count].calcOnlineWorkerWageMultiplier();
             supermarkets[count].calcSupplierCost(supplier.SuppliersPrices, supplier.SuppliersQuality);
             supermarkets[count].stockAvailableChangeProfit();
             supermarkets[count].calcCustomerMultiplier();

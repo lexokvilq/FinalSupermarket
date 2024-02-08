@@ -50,7 +50,7 @@ namespace supermarketProject1
         }
         public Area(String area)
         {
-            //the parameter passed in represents the Program.getUserArea
+            //the parameter passed in represents the Program.userArea
             if (area == "Urban")
             {
                 //here are the values based on real data of urban areas

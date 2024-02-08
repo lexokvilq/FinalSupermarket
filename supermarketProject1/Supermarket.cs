@@ -336,7 +336,7 @@ namespace supermarketProject1
             onlineAmountOfWorkersMultiplier = Convert.ToDouble(onlineAmountOfWorkers) / Convert.ToDouble(areaOnAvAmWork);
             //this is a multiplier that represents how a change in the number of delivery workers
         }
-        public virtual void calcOnlineWorkerWageMult()
+        public virtual void calcOnlineWorkerWageMultiplier()
         {
             //divide the delivery worker wage by the average delivery worker wage to get the online worker wage multiplier
             onlineWorkerWageMultiplier = onlineWorkerWage / OnlineWorkerWageAverage;

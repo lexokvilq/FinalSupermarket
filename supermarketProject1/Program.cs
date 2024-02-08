@@ -538,10 +538,6 @@ namespace supermarketProject1
             currentFundsForSaveFile = new double[numOfPlayers];
         }
 
-        
-
-
-
         //function to increment numOfWeeks by 1
         public static void incrementNumOfWeeks()
         {
