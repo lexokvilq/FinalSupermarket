@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace supermarketProject1
 {
-    internal static class Program
+    static internal class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,14 +16,35 @@ namespace supermarketProject1
         /// 
 
 
-        public static string userArea;
+        //ALL THE SET FUNCTIONS FOR THE VARIABLES ARENT WORKING 
+        //CREATING OWN NEW FUNCTIONS WHEN SET NEEDS TO BE OUTSIDE THE CLASS
+
+        //userArea 
+        private static string userArea;
+        public static string UserArea
+        {
+            get { return userArea; }
+        }
 
         //this is the number of the week that the game is on
-        public static int numOfWeeks;
-        //end number of weeks
-        public static int endNumOfWeeks;
+        private static int numOfWeeks;
+        public static int NumOfWeeks
+        {
+            get { return numOfWeeks; }
+        }
 
-        public static int numOfPlayers;
+        //end number of weeks
+        private static int endNumOfWeeks;
+        public static int EndNumOfWeeks
+        {
+            get { return endNumOfWeeks; }
+        }
+
+        private static int numOfPlayers;
+        public static int NumOfPlayers
+        {
+            get { return numOfPlayers; }
+        }
 
         //add these values to the design
         //lenStockRange represents the number of different types of stock
@@ -34,24 +55,91 @@ namespace supermarketProject1
         //need to create a supermarket index
         //this index represents which supermarket the program is looking at when graphing - in the 2d array
         //this is called in the maingameScreenGraph.cs
-        public static int supermarketIndex;
+        private static int supermarketIndex;
+        public static int SupermarketIndex
+        {
+            get { return supermarketIndex; }
+        }
 
         //create variables storing the history of the graphing variables
-        public static double[,] historyWorkerWage;
-        public static double[,] historyOnlineWorkerWage;
-        public static double[,] historyAmountOfWorkers;
-        public static double[,] historyOnlineAmountOfWorkers;
-        public static double[,] historyItemPrices;
-        public static double[,] historyNumOfCustomers;
-        public static double[,] historyOnlineNumOfCustomers;
-        public static double[,] historyNetProfit;
-        public static double[,] historyCurrentFunds;
+        private static double[,] historyWorkerWage;
+        public static double[,] HistoryWorkerWage
+        {
+            get { return historyWorkerWage; }
+        }
 
-        //add this to design
-        public static string userSaveFile;
-        public static double[] currentFundsForSaveFile;
-        public static bool userLoadedFile;
-        public static bool gameEnded;
+        private static double[,] historyOnlineWorkerWage;
+        public static double[,] HistoryOnlineWorkerWage
+        {
+            get { return historyOnlineWorkerWage; }
+        }
+
+        private static double[,] historyAmountOfWorkers;
+        public static double[,] HistoryAmountOfWorkers
+        {
+            get { return historyAmountOfWorkers; }
+        }
+
+        private static double[,] historyOnlineAmountOfWorkers;
+        public static double[,] HistoryOnlineAmountOfWorkers
+        {
+            get { return historyOnlineAmountOfWorkers; }
+        }
+
+        private static double[,] historyItemPrices;
+        public static double[,] HistoryItemPrices
+        {
+            get { return historyItemPrices; }
+        }
+
+        private static double[,] historyNumOfCustomers;
+        public static double[,] HistoryNumOfCustomers
+        {
+            get { return historyNumOfCustomers; }
+        }
+
+        private static double[,] historyOnlineNumOfCustomers;
+        public static double[,] HistoryOnlineNumOfCustomers
+        {
+            get { return historyOnlineNumOfCustomers; }
+        }
+
+        private static double[,] historyNetProfit;
+        public static double[,] HistoryNetProfit
+        {
+            get { return historyNetProfit; }
+        }
+
+        private static double[,] historyCurrentFunds;
+        public static double[,] HistoryCurrentFunds
+        {
+            get { return historyCurrentFunds; }
+        }
+
+        //this is the file for loading in a file        
+        private static string userLoadingFileName;
+        public static string UserLoadingFileName
+        {
+            get { return userLoadingFileName; }
+        }
+        
+        private static double[] currentFundsForSaveFile;
+        public static double[] CurrentFundsForSaveFile
+        {
+            get { return currentFundsForSaveFile; }
+        }
+
+        private static bool userLoadedFile;
+        public static bool UserLoadedFile
+        {
+            get { return userLoadedFile; }
+        }
+
+        private static bool gameEnded;
+        public static bool GameEnded
+        {
+            get { return gameEnded; }
+        }
 
         [STAThread]
 
@@ -73,7 +161,8 @@ namespace supermarketProject1
             //THIS NEEDS TO CHANGE DEPENDENT ON THE DEVICE
 
 
-            userSaveFile = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\supermarketProject1\\supermarketProject1\\bin\\Debug\\";
+
+            userLoadingFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\supermarketProject1\\supermarketProject1\\bin\\Debug\\";
 
             //set the game end to false
             gameEnded = false;
@@ -197,7 +286,7 @@ namespace supermarketProject1
             userArea = values[3];
 
             //need a variable to store the current funds
-            
+
             //this index will be used for the history values to 
             //work out what value the program is currently looking at
             int indexInValues = 4;
@@ -392,7 +481,7 @@ namespace supermarketProject1
             {
                 for (int j = 0; j < numOfWeeks; j++)
                 {
-                    file = file + Convert.ToString(historyNumOfCustomers[i,j]);
+                    file = file + Convert.ToString(historyNumOfCustomers[i, j]);
                     file = file + ",";
                 }
             }
@@ -420,7 +509,7 @@ namespace supermarketProject1
             for (int i = 0; i < numOfPlayers; i++)
             {
                 for (int j = 0; j < numOfWeeks; j++)
-            //history of current funds
+                //history of current funds
                 {
                     file = file + Convert.ToString(historyCurrentFunds[i, j]);
                     file = file + ",";
@@ -447,6 +536,100 @@ namespace supermarketProject1
         public static void initCurrentFundsForSaveFile()
         {
             currentFundsForSaveFile = new double[numOfPlayers];
+        }
+
+        
+
+
+
+        //function to increment numOfWeeks by 1
+        public static void incrementNumOfWeeks()
+        {
+            numOfWeeks++;
+        }
+
+        //function to work out how many weeks are left
+        public static int calcNumOfWeeksLeft()
+        {
+            return endNumOfWeeks - numOfWeeks;
+        }
+
+        public static void incrementSupermarketIndex()
+        {
+            supermarketIndex++;
+        }
+
+        public static void resetSupermarketIndex()
+        {
+            supermarketIndex = 0;
+        }
+
+        //this function will set a variable to its appropriate history variable alternative
+        public static void setHistoryVariables(double [,] historyArray, int index, double value)
+        {
+            historyArray[index, numOfWeeks] = value;
+        }
+
+        //currently there is an issue with the setters not working in other classes
+        //made a variable here that will set the appropriate varriable with its appropriate variable
+        //set the number of players
+        public static void setNumOfPlayers(int n)
+        {
+            numOfPlayers = n;
+        }
+        //set the end number of weeks
+        public static void setEndNumOfWeeks(int endWeek)
+        {
+            endNumOfWeeks = endWeek;
+        }
+
+        //for the user loading a file need to get what the user names their file and add it to the file name
+        public static void generateNameUserLoadingFile(string name)
+        {
+            userLoadingFileName = userLoadingFileName + name + ".txt";
+        }
+
+        //set the userArea to the appropriate value based on the input the user gives
+        public static void setUserArea(string areaName)
+        {
+            if (areaName == "Urban")
+            {
+                userArea = "Urban";
+            }
+            if (areaName == "Suburb")
+            {
+                userArea = "Suburb";
+            }
+            if (areaName == "Rural")
+            {
+                userArea = "Rural";
+            }
+        }
+        public static void setUserLoadedFile(bool loadedFile)
+        {
+            if (loadedFile == true)
+            {
+                userLoadedFile = true;
+            }
+            else if( loadedFile  == false)
+            {
+                userLoadedFile = false;
+            }
+        }
+        public static void setGameEnded(bool ended)
+        {
+            if (ended == true)
+            {
+                gameEnded = true;
+            }
+            else if (ended == false)
+            {
+                gameEnded = false;
+            }
+        }
+        public static void setCurrentFundsForSaveFile(double currentFunds, int index)
+        {
+            currentFundsForSaveFile[index] = currentFunds;
         }
     }
 }

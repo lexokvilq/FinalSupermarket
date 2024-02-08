@@ -14,8 +14,7 @@ namespace supermarketProject1
     public partial class newGameScreen : Form
     {
 
-        //add this into design
-        public static bool valid;
+        private static bool valid;
         public newGameScreen()
         {
             InitializeComponent();
@@ -29,7 +28,7 @@ namespace supermarketProject1
 
         private void buttonRural_Click(object sender, EventArgs e)
         {
-            Program.userArea = "Rural";
+            Program.setUserArea("Rural");
             buttonSuburb.ForeColor = Color.Black;
             buttonUrban.ForeColor = Color.Black;    
             buttonRural.ForeColor = Color.WhiteSmoke;    
@@ -37,7 +36,7 @@ namespace supermarketProject1
 
         private void buttonSuburb_Click(object sender, EventArgs e)
         {
-            Program.userArea = "Suburb";
+            Program.setUserArea("Suburb");
             buttonRural.ForeColor = Color.Black;
             buttonUrban.ForeColor = Color.Black;
             buttonSuburb.ForeColor = Color.WhiteSmoke;
@@ -45,7 +44,7 @@ namespace supermarketProject1
 
         private void buttonUrban_Click(object sender, EventArgs e)
         {
-            Program.userArea = "Urban";
+            Program.setUserArea("Urban");
             buttonRural.ForeColor = Color.Black;
             buttonSuburb.ForeColor = Color.Black;
             buttonUrban.ForeColor = Color.WhiteSmoke;
@@ -73,8 +72,15 @@ namespace supermarketProject1
             {
                 labelInvalidNumOfPlay.ForeColor = Color.WhiteSmoke;
                 labelInvalidNumOfWeeks.ForeColor = Color.WhiteSmoke; 
-                Program.numOfPlayers = Convert.ToInt32(textBoxNumberOfPlayers.Text);
-                Program.endNumOfWeeks = Convert.ToInt32(textBoxNumberOfWeeks.Text);
+
+                //error here the static variable Program.NumOfPlayers can be assigned a value
+                //Program.NumOfPlayers = Convert.ToInt32(textBoxNumberOfPlayers.Text);
+                Program.setNumOfPlayers(Convert.ToInt32(textBoxNumberOfPlayers.Text));
+
+                Program.setEndNumOfWeeks(Convert.ToInt32(textBoxNumberOfWeeks.Text));
+//                Program.EndNumOfWeeks = Convert.ToInt32(textBoxNumberOfWeeks.Text);
+
+                
                 this.Hide();
                 mainGameScreenInput mgsi = new mainGameScreenInput();
                 mgsi.Show();

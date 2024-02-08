@@ -12,14 +12,13 @@ namespace supermarketProject1
 {
     public partial class saveGameScreen : Form
     {
-        public static string saveFileName;
+        private static string saveFileName;
         public saveGameScreen()
         {
             InitializeComponent();
             labelInvalidFileName.ForeColor = Color.WhiteSmoke;
 
             //NEED TO CHANGE THIS FOR SEPERATE COMPUTERS
-
             saveFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\supermarketProject1\\supermarketProject1\\bin\\Debug\\";
 
         }

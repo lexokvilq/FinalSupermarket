@@ -49,7 +49,7 @@
             // 
             // buttonLoadGame
             // 
-            this.buttonLoadGame.Location = new System.Drawing.Point(8, 120);
+            this.buttonLoadGame.Location = new System.Drawing.Point(10, 124);
             this.buttonLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadGame.Name = "buttonLoadGame";
             this.buttonLoadGame.Size = new System.Drawing.Size(76, 32);

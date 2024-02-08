@@ -61,6 +61,7 @@
             this.labelWeekNumberCurrentFunds = new System.Windows.Forms.Label();
             this.labelWeekNumberNetProfit = new System.Windows.Forms.Label();
             this.labelCantSaveEndedGame = new System.Windows.Forms.Label();
+            this.labelPlayerNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelWorkerWage
@@ -362,11 +363,24 @@
             this.labelCantSaveEndedGame.TabIndex = 41;
             this.labelCantSaveEndedGame.Text = "Can\'t Save A Game \r\nThat Has Ended!";
             // 
+            // labelPlayerNumber
+            // 
+            this.labelPlayerNumber.AutoSize = true;
+            this.labelPlayerNumber.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelPlayerNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerNumber.ForeColor = System.Drawing.Color.Black;
+            this.labelPlayerNumber.Location = new System.Drawing.Point(660, 563);
+            this.labelPlayerNumber.Name = "labelPlayerNumber";
+            this.labelPlayerNumber.Size = new System.Drawing.Size(60, 20);
+            this.labelPlayerNumber.TabIndex = 42;
+            this.labelPlayerNumber.Text = " Player ";
+            // 
             // mainGameScreenGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 661);
+            this.Controls.Add(this.labelPlayerNumber);
             this.Controls.Add(this.labelCantSaveEndedGame);
             this.Controls.Add(this.labelWeekNumberNetProfit);
             this.Controls.Add(this.labelWeekNumberCurrentFunds);
@@ -444,5 +458,6 @@
         private System.Windows.Forms.Label labelWeekNumberCurrentFunds;
         private System.Windows.Forms.Label labelWeekNumberNetProfit;
         private System.Windows.Forms.Label labelCantSaveEndedGame;
+        private System.Windows.Forms.Label labelPlayerNumber;
     }
 }

@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,36 +19,47 @@ namespace supermarketProject1
         //here adding all the variables in supermarket which the user can control
         //these variables will be added to their specific supermarket objects in program.cs
         //these variables will change every time that the mainGameScreen is called
-        public static string userSupplier;
-        public static string[] stockShop = new string[Program.LenStockRange];
-        public static int stockAmount;
-        public static double itemPrices;
-        public static double advertisementInvestment;
-        public static double securityInvestment;
-        public static int amountOfWorkers;
-        public static double workerWage;
-        public static int onlineAmountOfWorkers;
-        public static double onlineWorkerWage;
+        private static string userSupplier;
+
+        private static string[] stockShop = new string[Program.LenStockRange];
+        
+        private static int stockAmount;
+
+        private static double itemPrices;
+
+        private static double advertisementInvestment;
+
+        private static double securityInvestment;
+
+        private static int amountOfWorkers;
+       
+        private static double workerWage;
+        
+        private static int onlineAmountOfWorkers;
+
+        private static double onlineWorkerWage;
 
         //set up the valid
-        public static bool valid;
+        private static bool valid;
 
-        public static Supermarket[] supermarkets = new Supermarket[Program.numOfPlayers];
-        public static Area area;
-        public static Supplier supplier;
+        private static Supermarket[] supermarkets = new Supermarket[Program.NumOfPlayers];
+        
+        private static Area area;
+       
+        private static Supplier supplier;
 
         //this is a list containing all the number of customers for all the supermarkets
-        public static int[] numberOfCustomers = new int[Program.numOfPlayers];
+        private static int[] numberOfCustomers = new int[Program.NumOfPlayers];
         //this is a list contatining the number of online customers for all the supermarkets
-        public static int[] onlineNumberOfCustomers = new int[Program.numOfPlayers];
+        private static int[] onlineNumberOfCustomers = new int[Program.NumOfPlayers];
 
         //this is a list contatining all the multipliers for the supermarkets
-        public static double[] customerMultipliers = new double[Program.numOfPlayers];
+        private static double[] customerMultipliers = new double[Program.NumOfPlayers];
         //different list for the online supermarkets
-        public static double[] onlineCustomerMultipliers = new double[Program.numOfPlayers];
+        private static double[] onlineCustomerMultipliers = new double[Program.NumOfPlayers];
 
         //count is used to see what supermarket is being looked at
-        public static int count;
+        private static int count;
 
        
         public mainGameScreenInput()
@@ -60,24 +73,21 @@ namespace supermarketProject1
             }
             count = 0;
 
-            //initialise the area object
-            area = new Area();
-            //update area variables to the right area
-            area.updateArea();
+            area = new Area(Program.UserArea);
 
             //initialise the supplier object
             supplier = new Supplier();
 
-            if (Program.userLoadedFile == true)
+            if (Program.UserLoadedFile == true)
             {
                 //initialise all the supermarket objects for the right number of players
-                for (int i = 0; i < Program.numOfPlayers; i++)
+                for (int i = 0; i < Program.NumOfPlayers; i++)
                 {
                     supermarkets[i] = new Supermarket();
 
                     //set up all the old prices as deafult 0 
-                    supermarkets[i].oldItemPrices = Program.historyItemPrices[i,Program.numOfWeeks - 1]; ;
-                    supermarkets[i].previousFunds = Program.historyCurrentFunds[i,Program.numOfWeeks-1];
+                    supermarkets[i].setValueToOldItemPrices(Program.HistoryItemPrices[i, Program.NumOfWeeks - 1]);
+                    supermarkets[i].setValueToPrevFunds(Program.HistoryCurrentFunds[i, Program.NumOfWeeks - 1]);
 
                     //need to also set the newer version of the worker wages to 0 because the first time through the
                     //old variables will have no variable to be assigned too.
@@ -90,10 +100,10 @@ namespace supermarketProject1
                     //                                                                    |
                     //---------------------------------------------------------------------
 
-
-                    supermarkets[i].currentFunds = Program.currentFundsForSaveFile[i];
+                    //call a function that sets the specific save file current funds to the appropriate current funds
+                    supermarkets[i].setValueToCurrentFunds(Program.CurrentFundsForSaveFile[i]);
                     
-                    if (Program.userArea == "Rural")
+                    if (Program.UserArea == "Rural")
                     {
                         //make the security investment invisible because there is no shoplifting in rural areas
                         labelSecurityInvestment.ForeColor = Color.WhiteSmoke;
@@ -103,16 +113,16 @@ namespace supermarketProject1
 
                 }
             }
-            else if(Program.userLoadedFile == false)
+            else if(Program.UserLoadedFile == false)
             {
                 //initialise all the supermarket objects for the right number of players
-                for (int i = 0; i < Program.numOfPlayers; i++)
+                for (int i = 0; i < Program.NumOfPlayers; i++)
                 {
                     supermarkets[i] = new Supermarket();
-                    
+
                     //set up all the old prices as deafult 0 
-                    supermarkets[i].oldItemPrices = 0;
-                    supermarkets[i].previousFunds = 0;
+                    supermarkets[i].setValueToOldItemPrices(0);
+                    supermarkets[i].setValueToPrevFunds(0);
 
 
                     //DO I NEED THIS???????????????????????
@@ -125,17 +135,17 @@ namespace supermarketProject1
     //              supermarkets[i].onlineWorkerWage = 0;
                 
                     //check which area the user has chosen and set the appropriate current funds
-                    if (Program.userArea == "Urban")
+                    if (Program.UserArea == "Urban")
                     {
-                        supermarkets[i].currentFunds = 132530.29;
+                        supermarkets[i].setValueToCurrentFunds(132530.29);
                     }
-                    if (Program.userArea == "Suburb")
+                    if (Program.UserArea == "Suburb")
                     {
-                        supermarkets[i].currentFunds = 63452.15;
+                        supermarkets[i].setValueToCurrentFunds(63452.15);
                     }
-                    if (Program.userArea == "Rural")
+                    if (Program.UserArea == "Rural")
                     {
-                        supermarkets[i].currentFunds = 46789.87;
+                        supermarkets[i].setValueToCurrentFunds(46789.87);
                         //make the security investment invisible because there is no shoplifting in rural areas
                         labelSecurityInvestment.ForeColor = Color.WhiteSmoke;
                         textBoxSecurityInvestmentInput.BackColor = Color.WhiteSmoke;
@@ -151,13 +161,13 @@ namespace supermarketProject1
             Program.initCurrentFundsForSaveFile();
 
             //set up the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.numOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
 
             //set up the number of weeks left
-            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.endNumOfWeeks - Program.numOfWeeks);
+            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
 
             //set up the current funds
-            labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].currentFunds);
+            labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].CurrentFunds);
 
             //set the last week label to be invisible first
             labelLastWeek.ForeColor = Color.WhiteSmoke;
@@ -176,13 +186,12 @@ namespace supermarketProject1
         private void buttonSubmitChanges_Click(object sender, EventArgs e)
         {
             //this for loop is to set up all the "old" variables
-            supermarkets[count].oldItemPrices = supermarkets[count].itemPrices;
-            supermarkets[count].previousFunds = supermarkets[count].currentFunds;
-            
+            supermarkets[count].setValueToOldItemPrices(supermarkets[count].ItemPrices);
+            supermarkets[count].setValueToPrevFunds(supermarkets[count].CurrentFunds); 
             //add the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.numOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
             //add the number of weeks left 
-            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.endNumOfWeeks - Program.numOfWeeks);
+            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
             
             //reset the invalid message for current funds
             labelInvalidFunds.ForeColor = Color.WhiteSmoke;
@@ -190,7 +199,7 @@ namespace supermarketProject1
             //set up an if statment, so that every time the submit changes is clicked the program checks whether
             //to display the graphs, or to do the next supermarket.
             //have a bool called valid which will be used to see if the user can move onto the next person or not
-            if (count < Program.numOfPlayers)
+            if (count < Program.NumOfPlayers)
             {
                 valid = true;
 
@@ -238,7 +247,7 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the value is 0 or smaller
                 //first need to check if it is a rural area or not, if it is not a rural area does not need to go through this check
-                if (Program.userArea == "Urban" || Program.userArea == "Suburb")
+                if (Program.UserArea == "Urban" || Program.UserArea == "Suburb")
                 {
 
                     if (Program.checkIfString(textBoxSecurityInvestmentInput.Text) == true ||
@@ -365,7 +374,7 @@ namespace supermarketProject1
                         //display error message to user
                         labelInvalidFunds.ForeColor = Color.Red;
                         //tell the user how much they have overspent by
-                        labelOverspent.Text = "Overspent by £" + Convert.ToString(supermarkets[count].overspent);
+                        labelOverspent.Text = "Overspent by £" + Convert.ToString(supermarkets[count].Overspent);
                         labelOverspent.ForeColor = Color.Red;
                     }
                     else
@@ -375,11 +384,11 @@ namespace supermarketProject1
                         count++;
 
                         //change the player to the right player using the count index only if there are more players
-                        if (count < Program.numOfPlayers)
+                        if (count < Program.NumOfPlayers)
                         {
                             labelPlayerNum.Text = "Player " + Convert.ToString(count + 1);
                             //label for the current funds
-                            labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].currentFunds);
+                            labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].CurrentFunds);
 
                         }
 
@@ -394,20 +403,20 @@ namespace supermarketProject1
                 }
 
             }
-            if(count == Program.numOfPlayers)
+            if(count == Program.NumOfPlayers)
             {
                 //after the if statment process all the changes to the supermarket in this else statement
 
                 //make a loop that will input all the supermarket multipliers into a list 
                 for (int i = 0; i < supermarkets.Length; i++)
                 {
-                    customerMultipliers[i] = supermarkets[i].customerMultiplier;
-                    onlineCustomerMultipliers[i] = supermarkets[i].onlineCustomerMultiplier;
+                    customerMultipliers[i] = supermarkets[i].CustomerMultiplier;
+                    onlineCustomerMultipliers[i] = supermarkets[i].OnlineCustomerMultiplier;
                 }
 
                 //use the same function to calculate the number of customers and then the number of customer for the online shop
-                numberOfCustomers = calcNumOfCustomer(area.customerPopulation, customerMultipliers);
-                onlineNumberOfCustomers = calcNumOfCustomer(area.onlineCustomerPopulation, onlineCustomerMultipliers);
+                numberOfCustomers = calcNumOfCustomer(area.CustomerPopulation, customerMultipliers);
+                onlineNumberOfCustomers = calcNumOfCustomer(area.OnlineCustomerPopulation, onlineCustomerMultipliers);
 
                 //now we need to calculate the current funds for all the supermarkets
                 //we can do this by using a for loop to go through all the supermarkets
@@ -416,7 +425,7 @@ namespace supermarketProject1
                     //this calulates the current funds for every supermarket
                     supermarkets[i].calcCurrentFunds(numberOfCustomers[i], onlineNumberOfCustomers[i]);
                     //set the current funds to a save file if it will be used
-                    Program.currentFundsForSaveFile[i] = supermarkets[i].currentFunds;
+                    Program.setCurrentFundsForSaveFile(supermarkets[i].CurrentFunds, i);
                     //now calculate the net profit for all the supermarkets
                     supermarkets[i].calcNetProfit();
                 }
@@ -434,26 +443,26 @@ namespace supermarketProject1
                     //using a for loop
                     //i representing the index of the number the player is. For example when i is 0 it looks at the first
                     //player, when i is 1 it looks at the second player etc...
-                    for (int i = 0; i < Program.numOfPlayers; i++)
+                    for (int i = 0; i < Program.NumOfPlayers; i++)
                     {
-                        Program.historyNetProfit[i, Program.numOfWeeks] = supermarkets[i].netProfit;
-                        Program.historyAmountOfWorkers[i, Program.numOfWeeks] = supermarkets[i].amountOfWorkers;
-                        Program.historyCurrentFunds[i, Program.numOfWeeks] = supermarkets[i].currentFunds;
-                        Program.historyItemPrices[i, Program.numOfWeeks] = supermarkets[i].itemPrices;
-                        Program.historyNumOfCustomers[i, Program.numOfWeeks] = numberOfCustomers[i];
-                        Program.historyOnlineNumOfCustomers[i, Program.numOfWeeks] = onlineNumberOfCustomers[i];
-                        Program.historyOnlineAmountOfWorkers[i, Program.numOfWeeks] = supermarkets[i].onlineAmountOfWorkers;
-                        Program.historyOnlineWorkerWage[i, Program.numOfWeeks] = supermarkets[i].onlineWorkerWage;
-                        Program.historyWorkerWage[i, Program.numOfWeeks] = supermarkets[i].workerWage;
+                        Program.setHistoryVariables(Program.HistoryNetProfit, i, supermarkets[i].NetProfit);
+                        Program.setHistoryVariables(Program.HistoryAmountOfWorkers, i, supermarkets[i].AmountOfWorkers);
+                        Program.setHistoryVariables(Program.HistoryCurrentFunds, i, supermarkets[i].CurrentFunds);
+                        Program.setHistoryVariables(Program.HistoryItemPrices, i, supermarkets[i].ItemPrices);
+                        Program.setHistoryVariables(Program.HistoryNumOfCustomers, i, numberOfCustomers[i]);
+                        Program.setHistoryVariables(Program.HistoryOnlineNumOfCustomers, i, onlineNumberOfCustomers[i]);
+                        Program.setHistoryVariables(Program.HistoryOnlineAmountOfWorkers, i, supermarkets[i].OnlineAmountOfWorkers);
+                        Program.setHistoryVariables(Program.HistoryOnlineWorkerWage, i, supermarkets[i].OnlineWorkerWage);
+                        Program.setHistoryVariables(Program.HistoryWorkerWage, i, supermarkets[i].WorkerWage);
                     }
                     //once the turns have finished implement the number of weeks by 1
-                    Program.numOfWeeks = Program.numOfWeeks + 1;
+                    Program.incrementNumOfWeeks();
                     //add the right number of weeks to the label
                     //set up the number of weeks passed
-                    labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.numOfWeeks);
+                    labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
 
                     //set up the number of weeks left
-                    labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.endNumOfWeeks - Program.numOfWeeks);
+                    labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
 
                     //reset count back to the first player 
                     count = 0;
@@ -462,15 +471,14 @@ namespace supermarketProject1
                     labelPlayerNum.Text = "Player " + Convert.ToString(count + 1);
 
                     //label for the current funds
-                    labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].currentFunds);
+                    labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].CurrentFunds);
 
                     //initialise the new main game screen graph and show it
                     mainGameScreenGraph mgsg = new mainGameScreenGraph();
                     mgsg.Show();
 
                     //this means it is the last week
-                    //it is endNumOfWeeks -1 because numOfWeeks starts on 0 not 1
-                    if (Program.numOfWeeks == Program.endNumOfWeeks -1)
+                    if (Program.calcNumOfWeeksLeft() == 1)
                     {
                         //this means it is the last turn
                         labelLastWeek.ForeColor = Color.Red;
@@ -479,7 +487,7 @@ namespace supermarketProject1
                     //if the number of weeks is equal to end number of weeks
                     //there are no more goes left so close this forms application
 
-                    if (Program.numOfWeeks == Program.endNumOfWeeks)
+                    if (Program.calcNumOfWeeksLeft() == 0)
                     {
                         this.Close();
                     }
@@ -527,35 +535,35 @@ namespace supermarketProject1
             }
             return numOfCust;
         }
-
+        
         //create a function that sets all the variables to their respective supermarket object
         public static void setVariablesToSupermarkets()
         {
-            supermarkets[count].stockAmount = stockAmount;
-            supermarkets[count].userSupplier = userSupplier;
-            supermarkets[count].itemPrices = itemPrices;
-            supermarkets[count].advertisementInvestment = advertisementInvestment;
-            supermarkets[count].securityInvestment = securityInvestment;
-            supermarkets[count].amountOfWorkers = amountOfWorkers;
-            supermarkets[count].workerWage = workerWage;
-            supermarkets[count].onlineAmountOfWorkers = onlineAmountOfWorkers;
-            supermarkets[count].onlineWorkerWage = onlineWorkerWage;
-            supermarkets[count].stockShop = stockShop;
-            supermarkets[count].checkStockAvailable(supplier.stockRange);
+            supermarkets[count].setValueToStockAmount(stockAmount);
+            supermarkets[count].setValueToUserSupplier(userSupplier);
+            supermarkets[count].setValueToItemPrices(itemPrices);
+            supermarkets[count].setValueToAdInvest(advertisementInvestment);
+            supermarkets[count].setValueToSecInvest(securityInvestment);
+            supermarkets[count].setValueToAmountOfWorkers(amountOfWorkers);
+            supermarkets[count].setValueToWorkerWage(workerWage);
+            supermarkets[count].setValueToOnilneAmountOfWorkers(onlineAmountOfWorkers);
+            supermarkets[count].setValueToOnlineWorkerWage(onlineWorkerWage);
+            supermarkets[count].setValuesToStockShop(stockShop);
+            supermarkets[count].checkStockAvailable(supplier.StockRange);
         }
 
         //create a function that calls all the supermarket methods used to get the find the supermarkets results
         public static void callAllSupermarketMethods()
         {
-            supermarkets[count].calcAdvertisementMultiplier(area.averageAreaAdvertisementInvestment);
-            supermarkets[count].calcQualityMultiplier(supplier.suppliersQuality, supplier.suppliersQualityMultiplier);
-            supermarkets[count].calcNumOfPayingCustomers(area.shopliftingRate, area.averageSecurityInvestment);
+            supermarkets[count].calcAdvertisementMultiplier(area.AverageAreaAdvertisementInvestment);
+            supermarkets[count].calcQualityMultiplier(supplier.SuppliersQuality, supplier.SuppliersQualityMultiplier);
+            supermarkets[count].calcNumOfPayingCustomers(area.ShopLiftingRate, area.AverageSecurityInvestment);
             supermarkets[count].calcItemPricesMultiplier();
-            supermarkets[count].calcAmountOfWorkersMultiplier(area.averageAmountOfWorkers);
-            supermarkets[count].calcOnlineAmountOfWorkersMultiplier(area.onlineAverageAmountOfWorkers);
+            supermarkets[count].calcAmountOfWorkersMultiplier(area.AverageAmountOfWorkers);
+            supermarkets[count].calcOnlineAmountOfWorkersMultiplier(area.OnlineAverageAmountOfWorkers);
             supermarkets[count].calcWorkerWageMultiplier();
             supermarkets[count].calcOnlineWorkerWageMult();
-            supermarkets[count].calcSupplierCost(supplier.suppliersPrices, supplier.suppliersQuality);
+            supermarkets[count].calcSupplierCost(supplier.SuppliersPrices, supplier.SuppliersQuality);
             supermarkets[count].stockAvailableChangeProfit();
             supermarkets[count].calcCustomerMultiplier();
             supermarkets[count].calcOnlineCustomerMultiplier();
@@ -689,9 +697,9 @@ namespace supermarketProject1
             
             //set the number of weeks and num of weeks left to the right number
             //add the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.numOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
             //add the number of weeks left 
-            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.endNumOfWeeks - Program.numOfWeeks);
+            labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
 
             //reset the stock different stocks all to false
             for (int i = 0; i < stockShop.Length; i++)

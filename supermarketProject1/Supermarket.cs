@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,45 +9,106 @@ namespace supermarketProject1
 {
     public class Supermarket
     {
-        public double currentFunds;
-        public double previousFunds;
-        public double netProfit;
-        public double customerMultiplier;
-        public int stockAmount;
-        public string[] stockShop;
-        public bool[] stockAvailable = new bool[Program.LenStockRange];
-        public double stockAvailableMultiplier;
-        public string userSupplier;
-        public double qualityMultiplier;
-        public double supplierCost;
-        public double itemPrices;
-        public double oldItemPrices;
-        public double itemPricesMultiplier;
-        public double advertisementInvestment;
-        public double advertismentMultiplier;
-        public double securityInvestment;
-        public double numberOfPayingCustomers;
-        public int amountOfWorkers;
-        public double amountOfWorkersMultiplier;
-        public double workerWage;
-        public const double WorkerWageAverage = 11.36;
-        public double workerWageMultiplier;
 
+        private double currentFunds;
+        public double CurrentFunds
+        {
+            get { return currentFunds; }
+        }
+        private double previousFunds;
 
-        public double onlineCustomerMultiplier;
-        public int onlineAmountOfWorkers;
-        public double onlineWorkerWage;
-        public const double OnlineWorkerWageAverage = 12.39;
-        public double onlineWorkerWageMultiplier;
-        public double onlineAmountOfWorkersMultiplier;
+        private double netProfit;
+        public double NetProfit
+        {
+            get { return netProfit; }
+        }
+        private double customerMultiplier;
+        public double CustomerMultiplier
+        {
+            get { return customerMultiplier; }
+        }
+        private int stockAmount;
 
-        public const int WorkerHours = 28;
-        public const int DeliveryWorkerHours = 31;
-        public const int AverageShoppingMassKg = 21;
+        private string[] stockShop;
 
-        //add overspent into the design as well
-        public double overspent;
+        private bool[] stockAvailable = new bool[Program.LenStockRange];
 
+        private double stockAvailableMultiplier;
+
+        private string userSupplier;
+
+        private double qualityMultiplier;
+
+        private double supplierCost;
+
+        private double itemPrices;
+        public double ItemPrices
+        {
+            get { return itemPrices; }
+        }
+
+        private double oldItemPrices;
+
+        private double itemPricesMultiplier;
+
+        private double advertisementInvestment;
+
+        private double advertismentMultiplier;
+
+        private double securityInvestment;
+
+        private double numberOfPayingCustomers;
+
+        private int amountOfWorkers;
+        public int AmountOfWorkers
+        {
+            get { return amountOfWorkers; }
+        }
+        private double amountOfWorkersMultiplier;
+        private double workerWage;
+        public double WorkerWage
+        {
+            get { return workerWage; }
+        }
+
+        private const double WorkerWageAverage = 11.36;
+
+        private double workerWageMultiplier;
+
+        private double onlineCustomerMultiplier;
+        public double OnlineCustomerMultiplier
+        {
+            get { return onlineCustomerMultiplier; }
+        }
+
+        private int onlineAmountOfWorkers;
+        public int OnlineAmountOfWorkers
+        {
+            get { return onlineAmountOfWorkers; }
+        }
+        private double onlineWorkerWage;
+        public double OnlineWorkerWage
+        {
+            get { return onlineWorkerWage; }
+        }
+
+        private const double OnlineWorkerWageAverage = 12.39;
+
+        private double onlineWorkerWageMultiplier;
+
+        private double onlineAmountOfWorkersMultiplier;
+
+        private const int WorkerHours = 28;
+
+        private const int DeliveryWorkerHours = 31;
+
+        private const int AverageShoppingMassKg = 21;
+
+        private double overspent;
+        public double Overspent
+        {
+            get { return overspent; }
+        }
 
         public Supermarket()
         {
@@ -57,7 +119,7 @@ namespace supermarketProject1
             //multiply all the calculated multipliers together to create a combined multiplier
             //this combined multiplier used to work out the number of customers
             customerMultiplier = stockAvailableMultiplier * qualityMultiplier * itemPricesMultiplier * advertismentMultiplier
-                * amountOfWorkersMultiplier * workerWageMultiplier 
+                * amountOfWorkersMultiplier * workerWageMultiplier
                 * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier * numberOfPayingCustomers;
         }
         public virtual void calcCurrentFunds(int numCust, int onlineNumCust)
@@ -81,7 +143,7 @@ namespace supermarketProject1
             expenses = expenses + advertisementInvestment;
             expenses = expenses + securityInvestment;
 
-            currentFunds = currentFunds + profit - expenses;   
+            currentFunds = currentFunds + profit - expenses;
         }
 
         //this function calculates the expenses and the current funds that the supermarket can use 
@@ -111,7 +173,7 @@ namespace supermarketProject1
         {
             //currentFunds, previousFunds
             //find the difference between the current funds and the previous funds to work out the net profit
-            netProfit = currentFunds - previousFunds;  
+            netProfit = currentFunds - previousFunds;
         }
         public virtual void checkStockAvailable(string[] stRange)
         {
@@ -131,7 +193,7 @@ namespace supermarketProject1
         }
         public virtual void stockAvailableChangeProfit()
         {
-            
+
             //stockAvailable
 
             //deafult that they have all the different types of stock and the multiplier is 1 ()
@@ -152,13 +214,13 @@ namespace supermarketProject1
             {
                 stockAvailableMultiplier = stockAvailableMultiplier * 0.75;
             }
-            
+
         }
         public virtual void calcQualityMultiplier(string[] supQual, double[] suppQualMult)
         {
             //userSupplier
             //Supplier.suppliersQuality, Supplier.suppliersQualityMultiplier
-            
+
             //go through the list to check the number in the list that the userSupplier refers to in the supplier lists
             for (int i = 0; i < supQual.Length; i++)
             {
@@ -218,7 +280,7 @@ namespace supermarketProject1
         {
             //Area.shopliftingRate, Area.averageSecurityInvesmtent
             //the shoplifting rate is a decimal representation of a percentage
-            
+
             //first i am going to divide the security investment by the average security investment
             //if the security investment > average security investment then the answer will be greater
             //than one 
@@ -237,12 +299,12 @@ namespace supermarketProject1
             numberOfPayingCustomers = numberOfPayingCustomers * -1;
             numberOfPayingCustomers = numberOfPayingCustomers + 1;
 
-            if (Program.userArea == "Rural")
+            if (Program.UserArea == "Rural")
             {
                 numberOfPayingCustomers = 1;
             }
         }
-        
+
         public virtual void calcWorkerWageMultiplier()
         {
             //for the worker wage multiplier multiply divide the worker wage by the average worker wage
@@ -278,6 +340,74 @@ namespace supermarketProject1
         {
             //divide the delivery worker wage by the average delivery worker wage to get the online worker wage multiplier
             onlineWorkerWageMultiplier = onlineWorkerWage / OnlineWorkerWageAverage;
+        }
+
+        //function that sets a value to the supermarket current funds
+        public virtual void setValueToCurrentFunds(double currFund)
+        {
+            currentFunds = currFund;
+        }
+
+        //sets a value to previous funds
+        public virtual void setValueToPrevFunds(double prevFund)
+        {
+            previousFunds = prevFund;
+        }
+        //sets the stock amount to a value
+        public virtual void setValueToStockAmount(int stAm)
+        {
+            stockAmount = stAm;
+        }
+        //sets values to stock shop
+        public virtual void setValuesToStockShop(string[] stShop)
+        {
+            stockShop = stShop;
+        }
+
+        //sets value to user supplier
+        public virtual void setValueToUserSupplier(string usSup)
+        {
+            userSupplier = usSup;
+        }
+        //sets item prices to a value
+        public virtual void setValueToItemPrices(double price)
+        {
+            itemPrices = price;
+        }
+        //sets old item prices to a value
+        public virtual void setValueToOldItemPrices(double oldPrice)
+        {
+            oldItemPrices = oldPrice;
+        }
+        //sets a value to the advertisement investment
+        public virtual void setValueToAdInvest(double adInvest)
+        {
+            advertisementInvestment = adInvest;
+        }
+        //sets a variable to security investment
+        public virtual void setValueToSecInvest(double secInv)
+        {
+            securityInvestment = secInv;
+        }
+        //set a value to amount of workers
+        public virtual void setValueToAmountOfWorkers(int amWork)
+        {
+            amountOfWorkers = amWork;
+        }
+        //set value to worker wage
+        public virtual void setValueToWorkerWage(double workWage)
+        {
+            workerWage = workWage;
+        }
+        //set value to online amount of workers
+        public virtual void setValueToOnilneAmountOfWorkers(int onlineAmWork)
+        {
+            onlineAmountOfWorkers = onlineAmWork;
+        }
+        //set value to online worker wage
+        public virtual void setValueToOnlineWorkerWage(double onlineWorkWage)
+        {
+            onlineWorkerWage = onlineWorkWage;
         }
     }
 }

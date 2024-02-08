@@ -8,10 +8,29 @@ namespace supermarketProject1
 {
     public class Supplier
     {
-        public string[] stockRange = new string[Program.LenStockRange];
-        public double[] suppliersPrices = new double[Program.LenSuppliers];
-        public string[] suppliersQuality = new string[Program.LenSuppliers];
-        public double[] suppliersQualityMultiplier = new double[Program.LenSuppliers];
+        private string[] stockRange = new string[Program.LenStockRange];
+        public string[] StockRange
+        {
+            get { return stockRange; }
+        }
+
+        private double[] suppliersPrices = new double[Program.LenSuppliers];
+        public double[] SuppliersPrices
+        {
+            get { return suppliersPrices; }
+        }
+
+        private string[] suppliersQuality = new string[Program.LenSuppliers];
+        public string[] SuppliersQuality
+        {
+            get { return suppliersQuality; }
+        }
+
+        private double[] suppliersQualityMultiplier = new double[Program.LenSuppliers];
+        public double[] SuppliersQualityMultiplier
+        {
+            get { return suppliersQualityMultiplier; }
+        }
 
         public Supplier()
         {

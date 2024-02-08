@@ -8,27 +8,50 @@ namespace supermarketProject1
 {
     public class Area
     {
-        public int customerPopulation;
-        public int onlineCustomerPopulation;
-
-
-        public int averageAmountOfWorkers;
-        public int onlineAverageAmountOfWorkers;
-        public double averageAreaAdvertisementInvestment;
-        public double shopliftingRate;
-        public double averageSecurityInvestment;
-
-        public Area()
+        private int customerPopulation;
+        public int CustomerPopulation
         {
-
+            get { return customerPopulation; }
         }
-        public virtual void updateArea()
-        {
-            //userArea, customerPopulation, numberOfComputerSupermarkets, onlineCustomerPopulation, averageAmountOfWorkers
-            //onlineAverageAmountOfWorkers, averageAreaAdvertisementInvestment, shopliftingRate, averageSecurityInvestment
-            //rent, numberOfPlayers   
 
-            if(Program.userArea == "Urban")
+        private int onlineCustomerPopulation;
+        public int OnlineCustomerPopulation
+        {
+            get { return onlineCustomerPopulation; }
+        }
+
+        private int averageAmountOfWorkers;
+        public int AverageAmountOfWorkers
+        {
+            get { return averageAmountOfWorkers; }
+        }
+        private int onlineAverageAmountOfWorkers;
+        public int OnlineAverageAmountOfWorkers
+        {
+            get { return onlineAverageAmountOfWorkers; }
+        }
+
+        private double averageAreaAdvertisementInvestment;
+        public double AverageAreaAdvertisementInvestment
+        {
+            get { return averageAreaAdvertisementInvestment; }
+        }
+
+        private double shopliftingRate;
+        public double ShopLiftingRate
+        {
+            get { return shopliftingRate; }
+        }
+        
+        private double averageSecurityInvestment;
+        public double AverageSecurityInvestment
+        {
+            get { return averageSecurityInvestment; }
+        }
+        public Area(String area)
+        {
+            //the parameter passed in represents the Program.getUserArea
+            if (area == "Urban")
             {
                 //here are the values based on real data of urban areas
                 customerPopulation = 10605;
@@ -38,12 +61,8 @@ namespace supermarketProject1
                 averageAreaAdvertisementInvestment = 354.58;
                 shopliftingRate = 0.0145;
                 averageSecurityInvestment = 1327.86;
-                
-
-                
-
             }
-            if (Program.userArea == "Suburb")
+            if (area == "Suburb")
             {
                 //real values
                 customerPopulation = 4972;
@@ -53,9 +72,8 @@ namespace supermarketProject1
                 averageAreaAdvertisementInvestment = 290.55;
                 shopliftingRate = 0.0091;
                 averageSecurityInvestment = 885.12;
- 
             }
-            if (Program.userArea == "Rural")
+            if (area == "Rural")
             {
                 //real values
                 customerPopulation = 3795;
@@ -65,9 +83,7 @@ namespace supermarketProject1
                 averageAreaAdvertisementInvestment = 226.08;
                 shopliftingRate = 0;
                 averageSecurityInvestment = 0;
-
             }
         }
-        
     }
 }

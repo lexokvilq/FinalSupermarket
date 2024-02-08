@@ -16,10 +16,9 @@ namespace supermarketProject1
     //in the design this is called the introduction screen
     public partial class Form1 : Form
     {
-        //add this to design
         //this string contains all the data from the save file
-        public string userFileData;
-        bool fileReadOk;
+        private string userFileData;
+        private bool fileReadOk;
         public Form1()
         {
             InitializeComponent();
@@ -33,8 +32,7 @@ namespace supermarketProject1
 
         public void buttonNewGame_Click(object sender, EventArgs e)
         {
-            Program.userLoadedFile = false;
-            //set the user save file to "" so the program knows that the user isn't loading a save file
+            Program.setUserLoadedFile(false);
             this.Hide();
             newGameScreen ngs = new newGameScreen();
             ngs.Show();
@@ -42,7 +40,7 @@ namespace supermarketProject1
 
         private void buttonLoadGame_Click(object sender, EventArgs e)
         {
-            Program.userLoadedFile = true;
+            Program.setUserLoadedFile(true);
             //or search for the textBoxLoadGame.Text in the c# files 
             if (textBoxLoadGame.Text == "" || textBoxLoadGame.Text == " ")
             {
@@ -50,12 +48,12 @@ namespace supermarketProject1
             }
             else
             {
-                Program.userSaveFile = Program.userSaveFile + textBoxLoadGame.Text + ".txt";
+                Program.generateNameUserLoadingFile(textBoxLoadGame.Text);
                 try
                 {
                     //create an instance of stream reader to read from a file
                     //the using statement closes the stream reader
-                    using (StreamReader sr = new StreamReader(Program.userSaveFile))
+                    using (StreamReader sr = new StreamReader(Program.UserLoadingFileName))
                     {
                         string file;
                         //read and display the lines from the fil until the end of the file is reached
