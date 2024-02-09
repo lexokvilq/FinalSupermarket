@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace supermarketProject1
 {
@@ -27,10 +29,10 @@ namespace supermarketProject1
         }
 
         //this is the number of the week that the game is on
-        private static int numOfWeeks;
-        public static int NumOfWeeks
+        private static int weekNumber;
+        public static int WeekNumber
         {
-            get { return numOfWeeks; }
+            get { return weekNumber; }
         }
 
         //end number of weeks
@@ -149,7 +151,7 @@ namespace supermarketProject1
             Application.SetCompatibleTextRenderingDefault(false);
 
             //the game has started and the players is on the first week
-            numOfWeeks = 0;
+            weekNumber = 0;
 
             //set the supermarketIndex to 0
             supermarketIndex = 0;
@@ -203,12 +205,53 @@ namespace supermarketProject1
 
 
 
-        //add this function into the design
+        //add this function into the design using Regular expressions
         //this functions checks if a string is a string or a number
         public static bool checkIfString(string input)
         {
-            decimal number1 = 0;
-            if (decimal.TryParse(input, out number1) == false)
+            return Regex.IsMatch(input, "[a-z]");
+        }
+        public static bool checkIfDouble(string input)
+        {
+            //need to check if the input is not a string
+            //and if the input contains a decimal place
+            if (checkIfString(input) == false & Regex.IsMatch(input, "[.]"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool checkIfInteger(string input)
+        {
+            //first need to check if the value is not a double
+            //check if the value is not a string
+            //then check if it contains integers
+            if (checkIfString(input) == false &
+                checkIfDouble(input) == false &
+                Regex.IsMatch(input, "[0-9]"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //check if a value is negative or 0
+        public static bool checkIfNegativeOrZero(string input)
+        {
+            //first need to check if it is a string
+            if (checkIfString(input) == true)
+            {
+                return false;
+            }
+
+            //then need to check if it is smaller than or equal to 0 
+            if (Convert.ToDouble(input) <= 0)
             {
                 return true;
             }
@@ -281,7 +324,7 @@ namespace supermarketProject1
             //historyNetProfit, historyCurrentFunds
 
             numOfPlayers = Convert.ToInt32(values[0]);
-            numOfWeeks = Convert.ToInt32(values[1]);
+            weekNumber = Convert.ToInt32(values[1]);
             endNumOfWeeks = Convert.ToInt32(values[2]);
             userArea = values[3];
 
@@ -307,7 +350,7 @@ namespace supermarketProject1
             //history of worker wage
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyWorkerWage[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
@@ -317,7 +360,7 @@ namespace supermarketProject1
             //history of onlineWorkerWage
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyOnlineWorkerWage[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
@@ -327,7 +370,7 @@ namespace supermarketProject1
             //history of amount of workers
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyAmountOfWorkers[i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
@@ -338,7 +381,7 @@ namespace supermarketProject1
             //history of online amount of workers
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyOnlineAmountOfWorkers[i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
@@ -348,7 +391,7 @@ namespace supermarketProject1
             //history of item prices
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyItemPrices[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
@@ -358,7 +401,7 @@ namespace supermarketProject1
             //history of number of customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyNumOfCustomers[i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
@@ -368,7 +411,7 @@ namespace supermarketProject1
             //history of online number of customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyOnlineNumOfCustomers[i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
@@ -378,7 +421,7 @@ namespace supermarketProject1
             //history of net profit
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyNetProfit[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
@@ -388,7 +431,7 @@ namespace supermarketProject1
             //history of current funds
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     historyCurrentFunds[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
@@ -413,7 +456,7 @@ namespace supermarketProject1
 
             file = Convert.ToString(numOfPlayers);
             file = file + ",";
-            file = file + Convert.ToString(numOfWeeks);
+            file = file + Convert.ToString(weekNumber);
             file = file + ",";
             file = file + Convert.ToString(endNumOfWeeks);
             file = file + ",";
@@ -430,7 +473,7 @@ namespace supermarketProject1
             //using a nested for loop to store the history worker wage
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyWorkerWage[i, j]);
                     file = file + ",";
@@ -439,7 +482,7 @@ namespace supermarketProject1
             //history of onlineWorkerWage
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyOnlineWorkerWage[i, j]);
                     file = file + ",";
@@ -449,7 +492,7 @@ namespace supermarketProject1
             //history of amount of workers
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyAmountOfWorkers[i, j]);
                     file = file + ",";
@@ -459,7 +502,7 @@ namespace supermarketProject1
             //history of online amount of workers
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyOnlineAmountOfWorkers[i, j]);
                     file = file + ",";
@@ -469,7 +512,7 @@ namespace supermarketProject1
             //history of item prices
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyItemPrices[i, j]);
                     file = file + ",";
@@ -479,7 +522,7 @@ namespace supermarketProject1
             //history of number of customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyNumOfCustomers[i, j]);
                     file = file + ",";
@@ -489,7 +532,7 @@ namespace supermarketProject1
             //history of online number of customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyOnlineNumOfCustomers[i, j]);
                     file = file + ",";
@@ -499,7 +542,7 @@ namespace supermarketProject1
             //history of net profit
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 {
                     file = file + Convert.ToString(historyNetProfit[i, j]);
                     file = file + ",";
@@ -508,7 +551,7 @@ namespace supermarketProject1
 
             for (int i = 0; i < numOfPlayers; i++)
             {
-                for (int j = 0; j < numOfWeeks; j++)
+                for (int j = 0; j < weekNumber; j++)
                 //history of current funds
                 {
                     file = file + Convert.ToString(historyCurrentFunds[i, j]);
@@ -539,15 +582,15 @@ namespace supermarketProject1
         }
 
         //function to increment numOfWeeks by 1
-        public static void incrementNumOfWeeks()
+        public static void incrementWeekNumber()
         {
-            numOfWeeks++;
+            weekNumber++;
         }
 
         //function to work out how many weeks are left
         public static int calcNumOfWeeksLeft()
         {
-            return endNumOfWeeks - numOfWeeks;
+            return endNumOfWeeks - weekNumber;
         }
 
         public static void incrementSupermarketIndex()
@@ -563,7 +606,7 @@ namespace supermarketProject1
         //this function will set a variable to its appropriate history variable alternative
         public static void setHistoryVariables(double [,] historyArray, int index, double value)
         {
-            historyArray[index, numOfWeeks] = value;
+            historyArray[index, weekNumber] = value;
         }
 
         //currently there is an issue with the setters not working in other classes

@@ -106,7 +106,7 @@ namespace supermarketProject1
 
             initDataXY();
             //create a for loop which will go through the number of weeks that have passed
-            for (int i = 0; i < Program.NumOfWeeks; i++)
+            for (int i = 0; i < Program.WeekNumber; i++)
             {
                 //then set up the x axis by assigning i to the dataX
                 dataX[i] = i;
@@ -120,8 +120,8 @@ namespace supermarketProject1
 
         public static void initDataXY()
         {
-            dataX = new double[Program.NumOfWeeks];
-            dataY = new double[Program.NumOfWeeks];
+            dataX = new double[Program.WeekNumber];
+            dataY = new double[Program.WeekNumber];
         }
        
         private void cartesianChart1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)

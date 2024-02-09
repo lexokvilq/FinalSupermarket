@@ -86,8 +86,8 @@ namespace supermarketProject1
                     supermarkets[i] = new Supermarket();
 
                     //set up all the old prices as deafult 0 
-                    supermarkets[i].setValueToOldItemPrices(Program.HistoryItemPrices[i, Program.NumOfWeeks - 1]);
-                    supermarkets[i].setValueToPrevFunds(Program.HistoryCurrentFunds[i, Program.NumOfWeeks - 1]);
+                    supermarkets[i].setValueToOldItemPrices(Program.HistoryItemPrices[i, Program.WeekNumber - 1]);
+                    supermarkets[i].setValueToPrevFunds(Program.HistoryCurrentFunds[i, Program.WeekNumber - 1]);
 
                     //need to also set the newer version of the worker wages to 0 because the first time through the
                     //old variables will have no variable to be assigned too.
@@ -123,16 +123,7 @@ namespace supermarketProject1
                     //set up all the old prices as deafult 0 
                     supermarkets[i].setValueToOldItemPrices(0);
                     supermarkets[i].setValueToPrevFunds(0);
-
-
-                    //DO I NEED THIS???????????????????????
-                    //?????????????????
-                    //???????????????
-                    //need to also set the newer version of the worker wages to 0 because the first time through the
-                    //old variables will have no variable to be assigned too.
-//                  supermarkets[i].itemPrices = 0;
-  //                supermarkets[i].workerWage = 0;
-    //              supermarkets[i].onlineWorkerWage = 0;
+   
                 
                     //check which area the user has chosen and set the appropriate current funds
                     if (Program.UserArea == "Urban")
@@ -161,7 +152,7 @@ namespace supermarketProject1
             Program.initCurrentFundsForSaveFile();
 
             //set up the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.WeekNumber);
 
             //set up the number of weeks left
             labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
@@ -189,7 +180,7 @@ namespace supermarketProject1
             supermarkets[count].setValueToOldItemPrices(supermarkets[count].ItemPrices);
             supermarkets[count].setValueToPrevFunds(supermarkets[count].CurrentFunds); 
             //add the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.WeekNumber);
             //add the number of weeks left 
             labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
             
@@ -207,8 +198,8 @@ namespace supermarketProject1
                 //or if the input is smaller than 1 meaning it is a minus number or 0
                 //or if the input is a float            
                 if (Program.checkIfString(Convert.ToString(textBoxStockAmountInput.Text)) == true
-                     || checkIfFloat(Convert.ToString(textBoxStockAmountInput.Text)) == true
-                     || checkIfNegativeOr0(Convert.ToString(textBoxStockAmountInput.Text)) == true)
+                     || Program.checkIfDouble(Convert.ToString(textBoxStockAmountInput.Text)) == true
+                     || Program.checkIfNegativeOrZero(Convert.ToString(textBoxStockAmountInput.Text)) == true)
                 {
                     valid = false;
                     labelInvalidStockAmount.ForeColor = Color.Red;
@@ -221,7 +212,7 @@ namespace supermarketProject1
 
                 //need to check if the value is a string, then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxItemPricesInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxItemPricesInput.Text) == true)
+                    Program.checkIfNegativeOrZero(textBoxItemPricesInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidItemPrices.ForeColor = Color.Red;
@@ -234,7 +225,7 @@ namespace supermarketProject1
 
                 //need to check if the advertisement investment is a string, then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxAdvertisementInvestmentInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxAdvertisementInvestmentInput.Text) == true)
+                    Program.checkIfNegativeOrZero(textBoxAdvertisementInvestmentInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAdvertisementInvestment.ForeColor = Color.Red;
@@ -251,7 +242,7 @@ namespace supermarketProject1
                 {
 
                     if (Program.checkIfString(textBoxSecurityInvestmentInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxSecurityInvestmentInput.Text) == true)
+                    Program.checkIfNegativeOrZero(textBoxSecurityInvestmentInput.Text) == true)
                     {
                         valid = false;
                         labelInvalidSecurityInvestment.ForeColor = Color.Red;
@@ -269,8 +260,8 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the input is a float, then if the value is 0
                 if (Program.checkIfString(textBoxAmountOfWorkersInput.Text) == true ||
-                    checkIfFloat(textBoxAmountOfWorkersInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxAmountOfWorkersInput.Text) == true)
+                    Program.checkIfDouble(textBoxAmountOfWorkersInput.Text) == true ||
+                    Program.checkIfNegativeOrZero(textBoxAmountOfWorkersInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAmountOfWorkers.ForeColor = Color.Red;
@@ -283,7 +274,7 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the input is a negative number or 0
                 if (Program.checkIfString(textBoxWorkerWageInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxWorkerWageInput.Text) == true)
+                    Program.checkIfNegativeOrZero(textBoxWorkerWageInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidWorkerWage.ForeColor = Color.Red;
@@ -296,8 +287,8 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the input is a float, then if the value is 0
                 if (Program.checkIfString(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
-                    checkIfFloat(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxAmountOfDeliveryWorkersInput.Text) == true)
+                    Program.checkIfDouble(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
+                    Program.checkIfNegativeOrZero(textBoxAmountOfDeliveryWorkersInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAmountOfDeliveryWorkers.ForeColor = Color.Red;
@@ -310,7 +301,7 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the input is a float 
                 if (Program.checkIfString(textBoxDeliveryWorkerWageInput.Text) == true ||
-                    checkIfNegativeOr0(textBoxDeliveryWorkerWageInput.Text) == true)
+                    Program.checkIfNegativeOrZero(textBoxDeliveryWorkerWageInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidDeliveryWorkerWage.ForeColor = Color.Red;
@@ -430,67 +421,61 @@ namespace supermarketProject1
                     supermarkets[i].calcNetProfit();
                 }
 
-                //only do this if the valid is true
-                //meaning that the currentFunds is valid
+                //only graph the results if the currentFunds isn't negative, or the valid is true
+                // --- NOW WE NEED TO START GRAPHING THE RESULTS ---
+                //first we need to get all the variables that are going to be graphed and put them into a list in Program
+                //this list will contain the history of all the variables, so they can be graphed
 
-                if (valid == true)
+                //using a for loop
+                //i representing the index of the number the player is. For example when i is 0 it looks at the first
+                //player, when i is 1 it looks at the second player etc...
+                for (int i = 0; i < Program.NumOfPlayers; i++)
                 {
-                    //only graph the results if the currentFunds isn't negative, or the valid is true
-                    // --- NOW WE NEED TO START GRAPHING THE RESULTS ---
-                    //first we need to get all the variables that are going to be graphed and put them into a list in Program
-                    //this list will contain the history of all the variables, so they can be graphed
+                    Program.setHistoryVariables(Program.HistoryNetProfit, i, supermarkets[i].NetProfit);
+                    Program.setHistoryVariables(Program.HistoryAmountOfWorkers, i, supermarkets[i].AmountOfWorkers);
+                    Program.setHistoryVariables(Program.HistoryCurrentFunds, i, supermarkets[i].CurrentFunds);
+                    Program.setHistoryVariables(Program.HistoryItemPrices, i, supermarkets[i].ItemPrices);
+                    Program.setHistoryVariables(Program.HistoryNumOfCustomers, i, numberOfCustomers[i]);
+                    Program.setHistoryVariables(Program.HistoryOnlineNumOfCustomers, i, onlineNumberOfCustomers[i]);
+                    Program.setHistoryVariables(Program.HistoryOnlineAmountOfWorkers, i, supermarkets[i].OnlineAmountOfWorkers);
+                    Program.setHistoryVariables(Program.HistoryOnlineWorkerWage, i, supermarkets[i].OnlineWorkerWage);
+                    Program.setHistoryVariables(Program.HistoryWorkerWage, i, supermarkets[i].WorkerWage);
+                }
+                //once the turns have finished implement the number of weeks by 1
+                Program.incrementWeekNumber();
+                //add the right number of weeks to the label
+                //set up the number of weeks passed
+                labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.WeekNumber);
 
-                    //using a for loop
-                    //i representing the index of the number the player is. For example when i is 0 it looks at the first
-                    //player, when i is 1 it looks at the second player etc...
-                    for (int i = 0; i < Program.NumOfPlayers; i++)
-                    {
-                        Program.setHistoryVariables(Program.HistoryNetProfit, i, supermarkets[i].NetProfit);
-                        Program.setHistoryVariables(Program.HistoryAmountOfWorkers, i, supermarkets[i].AmountOfWorkers);
-                        Program.setHistoryVariables(Program.HistoryCurrentFunds, i, supermarkets[i].CurrentFunds);
-                        Program.setHistoryVariables(Program.HistoryItemPrices, i, supermarkets[i].ItemPrices);
-                        Program.setHistoryVariables(Program.HistoryNumOfCustomers, i, numberOfCustomers[i]);
-                        Program.setHistoryVariables(Program.HistoryOnlineNumOfCustomers, i, onlineNumberOfCustomers[i]);
-                        Program.setHistoryVariables(Program.HistoryOnlineAmountOfWorkers, i, supermarkets[i].OnlineAmountOfWorkers);
-                        Program.setHistoryVariables(Program.HistoryOnlineWorkerWage, i, supermarkets[i].OnlineWorkerWage);
-                        Program.setHistoryVariables(Program.HistoryWorkerWage, i, supermarkets[i].WorkerWage);
-                    }
-                    //once the turns have finished implement the number of weeks by 1
-                    Program.incrementNumOfWeeks();
-                    //add the right number of weeks to the label
-                    //set up the number of weeks passed
-                    labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
+                //set up the number of weeks left
+                labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
 
-                    //set up the number of weeks left
-                    labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
+                //reset count back to the first player 
+                count = 0;
 
-                    //reset count back to the first player 
-                    count = 0;
+                //reset the label which says to the player which player it is
+                labelPlayerNum.Text = "Player " + Convert.ToString(count + 1);
 
-                    //reset the label which says to the player which player it is
-                    labelPlayerNum.Text = "Player " + Convert.ToString(count + 1);
+                //label for the current funds
+                labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].CurrentFunds);
 
-                    //label for the current funds
-                    labelCurrentFundsText.Text = Convert.ToString(supermarkets[count].CurrentFunds);
+                //initialise the new main game screen graph and show it
+                mainGameScreenGraph mgsg = new mainGameScreenGraph();
+                mgsg.Show();
 
-                    //initialise the new main game screen graph and show it
-                    mainGameScreenGraph mgsg = new mainGameScreenGraph();
-                    mgsg.Show();
+                //this means it is the last week
+                if (Program.calcNumOfWeeksLeft() == 1)
+                {
+                    //this means it is the last turn
+                    labelLastWeek.ForeColor = Color.Red;
+                }
 
-                    //this means it is the last week
-                    if (Program.calcNumOfWeeksLeft() == 1)
-                    {
-                        //this means it is the last turn
-                        labelLastWeek.ForeColor = Color.Red;
-                    }
+                //if the number of weeks is equal to end number of weeks
+                //there are no more goes left so close this forms application
 
-                    //if the number of weeks is equal to end number of weeks
-                    //there are no more goes left so close this forms application
-
-                    if (Program.calcNumOfWeeksLeft() == 0)
-                    {
-                        this.Close();
-                    }
+                if (Program.calcNumOfWeeksLeft() == 0)
+                {
+                    this.Close();
                 }
             }
         }
@@ -569,53 +554,6 @@ namespace supermarketProject1
             supermarkets[count].calcOnlineCustomerMultiplier();
         }
 
-        
-
-        //function to check if a value is a float or not
-        //if the function returns true then the value is a float
-        //if the function returns false then the value isn't a float
-        public static bool checkIfFloat(string input)
-        {
-            Int32 number2 = 0;
-            if (Int32.TryParse(input, out number2) == false)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        //function to check if a value is 0 or a minus number
-        public static bool checkIfNegativeOr0(string input)
-        {
-            //check if the value is a double 
-            if (checkIfFloat(input) == true)
-            {
-                if (Convert.ToDouble(input) <= 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            //if the value is a string
-            else
-            {
-                if (Convert.ToInt32(input) < 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
 
 
         private void buttonExcellent_Click(object sender, EventArgs e)
@@ -697,7 +635,7 @@ namespace supermarketProject1
             
             //set the number of weeks and num of weeks left to the right number
             //add the number of weeks passed
-            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.NumOfWeeks);
+            labelNumberOfWeeksPassedText.Text = Convert.ToString(Program.WeekNumber);
             //add the number of weeks left 
             labelNumberOfWeeksLeftText.Text = Convert.ToString(Program.calcNumOfWeeksLeft());
 
