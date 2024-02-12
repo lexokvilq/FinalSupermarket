@@ -52,35 +52,44 @@ namespace supermarketProject1
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            //reset all the error messages
             labelInvalidNumOfPlay.ForeColor = Color.WhiteSmoke;
             labelInvalidNumOfWeeks.ForeColor = Color.WhiteSmoke;
+            labelInvalidUserArea.ForeColor = Color.WhiteSmoke;
+
+            //checking if the number of players is valid or not
             if (Program.checkIfString(textBoxNumberOfPlayers.Text) == true || 
+                Program.checkIfInteger(textBoxNumberOfPlayers.Text) == false ||
                 Convert.ToInt32(textBoxNumberOfPlayers.Text) < 2 ||
-                Convert.ToInt32(textBoxNumberOfPlayers.Text) > 10)
+                Convert.ToInt32(textBoxNumberOfPlayers.Text) > 10 )
             {
                 labelInvalidNumOfPlay.ForeColor = Color.Red;
                 valid = false;
             }
+            //checking if the number of weeks is valid or not
             if (Program.checkIfString(textBoxNumberOfWeeks.Text) == true ||
+                Program.checkIfInteger(textBoxNumberOfWeeks.Text) == false ||
                 Convert.ToInt32(textBoxNumberOfWeeks.Text) < 4 ||
-                Convert.ToInt32(textBoxNumberOfWeeks.Text) > 52)
+                Convert.ToInt32(textBoxNumberOfWeeks.Text) > 52 )
             {
                 labelInvalidNumOfWeeks.ForeColor = Color.Red;
                 valid = false;
             }
+            //check if the user area is valid or not
+            if (string.IsNullOrWhiteSpace(Program.UserArea) == true)
+            {
+                labelInvalidUserArea.ForeColor = Color.Red;
+                valid = false;
+            }
+
             else if (valid == true)
             {
                 labelInvalidNumOfPlay.ForeColor = Color.WhiteSmoke;
                 labelInvalidNumOfWeeks.ForeColor = Color.WhiteSmoke; 
 
-                //error here the static variable Program.NumOfPlayers can be assigned a value
-                //Program.NumOfPlayers = Convert.ToInt32(textBoxNumberOfPlayers.Text);
                 Program.setNumOfPlayers(Convert.ToInt32(textBoxNumberOfPlayers.Text));
 
-                Program.setEndNumOfWeeks(Convert.ToInt32(textBoxNumberOfWeeks.Text));
-//                Program.EndNumOfWeeks = Convert.ToInt32(textBoxNumberOfWeeks.Text);
-
-                
+                Program.setEndNumOfWeeks(Convert.ToInt32(textBoxNumberOfWeeks.Text));                
                 this.Hide();
                 mainGameScreenInput mgsi = new mainGameScreenInput();
                 mgsi.Show();

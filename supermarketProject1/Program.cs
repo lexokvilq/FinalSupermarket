@@ -164,7 +164,7 @@ namespace supermarketProject1
 
 
 
-            userLoadingFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\supermarketProject1\\supermarketProject1\\bin\\Debug\\";
+            userLoadingFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\FinalSupermarket\\supermarketProject1\\bin\\Debug\\";
 
             //set the game end to false
             gameEnded = false;
@@ -184,38 +184,17 @@ namespace supermarketProject1
             historyWorkerWage = new double[numOfPlayers, endNumOfWeeks];
             historyOnlineWorkerWage = new double[numOfPlayers, endNumOfWeeks];
             historyCurrentFunds = new double[numOfPlayers, endNumOfWeeks];
-
-            //first you need to get the number of players
-            for (int i = 0; i < numOfPlayers; i++)
-            {
-                for (int j = 0; j < endNumOfWeeks; j++)
-                {
-                    historyAmountOfWorkers[i, j] = 0;
-                    historyItemPrices[i, j] = 0;
-                    historyNetProfit[i, j] = 0;
-                    historyNumOfCustomers[i, j] = 0;
-                    historyOnlineNumOfCustomers[i, j] = 0;
-                    historyOnlineAmountOfWorkers[i, j] = 0;
-                    historyWorkerWage[i, j] = 0;
-                    historyOnlineWorkerWage[i, j] = 0;
-                    historyCurrentFunds[i, j] = 0;
-                }
-            }
         }
 
 
 
         //add this function into the design using Regular expressions
         //this functions checks if a string is a string or a number
-        public static bool checkIfString(string input)
+        public static bool checkIfString(string value)
         {
-            return Regex.IsMatch(input, "[a-z]");
-        }
-        public static bool checkIfDouble(string input)
-        {
-            //need to check if the input is not a string
-            //and if the input contains a decimal place
-            if (checkIfString(input) == false & Regex.IsMatch(input, "[.]"))
+            //check if the value doesn't contain a number or a decimal place, which will mean 
+            //the value is a string, or if the value is null or contains white space
+            if (!Regex.IsMatch(value, "^[0-9.]*$") || string.IsNullOrWhiteSpace(value) == true)
             {
                 return true;
             }
@@ -224,34 +203,28 @@ namespace supermarketProject1
                 return false;
             }
         }
-        public static bool checkIfInteger(string input)
+        public static bool checkIfInteger(string value)
         {
-            //first need to check if the value is not a double
-            //check if the value is not a string
-            //then check if it contains integers
-            if (checkIfString(input) == false &
-                checkIfDouble(input) == false &
-                Regex.IsMatch(input, "[0-9]"))
+            //assumes the input is not a string
+            //checks if there is a decimal point if there is no decimal point
+            //if there is not decimal point it is a integer
+            if (!Regex.IsMatch(value, "[.]"))
             {
                 return true;
             }
             else
             {
+                //if the function returns false the value is a double
                 return false;
             }
         }
 
         //check if a value is negative or 0
-        public static bool checkIfNegativeOrZero(string input)
+        //assumes the value is not a string
+        public static bool checkIfNegativeOrZero(string value)
         {
-            //first need to check if it is a string
-            if (checkIfString(input) == true)
-            {
-                return false;
-            }
-
             //then need to check if it is smaller than or equal to 0 
-            if (Convert.ToDouble(input) <= 0)
+            if (Convert.ToDouble(value) <= 0)
             {
                 return true;
             }
@@ -260,6 +233,7 @@ namespace supermarketProject1
                 return false;
             }
         }
+       
 
         public static void loadFile(string file)
         {
@@ -318,7 +292,7 @@ namespace supermarketProject1
             }
 
             //the order that files will be stored is
-            //numOfPlayers, numOfWeeks, endNumOfWeeks, userArea, currentFunds,
+            //numOfPlayers, weekNumber, endNumOfWeeks, userArea, currentFunds,
             //historyWorkerWage, historyOnlineWorkerWage, hisotryAmountOfWorkers
             //historyOnlineAmountOfWorkers, historyItemPrices, historyNumOfCustomers, historyOnlineNumOfCustomers
             //historyNetProfit, historyCurrentFunds
@@ -447,7 +421,7 @@ namespace supermarketProject1
             //file name is passed in from the save game screen
 
             //first need to store 
-            //numOfPlayers, numOfWeeks, endNumOfWeeks, userArea, currentFunds,
+            //numOfPlayers, weekNumber, endNumOfWeeks, userArea, currentFunds,
             //historyWorkerWage, historyOnlineWorkerWage, hisotryAmountOfWorkers
             //historyOnlineAmountOfWorkers, historyItemPrices, historyNumOfCustomers, historyOnlineNumOfCustomers
             //historyNetProfit, historyCurrentFunds
@@ -581,7 +555,7 @@ namespace supermarketProject1
             currentFundsForSaveFile = new double[numOfPlayers];
         }
 
-        //function to increment numOfWeeks by 1
+        //function to increment weekNumber by 1
         public static void incrementWeekNumber()
         {
             weekNumber++;

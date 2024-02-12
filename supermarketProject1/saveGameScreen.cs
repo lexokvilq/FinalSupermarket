@@ -19,7 +19,7 @@ namespace supermarketProject1
             labelInvalidFileName.ForeColor = Color.WhiteSmoke;
 
             //NEED TO CHANGE THIS FOR SEPERATE COMPUTERS
-            saveFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\supermarketProject1\\supermarketProject1\\bin\\Debug\\";
+            saveFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\FinalSupermarket\\supermarketProject1\\bin\\Debug\\";
 
         }
 
@@ -30,7 +30,8 @@ namespace supermarketProject1
 
         private void buttonSaveQuit_Click(object sender, EventArgs e)
         {
-            if (textBoxSaveFileName.Text == "" || textBoxSaveFileName.Text == " ")
+            //check if the input is null
+            if (string.IsNullOrEmpty(textBoxSaveFileName.Text) == true)
             {
                 labelInvalidFileName.ForeColor = Color.Red;
             }

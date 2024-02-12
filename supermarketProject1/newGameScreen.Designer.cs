@@ -39,6 +39,7 @@
             this.labelHowManyWeeksPlayingFor = new System.Windows.Forms.Label();
             this.textBoxNumberOfWeeks = new System.Windows.Forms.TextBox();
             this.labelInvalidNumOfWeeks = new System.Windows.Forms.Label();
+            this.labelInvalidUserArea = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelSelectAreaType
@@ -160,11 +161,22 @@
             this.labelInvalidNumOfWeeks.TabIndex = 10;
             this.labelInvalidNumOfWeeks.Text = "Invalid Number Of Weeks! \r\n(4-52) weeks";
             // 
+            // labelInvalidUserArea
+            // 
+            this.labelInvalidUserArea.AutoSize = true;
+            this.labelInvalidUserArea.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelInvalidUserArea.Location = new System.Drawing.Point(415, 37);
+            this.labelInvalidUserArea.Name = "labelInvalidUserArea";
+            this.labelInvalidUserArea.Size = new System.Drawing.Size(132, 13);
+            this.labelInvalidUserArea.TabIndex = 11;
+            this.labelInvalidUserArea.Text = "Need To Choose An Area!";
+            // 
             // newGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 414);
+            this.Controls.Add(this.labelInvalidUserArea);
             this.Controls.Add(this.labelInvalidNumOfWeeks);
             this.Controls.Add(this.textBoxNumberOfWeeks);
             this.Controls.Add(this.labelHowManyWeeksPlayingFor);
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Label labelHowManyWeeksPlayingFor;
         private System.Windows.Forms.TextBox textBoxNumberOfWeeks;
         private System.Windows.Forms.Label labelInvalidNumOfWeeks;
+        private System.Windows.Forms.Label labelInvalidUserArea;
     }
 }

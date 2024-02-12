@@ -40,48 +40,38 @@ namespace supermarketProject1
 
         private void buttonLoadGame_Click(object sender, EventArgs e)
         {
+            //it is possible to have a null text file, e.g just .txt so no validation required
             Program.setUserLoadedFile(true);
-            //or search for the textBoxLoadGame.Text in the c# files 
-            if (textBoxLoadGame.Text == "" || textBoxLoadGame.Text == " ")
+            Program.generateNameUserLoadingFile(textBoxLoadGame.Text);
+            try
             {
+                //create an instance of stream reader to read from a file
+                //the using statement closes the stream reader
+                using (StreamReader sr = new StreamReader(Program.UserLoadingFileName))
+                {
+                    string file;
+                    //read and display the lines from the fil until the end of the file is reached
+                    while ((file = sr.ReadLine()) != null)
+                    {
+                        userFileData = userFileData + file;
+                    }
+                }
+
+
+            }
+            catch (Exception)
+            {
+                fileReadOk = false;
                 labelInvalidSaveFile.ForeColor = Color.Red;
             }
-            else
+
+            //if the file has been read ok
+            if (fileReadOk == true)
             {
-                Program.generateNameUserLoadingFile(textBoxLoadGame.Text);
-                try
-                {
-                    //create an instance of stream reader to read from a file
-                    //the using statement closes the stream reader
-                    using (StreamReader sr = new StreamReader(Program.UserLoadingFileName))
-                    {
-                        string file;
-                        //read and display the lines from the fil until the end of the file is reached
-                        while ((file = sr.ReadLine()) != null)
-                        {
-                            userFileData = userFileData + file;
-                        }
-                    }
-
-
-                }
-                catch (Exception)
-                {
-                    fileReadOk = false;
-                    labelInvalidSaveFile.ForeColor = Color.Red;
-                }
-
-                //if the file has been read ok
-                if (fileReadOk == true)
-                {
-                    Program.loadFile(userFileData);
-                    this.Hide();
-                    mainGameScreenInput mgsi = new mainGameScreenInput();
-                    mgsi.Show();
-                }
-
-
-
+                Program.loadFile(userFileData);
+                this.Hide();
+                mainGameScreenInput mgsi = new mainGameScreenInput();
+                mgsi.Show();
             }
         }
 

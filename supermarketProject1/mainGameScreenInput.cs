@@ -196,9 +196,9 @@ namespace supermarketProject1
 
                 //need to check if the input is a string 
                 //or if the input is smaller than 1 meaning it is a minus number or 0
-                //or if the input is a float            
+                //or if the input is not an integer, so is a double      
                 if (Program.checkIfString(Convert.ToString(textBoxStockAmountInput.Text)) == true
-                     || Program.checkIfDouble(Convert.ToString(textBoxStockAmountInput.Text)) == true
+                     || Program.checkIfInteger(Convert.ToString(textBoxStockAmountInput.Text)) == false
                      || Program.checkIfNegativeOrZero(Convert.ToString(textBoxStockAmountInput.Text)) == true)
                 {
                     valid = false;
@@ -210,7 +210,8 @@ namespace supermarketProject1
                     stockAmount = Convert.ToInt32(textBoxStockAmountInput.Text);
                 }
 
-                //need to check if the value is a string, then check if the value is 0 or smaller
+                //need to check if the value is a string,
+                //then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxItemPricesInput.Text) == true ||
                     Program.checkIfNegativeOrZero(textBoxItemPricesInput.Text) == true)
                 {
@@ -223,7 +224,8 @@ namespace supermarketProject1
                     itemPrices = Convert.ToDouble(textBoxItemPricesInput.Text);
                 }
 
-                //need to check if the advertisement investment is a string, then check if the value is 0 or smaller
+                //need to check if the advertisement investment is a string,
+                //then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxAdvertisementInvestmentInput.Text) == true ||
                     Program.checkIfNegativeOrZero(textBoxAdvertisementInvestmentInput.Text) == true)
                 {
@@ -237,8 +239,10 @@ namespace supermarketProject1
                 }
 
                 //need to check if the input is a string, then if the value is 0 or smaller
-                //first need to check if it is a rural area or not, if it is not a rural area does not need to go through this check
-                if (Program.UserArea == "Urban" || Program.UserArea == "Suburb")
+                //first need to check if it is a rural area or not,
+                //if it is not a rural area does not need to go through this check because there
+                //is no security variables for the rural area
+                if (Program.UserArea != "Rural")
                 {
 
                     if (Program.checkIfString(textBoxSecurityInvestmentInput.Text) == true ||
@@ -258,9 +262,10 @@ namespace supermarketProject1
 
                 
 
-                //need to check if the input is a string, then if the input is a float, then if the value is 0
+                //need to check if the input is a string, then if the input is not an integer
+                //then check if the value is 0 or less
                 if (Program.checkIfString(textBoxAmountOfWorkersInput.Text) == true ||
-                    Program.checkIfDouble(textBoxAmountOfWorkersInput.Text) == true ||
+                    Program.checkIfInteger(textBoxAmountOfWorkersInput.Text) == false ||
                     Program.checkIfNegativeOrZero(textBoxAmountOfWorkersInput.Text) == true)
                 {
                     valid = false;
@@ -285,9 +290,10 @@ namespace supermarketProject1
                     workerWage = Convert.ToDouble(textBoxWorkerWageInput.Text);
                 }
 
-                //need to check if the input is a string, then if the input is a float, then if the value is 0
+                //need to check if the input is a string, then if the input is
+                //not a integer, then if the value is 0 or less
                 if (Program.checkIfString(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
-                    Program.checkIfDouble(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
+                    Program.checkIfInteger(textBoxAmountOfDeliveryWorkersInput.Text) == false ||
                     Program.checkIfNegativeOrZero(textBoxAmountOfDeliveryWorkersInput.Text) == true)
                 {
                     valid = false;
@@ -299,7 +305,8 @@ namespace supermarketProject1
                     onlineAmountOfWorkers = Convert.ToInt32(textBoxAmountOfDeliveryWorkersInput.Text);
                 }
 
-                //need to check if the input is a string, then if the input is a float 
+                //need to check if the input is a string,
+                //then if the input is zero or less 
                 if (Program.checkIfString(textBoxDeliveryWorkerWageInput.Text) == true ||
                     Program.checkIfNegativeOrZero(textBoxDeliveryWorkerWageInput.Text) == true)
                 {
@@ -311,8 +318,7 @@ namespace supermarketProject1
                     valid = true;
                     onlineWorkerWage = Convert.ToDouble(textBoxDeliveryWorkerWageInput.Text);
                 }
-
-
+               
                 
                 //check if user suppier is empty
                 
