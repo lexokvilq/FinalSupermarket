@@ -61,7 +61,7 @@ namespace supermarketProject1
             if (Program.checkIfString(textBoxNumberOfPlayers.Text) == true || 
                 Program.checkIfInteger(textBoxNumberOfPlayers.Text) == false ||
                 Convert.ToInt32(textBoxNumberOfPlayers.Text) < 2 ||
-                Convert.ToInt32(textBoxNumberOfPlayers.Text) > 10 )
+                Convert.ToInt32(textBoxNumberOfPlayers.Text) > 5 )
             {
                 labelInvalidNumOfPlay.ForeColor = Color.Red;
                 valid = false;

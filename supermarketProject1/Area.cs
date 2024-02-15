@@ -78,6 +78,11 @@ namespace supermarketProject1
                 //real values
                 customerPopulation = 3795;
                 onlineCustomerPopulation = 567;
+
+                //testing values
+                //customerPopulation = 5000;
+                //onlineCustomerPopulation = 1000
+
                 averageAmountOfWorkers = 5;
                 onlineAverageAmountOfWorkers = 5;
                 averageAreaAdvertisementInvestment = 226.08;

@@ -118,9 +118,9 @@
             this.labelInvalidNumOfPlay.Location = new System.Drawing.Point(350, 184);
             this.labelInvalidNumOfPlay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInvalidNumOfPlay.Name = "labelInvalidNumOfPlay";
-            this.labelInvalidNumOfPlay.Size = new System.Drawing.Size(194, 20);
+            this.labelInvalidNumOfPlay.Size = new System.Drawing.Size(194, 40);
             this.labelInvalidNumOfPlay.TabIndex = 6;
-            this.labelInvalidNumOfPlay.Text = "Invalid Number Of Players!";
+            this.labelInvalidNumOfPlay.Text = "Invalid Number Of Players!\r\n(2-5)\r\n";
             // 
             // buttonSubmit
             // 

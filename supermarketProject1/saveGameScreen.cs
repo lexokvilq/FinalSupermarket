@@ -30,24 +30,16 @@ namespace supermarketProject1
 
         private void buttonSaveQuit_Click(object sender, EventArgs e)
         {
-            //check if the input is null
-            if (string.IsNullOrEmpty(textBoxSaveFileName.Text) == true)
+            saveFileName = saveFileName + textBoxSaveFileName.Text;
+            //this function in program will write the data to the save file and return whether it has succedded or not
+            bool programHasBeenSaved = Program.saveFile(saveFileName);
+            if (programHasBeenSaved == true)
             {
-                labelInvalidFileName.ForeColor = Color.Red;
+                Application.Exit();
             }
             else
             {
-                saveFileName = saveFileName + textBoxSaveFileName.Text;
-                //this function in program will write the data to the save file and return whether it has succedded or not
-                bool programHasBeenSaved = Program.saveFile(saveFileName);
-                if (programHasBeenSaved == true)
-                {
-                    Application.Exit(); 
-                }
-                else
-                {
-                    labelInvalidFileName.ForeColor = Color.Red;
-                }
+                labelInvalidFileName.ForeColor = Color.Red;
             }
         }
     }

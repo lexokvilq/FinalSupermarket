@@ -40,6 +40,8 @@ namespace supermarketProject1
 
         private void buttonLoadGame_Click(object sender, EventArgs e)
         {
+            //assume that file is read ok first
+            fileReadOk = true;
             //it is possible to have a null text file, e.g just .txt so no validation required
             Program.setUserLoadedFile(true);
             Program.generateNameUserLoadingFile(textBoxLoadGame.Text);

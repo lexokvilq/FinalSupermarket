@@ -62,6 +62,9 @@
             this.labelWeekNumberNetProfit = new System.Windows.Forms.Label();
             this.labelCantSaveEndedGame = new System.Windows.Forms.Label();
             this.labelPlayerNumber = new System.Windows.Forms.Label();
+            this.chartActualNumberOfCustomres = new ScottPlot.FormsPlot();
+            this.lableActualNumberOfCustomer = new System.Windows.Forms.Label();
+            this.labelWeekNumberActualNumberOfCustomers = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelWorkerWage
@@ -111,9 +114,9 @@
             this.labelNumberOfCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNumberOfCustomers.Location = new System.Drawing.Point(6, 356);
             this.labelNumberOfCustomers.Name = "labelNumberOfCustomers";
-            this.labelNumberOfCustomers.Size = new System.Drawing.Size(167, 20);
+            this.labelNumberOfCustomers.Size = new System.Drawing.Size(233, 20);
             this.labelNumberOfCustomers.TabIndex = 8;
-            this.labelNumberOfCustomers.Text = "Number Of Customers";
+            this.labelNumberOfCustomers.Text = "Potential Number Of Customers";
             // 
             // labelOnlineNumOfCustomers
             // 
@@ -121,9 +124,9 @@
             this.labelOnlineNumOfCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOnlineNumOfCustomers.Location = new System.Drawing.Point(306, 356);
             this.labelOnlineNumOfCustomers.Name = "labelOnlineNumOfCustomers";
-            this.labelOnlineNumOfCustomers.Size = new System.Drawing.Size(216, 20);
+            this.labelOnlineNumOfCustomers.Size = new System.Drawing.Size(286, 20);
             this.labelOnlineNumOfCustomers.TabIndex = 10;
-            this.labelOnlineNumOfCustomers.Text = "Online Number Of Customers";
+            this.labelOnlineNumOfCustomers.Text = "Potential  Number Of Online Customers";
             // 
             // labelItemPrices
             // 
@@ -207,7 +210,7 @@
             // 
             // chartNumberOfCustomers
             // 
-            this.chartNumberOfCustomers.Location = new System.Drawing.Point(6, 381);
+            this.chartNumberOfCustomers.Location = new System.Drawing.Point(10, 381);
             this.chartNumberOfCustomers.Name = "chartNumberOfCustomers";
             this.chartNumberOfCustomers.Size = new System.Drawing.Size(262, 142);
             this.chartNumberOfCustomers.TabIndex = 24;
@@ -375,11 +378,40 @@
             this.labelPlayerNumber.TabIndex = 42;
             this.labelPlayerNumber.Text = " Player ";
             // 
+            // chartActualNumberOfCustomres
+            // 
+            this.chartActualNumberOfCustomres.Location = new System.Drawing.Point(10, 556);
+            this.chartActualNumberOfCustomres.Name = "chartActualNumberOfCustomres";
+            this.chartActualNumberOfCustomres.Size = new System.Drawing.Size(262, 142);
+            this.chartActualNumberOfCustomres.TabIndex = 43;
+            // 
+            // lableActualNumberOfCustomer
+            // 
+            this.lableActualNumberOfCustomer.AutoSize = true;
+            this.lableActualNumberOfCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableActualNumberOfCustomer.Location = new System.Drawing.Point(6, 531);
+            this.lableActualNumberOfCustomer.Name = "lableActualNumberOfCustomer";
+            this.lableActualNumberOfCustomer.Size = new System.Drawing.Size(216, 20);
+            this.lableActualNumberOfCustomer.TabIndex = 44;
+            this.lableActualNumberOfCustomer.Text = "Actual Number Of Customers";
+            // 
+            // labelWeekNumberActualNumberOfCustomers
+            // 
+            this.labelWeekNumberActualNumberOfCustomers.AutoSize = true;
+            this.labelWeekNumberActualNumberOfCustomers.Location = new System.Drawing.Point(53, 685);
+            this.labelWeekNumberActualNumberOfCustomers.Name = "labelWeekNumberActualNumberOfCustomers";
+            this.labelWeekNumberActualNumberOfCustomers.Size = new System.Drawing.Size(76, 13);
+            this.labelWeekNumberActualNumberOfCustomers.TabIndex = 45;
+            this.labelWeekNumberActualNumberOfCustomers.Text = "Week Number";
+            // 
             // mainGameScreenGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 661);
+            this.ClientSize = new System.Drawing.Size(1027, 727);
+            this.Controls.Add(this.labelWeekNumberActualNumberOfCustomers);
+            this.Controls.Add(this.lableActualNumberOfCustomer);
+            this.Controls.Add(this.chartActualNumberOfCustomres);
             this.Controls.Add(this.labelPlayerNumber);
             this.Controls.Add(this.labelCantSaveEndedGame);
             this.Controls.Add(this.labelWeekNumberNetProfit);
@@ -459,5 +491,8 @@
         private System.Windows.Forms.Label labelWeekNumberNetProfit;
         private System.Windows.Forms.Label labelCantSaveEndedGame;
         private System.Windows.Forms.Label labelPlayerNumber;
+        private ScottPlot.FormsPlot chartActualNumberOfCustomres;
+        private System.Windows.Forms.Label lableActualNumberOfCustomer;
+        private System.Windows.Forms.Label labelWeekNumberActualNumberOfCustomers;
     }
 }

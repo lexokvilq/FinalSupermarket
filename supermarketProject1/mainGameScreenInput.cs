@@ -48,10 +48,13 @@ namespace supermarketProject1
        
         private static Supplier supplier;
 
-        //this is a list containing all the number of customers for all the supermarkets
-        private static int[] numberOfCustomers = new int[Program.NumOfPlayers];
-        //this is a list contatining the number of online customers for all the supermarkets
-        private static int[] onlineNumberOfCustomers = new int[Program.NumOfPlayers];
+        //this is a list containing all the potential number of customers for each of the supermarkets
+        //this value is the 'potential' number of customers, as it does not account for stock amount, and assumes that supermarket has
+        //enough stock
+        //this contains the customers for only the regular shop not the online shop
+        private static int[] potentialNumberOfRegularCustomers = new int[Program.NumOfPlayers];
+        //this is a list contatining all the potential number of online customers for each of the supermarkets
+        private static int[] potentialNumberOfOnlineCustomers = new int[Program.NumOfPlayers];
 
         //this is a list contatining all the multipliers for the supermarkets
         private static double[] customerMultipliers = new double[Program.NumOfPlayers];
@@ -61,7 +64,11 @@ namespace supermarketProject1
         //count is used to see what supermarket is being looked at
         private static int count;
 
-       
+
+        //add this to design
+        //this is the actual number of customers a supermarket gets, this is including both the real and online shop
+        private static int[] actualNumberOfCustomers = new int[Program.NumOfPlayers];
+
         public mainGameScreenInput()
         {
             InitializeComponent();
@@ -123,20 +130,16 @@ namespace supermarketProject1
                     //set up all the old prices as deafult 0 
                     supermarkets[i].setValueToOldItemPrices(0);
                     supermarkets[i].setValueToPrevFunds(0);
-   
-                
-                    //check which area the user has chosen and set the appropriate current funds
-                    if (Program.UserArea == "Urban")
-                    {
-                        supermarkets[i].setValueToCurrentFunds(132530.29);
-                    }
-                    if (Program.UserArea == "Suburb")
-                    {
-                        supermarkets[i].setValueToCurrentFunds(63452.15);
-                    }
+
+
+                    //use the current funds function to set the appropriate funds based on the user's area
+                    //and the number of players
+
+                    supermarkets[i].setCurrentFunds(Program.NumOfPlayers, Program.UserArea);
+
+                    
                     if (Program.UserArea == "Rural")
                     {
-                        supermarkets[i].setValueToCurrentFunds(46789.87);
                         //make the security investment invisible because there is no shoplifting in rural areas
                         labelSecurityInvestment.ForeColor = Color.WhiteSmoke;
                         textBoxSecurityInvestmentInput.BackColor = Color.WhiteSmoke;
@@ -199,7 +202,7 @@ namespace supermarketProject1
                 //or if the input is not an integer, so is a double      
                 if (Program.checkIfString(Convert.ToString(textBoxStockAmountInput.Text)) == true
                      || Program.checkIfInteger(Convert.ToString(textBoxStockAmountInput.Text)) == false
-                     || Program.checkIfNegativeOrZero(Convert.ToString(textBoxStockAmountInput.Text)) == true)
+                     || Program.checkIfZero(Convert.ToString(textBoxStockAmountInput.Text)) == true)
                 {
                     valid = false;
                     labelInvalidStockAmount.ForeColor = Color.Red;
@@ -213,7 +216,7 @@ namespace supermarketProject1
                 //need to check if the value is a string,
                 //then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxItemPricesInput.Text) == true ||
-                    Program.checkIfNegativeOrZero(textBoxItemPricesInput.Text) == true)
+                    Program.checkIfZero(textBoxItemPricesInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidItemPrices.ForeColor = Color.Red;
@@ -227,7 +230,7 @@ namespace supermarketProject1
                 //need to check if the advertisement investment is a string,
                 //then check if the value is 0 or smaller
                 if (Program.checkIfString(textBoxAdvertisementInvestmentInput.Text) == true ||
-                    Program.checkIfNegativeOrZero(textBoxAdvertisementInvestmentInput.Text) == true)
+                    Program.checkIfZero(textBoxAdvertisementInvestmentInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAdvertisementInvestment.ForeColor = Color.Red;
@@ -246,7 +249,7 @@ namespace supermarketProject1
                 {
 
                     if (Program.checkIfString(textBoxSecurityInvestmentInput.Text) == true ||
-                    Program.checkIfNegativeOrZero(textBoxSecurityInvestmentInput.Text) == true)
+                    Program.checkIfZero(textBoxSecurityInvestmentInput.Text) == true)
                     {
                         valid = false;
                         labelInvalidSecurityInvestment.ForeColor = Color.Red;
@@ -266,7 +269,7 @@ namespace supermarketProject1
                 //then check if the value is 0 or less
                 if (Program.checkIfString(textBoxAmountOfWorkersInput.Text) == true ||
                     Program.checkIfInteger(textBoxAmountOfWorkersInput.Text) == false ||
-                    Program.checkIfNegativeOrZero(textBoxAmountOfWorkersInput.Text) == true)
+                    Program.checkIfZero(textBoxAmountOfWorkersInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAmountOfWorkers.ForeColor = Color.Red;
@@ -279,7 +282,7 @@ namespace supermarketProject1
 
                 //need to check if the input is a string, then if the input is a negative number or 0
                 if (Program.checkIfString(textBoxWorkerWageInput.Text) == true ||
-                    Program.checkIfNegativeOrZero(textBoxWorkerWageInput.Text) == true)
+                    Program.checkIfZero(textBoxWorkerWageInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidWorkerWage.ForeColor = Color.Red;
@@ -294,7 +297,7 @@ namespace supermarketProject1
                 //not a integer, then if the value is 0 or less
                 if (Program.checkIfString(textBoxAmountOfDeliveryWorkersInput.Text) == true ||
                     Program.checkIfInteger(textBoxAmountOfDeliveryWorkersInput.Text) == false ||
-                    Program.checkIfNegativeOrZero(textBoxAmountOfDeliveryWorkersInput.Text) == true)
+                    Program.checkIfZero(textBoxAmountOfDeliveryWorkersInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidAmountOfDeliveryWorkers.ForeColor = Color.Red;
@@ -308,7 +311,7 @@ namespace supermarketProject1
                 //need to check if the input is a string,
                 //then if the input is zero or less 
                 if (Program.checkIfString(textBoxDeliveryWorkerWageInput.Text) == true ||
-                    Program.checkIfNegativeOrZero(textBoxDeliveryWorkerWageInput.Text) == true)
+                    Program.checkIfZero(textBoxDeliveryWorkerWageInput.Text) == true)
                 {
                     valid = false;
                     labelInvalidDeliveryWorkerWage.ForeColor = Color.Red;
@@ -412,15 +415,20 @@ namespace supermarketProject1
                 }
 
                 //use the same function to calculate the number of customers and then the number of customer for the online shop
-                numberOfCustomers = calcNumOfCustomer(area.CustomerPopulation, customerMultipliers);
-                onlineNumberOfCustomers = calcNumOfCustomer(area.OnlineCustomerPopulation, onlineCustomerMultipliers);
+                potentialNumberOfRegularCustomers = Program.calcPotentialNumOfCustomers(area.CustomerPopulation, customerMultipliers);
+                potentialNumberOfOnlineCustomers = Program.calcPotentialNumOfCustomers(area.OnlineCustomerPopulation, onlineCustomerMultipliers);
+                
 
                 //now we need to calculate the current funds for all the supermarkets
                 //we can do this by using a for loop to go through all the supermarkets
                 for (int i = 0; i < supermarkets.Length; i++)
                 {
+                    //caclulating the actual amount of customers
+                    //taking into account custoemrs online and not, and if the supermarket has enough stock for the customers
+                    actualNumberOfCustomers[i] = supermarkets[i].calcActualNumOfCustomers(potentialNumberOfRegularCustomers[i], potentialNumberOfOnlineCustomers[i]);
+
                     //this calulates the current funds for every supermarket
-                    supermarkets[i].calcCurrentFunds(numberOfCustomers[i], onlineNumberOfCustomers[i]);
+                    supermarkets[i].calcCurrentFunds(actualNumberOfCustomers[i]);
                     //set the current funds to a save file if it will be used
                     Program.setCurrentFundsForSaveFile(supermarkets[i].CurrentFunds, i);
                     //now calculate the net profit for all the supermarkets
@@ -441,11 +449,13 @@ namespace supermarketProject1
                     Program.setHistoryVariables(Program.HistoryAmountOfWorkers, i, supermarkets[i].AmountOfWorkers);
                     Program.setHistoryVariables(Program.HistoryCurrentFunds, i, supermarkets[i].CurrentFunds);
                     Program.setHistoryVariables(Program.HistoryItemPrices, i, supermarkets[i].ItemPrices);
-                    Program.setHistoryVariables(Program.HistoryNumOfCustomers, i, numberOfCustomers[i]);
-                    Program.setHistoryVariables(Program.HistoryOnlineNumOfCustomers, i, onlineNumberOfCustomers[i]);
+                    Program.setHistoryVariables(Program.HistoryPotentialNumberOfRegularCustomers, i, potentialNumberOfRegularCustomers[i]);
+                    Program.setHistoryVariables(Program.HistoryPotentialNumberOfOnlineCustomers, i, potentialNumberOfOnlineCustomers[i]);
                     Program.setHistoryVariables(Program.HistoryOnlineAmountOfWorkers, i, supermarkets[i].OnlineAmountOfWorkers);
                     Program.setHistoryVariables(Program.HistoryOnlineWorkerWage, i, supermarkets[i].OnlineWorkerWage);
                     Program.setHistoryVariables(Program.HistoryWorkerWage, i, supermarkets[i].WorkerWage);
+
+                    Program.setHistoryVariables(Program.HistoryActualNumberOfCustomers, i, actualNumberOfCustomers[i]);
                 }
                 //once the turns have finished implement the number of weeks by 1
                 Program.incrementWeekNumber();
@@ -486,6 +496,10 @@ namespace supermarketProject1
             }
         }
 
+            // MOVE THiS  FUNCTION TO PROGRAM
+
+
+        /*
         //a function that calculates the number of customers
         public static int[] calcNumOfCustomer(int custPop, double[] custMults)
         {
@@ -526,6 +540,7 @@ namespace supermarketProject1
             }
             return numOfCust;
         }
+        */
         
         //create a function that sets all the variables to their respective supermarket object
         public static void setVariablesToSupermarkets()
@@ -548,7 +563,7 @@ namespace supermarketProject1
         {
             supermarkets[count].calcAdvertisementMultiplier(area.AverageAreaAdvertisementInvestment);
             supermarkets[count].calcQualityMultiplier(supplier.SuppliersQuality, supplier.SuppliersQualityMultiplier);
-            supermarkets[count].calcNumOfPayingCustomers(area.ShopLiftingRate, area.AverageSecurityInvestment);
+            supermarkets[count].calcPercentageOfPayingCustomers(area.ShopLiftingRate, area.AverageSecurityInvestment);
             supermarkets[count].calcItemPricesMultiplier();
             supermarkets[count].calcAmountOfWorkersMultiplier(area.AverageAmountOfWorkers);
             supermarkets[count].calcOnlineAmountOfWorkersMultiplier(area.OnlineAverageAmountOfWorkers);

@@ -6,7 +6,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace supermarketProject1
 {
@@ -94,16 +93,16 @@ namespace supermarketProject1
             get { return historyItemPrices; }
         }
 
-        private static double[,] historyNumOfCustomers;
-        public static double[,] HistoryNumOfCustomers
+        private static double[,] historyPotentialNumberOfRegularCustomers;
+        public static double[,] HistoryPotentialNumberOfRegularCustomers
         {
-            get { return historyNumOfCustomers; }
+            get { return historyPotentialNumberOfRegularCustomers; }
         }
 
-        private static double[,] historyOnlineNumOfCustomers;
-        public static double[,] HistoryOnlineNumOfCustomers
+        private static double[,] historyPotentialNumberOfOnlineCustomers;
+        public static double[,] HistoryPotentialNumberOfOnlineCustomers
         {
-            get { return historyOnlineNumOfCustomers; }
+            get { return historyPotentialNumberOfOnlineCustomers; }
         }
 
         private static double[,] historyNetProfit;
@@ -118,13 +117,20 @@ namespace supermarketProject1
             get { return historyCurrentFunds; }
         }
 
+        //add to design
+        private static double[,] historyActualNumberOfCustomers;
+        public static double[,] HistoryActualNumberOfCustomers
+        {
+            get { return historyActualNumberOfCustomers; }
+        }
+
         //this is the file for loading in a file        
         private static string userLoadingFileName;
         public static string UserLoadingFileName
         {
             get { return userLoadingFileName; }
         }
-        
+
         private static double[] currentFundsForSaveFile;
         public static double[] CurrentFundsForSaveFile
         {
@@ -143,6 +149,8 @@ namespace supermarketProject1
             get { return gameEnded; }
         }
 
+        
+
         [STAThread]
 
         static void Main()
@@ -159,12 +167,7 @@ namespace supermarketProject1
             //set the userLoadedFile as false as deafult
             userLoadedFile = false;
 
-            //set the directory where user save file will be stored
-            //THIS NEEDS TO CHANGE DEPENDENT ON THE DEVICE
-
-
-
-            userLoadingFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\FinalSupermarket\\supermarketProject1\\bin\\Debug\\";
+            
 
             //set the game end to false
             gameEnded = false;
@@ -178,12 +181,13 @@ namespace supermarketProject1
             historyAmountOfWorkers = new double[numOfPlayers, endNumOfWeeks];
             historyItemPrices = new double[numOfPlayers, endNumOfWeeks];
             historyNetProfit = new double[numOfPlayers, endNumOfWeeks];
-            historyNumOfCustomers = new double[numOfPlayers, endNumOfWeeks];
-            historyOnlineNumOfCustomers = new double[numOfPlayers, endNumOfWeeks];
+            historyPotentialNumberOfRegularCustomers = new double[numOfPlayers, endNumOfWeeks];
+            historyPotentialNumberOfOnlineCustomers = new double[numOfPlayers, endNumOfWeeks];
             historyOnlineAmountOfWorkers = new double[numOfPlayers, endNumOfWeeks];
             historyWorkerWage = new double[numOfPlayers, endNumOfWeeks];
             historyOnlineWorkerWage = new double[numOfPlayers, endNumOfWeeks];
             historyCurrentFunds = new double[numOfPlayers, endNumOfWeeks];
+            historyActualNumberOfCustomers = new double[numOfPlayers, endNumOfWeeks];
         }
 
 
@@ -192,9 +196,18 @@ namespace supermarketProject1
         //this functions checks if a string is a string or a number
         public static bool checkIfString(string value)
         {
+            Regex rg = new Regex("[.]");
+            //count the number of decimal points in the string
+            MatchCollection matchedDecimalPlaces = rg.Matches(value);
+
             //check if the value doesn't contain a number or a decimal place, which will mean 
             //the value is a string, or if the value is null or contains white space
-            if (!Regex.IsMatch(value, "^[0-9.]*$") || string.IsNullOrWhiteSpace(value) == true)
+            //if there is more than 1 decimal place
+            //if there is a negative sign the program will return true for a string because
+            //the only valid inputs are integers and decimal points
+            if (!Regex.IsMatch(value, "^[0-9.]*$") 
+                || string.IsNullOrWhiteSpace(value) == true
+                || matchedDecimalPlaces.Count > 1)
             {
                 return true;
             }
@@ -219,12 +232,11 @@ namespace supermarketProject1
             }
         }
 
-        //check if a value is negative or 0
+        //check if a value is 0
         //assumes the value is not a string
-        public static bool checkIfNegativeOrZero(string value)
+        public static bool checkIfZero(string value)
         {
-            //then need to check if it is smaller than or equal to 0 
-            if (Convert.ToDouble(value) <= 0)
+            if (Convert.ToDouble(value) == 0)
             {
                 return true;
             }
@@ -322,6 +334,7 @@ namespace supermarketProject1
 
             //for the history variables need to create a list for each variable
             //history of worker wage
+            
             for (int i = 0; i < numOfPlayers; i++)
             {
                 for (int j = 0; j < weekNumber; j++)
@@ -372,22 +385,22 @@ namespace supermarketProject1
                 }
             }
 
-            //history of number of customers 
+            //history of the potential number of regular customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
                 for (int j = 0; j < weekNumber; j++)
                 {
-                    historyNumOfCustomers[i, j] = Convert.ToInt32(values[indexInValues]);
+                    historyPotentialNumberOfRegularCustomers [i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
                 }
             }
 
-            //history of online number of customers 
+            //history of the potential of online customers 
             for (int i = 0; i < numOfPlayers; i++)
             {
                 for (int j = 0; j < weekNumber; j++)
                 {
-                    historyOnlineNumOfCustomers[i, j] = Convert.ToInt32(values[indexInValues]);
+                    historyPotentialNumberOfOnlineCustomers[i, j] = Convert.ToInt32(values[indexInValues]);
                     indexInValues++;
                 }
             }
@@ -410,6 +423,17 @@ namespace supermarketProject1
                     historyCurrentFunds[i, j] = Convert.ToDouble(values[indexInValues]);
                     indexInValues++;
                 }
+            }
+
+            //history of actual number of customers
+            for (int i = 0; i < numOfPlayers; i++)
+            {
+                for (int j = 0; j < weekNumber; j++)
+                {
+                    historyActualNumberOfCustomers[i, j] = Convert.ToDouble(values[indexInValues]);
+                    indexInValues++;
+                }
+
             }
         }
 
@@ -498,7 +522,7 @@ namespace supermarketProject1
             {
                 for (int j = 0; j < weekNumber; j++)
                 {
-                    file = file + Convert.ToString(historyNumOfCustomers[i, j]);
+                    file = file + Convert.ToString(historyPotentialNumberOfRegularCustomers[i, j]);
                     file = file + ",";
                 }
             }
@@ -508,7 +532,7 @@ namespace supermarketProject1
             {
                 for (int j = 0; j < weekNumber; j++)
                 {
-                    file = file + Convert.ToString(historyOnlineNumOfCustomers[i, j]);
+                    file = file + Convert.ToString(historyPotentialNumberOfOnlineCustomers[i, j]);
                     file = file + ",";
                 }
             }
@@ -529,6 +553,15 @@ namespace supermarketProject1
                 //history of current funds
                 {
                     file = file + Convert.ToString(historyCurrentFunds[i, j]);
+                    file = file + ",";
+                }
+            }
+
+            for (int i = 0; i < numOfPlayers; i++)
+            {
+                for (int j = 0; j < weekNumber; j++)
+                {
+                    file = file + Convert.ToString(historyActualNumberOfCustomers[i, j]);
                     file = file + ",";
                 }
             }
@@ -599,6 +632,12 @@ namespace supermarketProject1
         //for the user loading a file need to get what the user names their file and add it to the file name
         public static void generateNameUserLoadingFile(string name)
         {
+            //set the directory where user save file will be stored
+            //THIS NEEDS TO CHANGE DEPENDENT ON THE DEVICE
+
+
+
+            userLoadingFileName = "C:\\Users\\maxle\\OneDrive\\Documents\\Visual Studio 2022\\SUPERMARKET PROJECT OLD HOME REAL\\FinalSupermarket\\supermarketProject1\\bin\\Debug\\";
             userLoadingFileName = userLoadingFileName + name + ".txt";
         }
 
@@ -644,5 +683,54 @@ namespace supermarketProject1
         {
             currentFundsForSaveFile[index] = currentFunds;
         }
+
+
+        // ADD THIS TO DESIGN
+        public static int[] calcPotentialNumOfCustomers(int custPop, double[] custMults)
+        {
+            //calculate the number of customers
+            //Area.customerPopulation or Area.onlineCustomerPopulation
+            //customerMultipliers (double []) or onlineCustomerMultipliers (double [])
+
+
+            //first add all the multipliers together
+            double multTotal = 0;
+            for (int i = 0; i < custMults.Length; i++)
+            {
+                multTotal = multTotal + custMults[i];
+            }
+
+            //then find the reciporacal of all the multipliers 
+            double recipMulTotal = 1 / multTotal;
+
+            //use the reciprocal of the total of all the multipliers and multipliy all the seperate multipliers by this value
+            //create a new value for the new balanced multipliers
+            double[] newMults = new double[custMults.Length];
+            for (int i = 0; i < custMults.Length; i++)
+            {
+                newMults[i] = custMults[i] * recipMulTotal;
+            }
+
+            //with the new balanced multipliers use this value as a multiplier and multiply by the total customer population
+            //create a new list of all the new updated number of customers
+            //this is potential beause the supermarket might not have enough
+            //stock for all the customers
+            int[] potentialNumOfCustomers = new int[custMults.Length];
+            // this is the maximum number of customers a supermarket can take
+            //based on the stock amount.
+            int[] maxNumOfCustomers = new int[custMults.Length];
+            for (int i = 0; i < custMults.Length; i++)
+            {
+                //note that here when rounding the number of customers will ignore any decimal points
+                //this means that adding all the user supermarkets together will not lead to an exact
+                //value of the area customer population
+                //however when dealing with such big number of customers (e.g over 100)
+                //then this little number of customers "dissapearing" seems igsicnificant
+                potentialNumOfCustomers[i] = Convert.ToInt32(Math.Round(newMults[i] * custPop));
+            }
+            return potentialNumOfCustomers;
+        }
+
+
     }
 }

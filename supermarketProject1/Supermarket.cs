@@ -57,7 +57,7 @@ namespace supermarketProject1
 
         private double securityInvestment;
 
-        private double numberOfPayingCustomers;
+        private double percentageOfPayingCustomers;
 
         private int amountOfWorkers;
         public int AmountOfWorkers
@@ -120,9 +120,9 @@ namespace supermarketProject1
             //this combined multiplier used to work out the number of customers
             customerMultiplier = stockAvailableMultiplier * qualityMultiplier * itemPricesMultiplier * advertismentMultiplier
                 * amountOfWorkersMultiplier * workerWageMultiplier
-                * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier * numberOfPayingCustomers;
+                * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier * percentageOfPayingCustomers;
         }
-        public virtual void calcCurrentFunds(int numCust, int onlineNumCust)
+        public virtual void calcCurrentFunds(int totalCustomers)
         {
             //numOfCustomers, onlineNumOfCustomer
             //stockAmount, supplierCost, itemPrices, 
@@ -130,10 +130,8 @@ namespace supermarketProject1
 
             //This method calculates the current funds of the supermarket
             //calculate the profits of the supermarket
-            //total number of customers
-            int totalAmountOfCusotmers = onlineNumCust + numCust;
             //average mass that a customer buys from a supermarket is 21
-            double profit = totalAmountOfCusotmers * itemPrices * AverageShoppingMassKg;
+            double profit = totalCustomers * itemPrices * AverageShoppingMassKg;
             //work out all the expenses
             //the workers work 28 hours
             double expenses = workerWage * amountOfWorkers * WorkerHours;
@@ -158,6 +156,9 @@ namespace supermarketProject1
             expenses = expenses + advertisementInvestment;
             expenses = expenses + securityInvestment;
 
+            //then round the expenses to the nearest penny
+            expenses = Math.Round(expenses, 2);
+
             if (currentFunds < expenses)
             {
                 //this means we can work out the amount that the user has overspent by
@@ -177,7 +178,7 @@ namespace supermarketProject1
         }
         public virtual void checkStockAvailable(string[] stRange)
         {
-            //Supplier.stockRange, stockShop, stockAvailable
+            //Supplier.stockRange, stockShop
             //use a for loop to go through the list of all the types of stock checking which ones are available and not
             for (int i = 0; i < stRange.Length; i++)
             {
@@ -276,7 +277,7 @@ namespace supermarketProject1
 
 
         //need to change this name to calculate the number of paying customers
-        public virtual void calcNumOfPayingCustomers(double shpLifRat, double avSecInv)
+        public virtual void calcPercentageOfPayingCustomers(double shpLifRat, double avSecInv)
         {
             //Area.shopliftingRate, Area.averageSecurityInvesmtent
             //the shoplifting rate is a decimal representation of a percentage
@@ -292,16 +293,16 @@ namespace supermarketProject1
             //with the new calculated shoplifting rate the number of customers who have shoplifted
             //can be calculated and then taken off the number of customers
 
-            numberOfPayingCustomers = securityInvestment / avSecInv;
-            numberOfPayingCustomers = numberOfPayingCustomers * shpLifRat;
+            percentageOfPayingCustomers = securityInvestment / avSecInv;
+            percentageOfPayingCustomers = percentageOfPayingCustomers * shpLifRat;
             //these two steps below are to change the calculated value from the number of customers who shoplifted
             // (as a percentage), to the number of customers who paid (as a decimal percentage)
-            numberOfPayingCustomers = numberOfPayingCustomers * -1;
-            numberOfPayingCustomers = numberOfPayingCustomers + 1;
+            percentageOfPayingCustomers = percentageOfPayingCustomers * -1;
+            percentageOfPayingCustomers = percentageOfPayingCustomers + 1;
 
             if (Program.UserArea == "Rural")
             {
-                numberOfPayingCustomers = 1;
+                percentageOfPayingCustomers = 1;
             }
         }
 
@@ -321,7 +322,7 @@ namespace supermarketProject1
         {
             //stockAvailableMultiplier, qualityMultiplier, itemPricesMultiplier, advertisementMultiplier
             //onlineAmountOfWOrkersMultiplier, onlineWorkerWageMultiplier
-
+            
             //this is a multiplier representing all the multipliers together for the online shop
             //it will be used to work out how many customers  the supermarket will have
             //can be calculated by multiplying all the multipliers together
@@ -347,6 +348,119 @@ namespace supermarketProject1
         {
             currentFunds = currFund;
         }
+
+        //this function sets the current funds when the game is starting
+        public virtual void setCurrentFunds(int numOfPlay, string area)
+        {
+            switch (area)
+            {
+                case "Urban":
+                    //set to the current funds which are dependent on the number of players
+                    switch (numOfPlay)
+                    {
+                        case 2:
+                            currentFunds = 313003.24;
+                            break;
+                        case 3:
+                            currentFunds = 212740.49;
+                            break;
+                        case 4:
+                            currentFunds = 162610.29;
+                            break;
+                        case 5:
+                            currentFunds = 132530.29;
+                            break;
+                        case 6:
+                            currentFunds = 112477.74;
+                            break;
+                        case 7:
+                            currentFunds = 98154.49;
+                            break;
+                        case 8:
+                            currentFunds = 87412.64;
+                            break;
+                        case 9:
+                            currentFunds = 79056.04;
+                            break;
+                        case 10:
+                            currentFunds = 72372.64;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Suburb":
+                    switch (numOfPlay)
+                    {
+                        case 2:
+                            currentFunds = 148063.9;
+                            break;
+                        case 3:
+                            currentFunds = 101056.85;
+                            break;
+                        case 4:
+                            currentFunds = 77554.5;
+                            break;
+                        case 5:
+                            currentFunds = 63452.15;
+                            break;
+                        case 6:
+                            currentFunds = 54052.15;
+                            break;
+                        case 7:
+                            currentFunds = 47335.85;
+                            break;
+                        case 8:
+                            currentFunds = 42299.8;
+                            break;
+                        case 9:
+                            currentFunds = 38382.35;
+                            break;
+                        case 10:
+                            currentFunds = 35249.8;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "Rural":
+                    switch (numOfPlay)
+                    {
+                        case 2:
+                            currentFunds = 111370.28;
+                            break;
+                        case 3:
+                            currentFunds = 75491.83;
+                            break;
+                        case 4:
+                            currentFunds = 57554.28;
+                            break;
+                        case 5:
+                            currentFunds = 46788.93;
+                            break;
+                        case 6:
+                            currentFunds = 39614.38;
+                            break;
+                        case 7:
+                            currentFunds = 34489.03;
+                            break;
+                        case 8:
+                            currentFunds = 30644.43;
+                            break;
+                        case 9:
+                            currentFunds = 27655.23;
+                            break;
+                        case 10:
+                            currentFunds = 25262.93;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+
+            }
+        }
+        
 
         //sets a value to previous funds
         public virtual void setValueToPrevFunds(double prevFund)
@@ -408,6 +522,34 @@ namespace supermarketProject1
         public virtual void setValueToOnlineWorkerWage(double onlineWorkWage)
         {
             onlineWorkerWage = onlineWorkWage;
+        }
+
+        //add this to design
+
+        public virtual int calcActualNumOfCustomers(int numCust, int onlineNumCust)
+        {
+            //passing the number of customers and online customers
+           
+            //the total number of customers the supermarket could get
+            //potentially if they had the right amount of stock
+            int totalNumOfPotentialCust = numCust + onlineNumCust;
+            //the maximum number of customers the shop could feed based on the stock amount
+            int maxNumOfCust = Convert.ToInt32(Math.Round(Convert.ToDouble(stockAmount))/Convert.ToDouble(AverageShoppingMassKg));
+
+
+            //if the the potential number of customers is greater than the maximum
+            //return the maximum
+            if (totalNumOfPotentialCust > maxNumOfCust)
+            {
+                return maxNumOfCust;
+            }
+            else
+            {
+                //return the number of potential customers
+                //there was less potential customers, than the number of customers that the supermarkte could of
+                //fed
+                return totalNumOfPotentialCust;
+            }
         }
     }
 }

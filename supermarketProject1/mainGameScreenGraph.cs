@@ -68,12 +68,12 @@ namespace supermarketProject1
             chartItemPrices.Refresh();
 
             //for the number of customers
-            addHistoryValuesToGraph(Program.HistoryNumOfCustomers);
+            addHistoryValuesToGraph(Program.HistoryPotentialNumberOfRegularCustomers);
             chartNumberOfCustomers.Plot.AddScatter(dataX, dataY);
             chartNumberOfCustomers.Refresh();
 
             //for the online number of customers
-            addHistoryValuesToGraph(Program.HistoryOnlineNumOfCustomers);
+            addHistoryValuesToGraph(Program.HistoryPotentialNumberOfOnlineCustomers);
             chartOnlineNumOfCustomers.Plot.AddScatter(dataX, dataY);
             chartOnlineNumOfCustomers.Refresh();
 
@@ -86,6 +86,11 @@ namespace supermarketProject1
             addHistoryValuesToGraph(Program.HistoryCurrentFunds);
             chartCurrentFunds.Plot.AddScatter(dataX, dataY);
             chartCurrentFunds.Refresh();
+
+            //for the actual number of customers
+            addHistoryValuesToGraph(Program.HistoryActualNumberOfCustomers);
+            chartActualNumberOfCustomres.Plot.AddScatter(dataX, dataY);
+            chartActualNumberOfCustomres.Refresh();
 
             //check to see if this is the last week by checking how many weeks have gone by
             if (Program.calcNumOfWeeksLeft() == 0)
