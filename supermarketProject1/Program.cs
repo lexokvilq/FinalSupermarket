@@ -161,10 +161,10 @@ namespace supermarketProject1
             //the game has started and the players is on the first week
             weekNumber = 0;
 
-            //set the supermarketIndex to 0
+            //set the supermarketIndex to 0 
             supermarketIndex = 0;
 
-            //set the userLoadedFile as false as deafult
+            //set the userLoadedFile as false by deafult
             userLoadedFile = false;
 
             
