@@ -683,7 +683,8 @@ namespace supermarketProject1
         }
 
 
-        // ADD THIS TO DESIGN
+        // Note that this function does not calculate the actual number of customers each supermarket will get, at it ignores the stock amoount
+        //of each of the supermarekts
         public static int[] calcPotentialNumOfCustomers(int custPop, double[] custMults)
         {
             //calculate the number of customers
@@ -700,29 +701,27 @@ namespace supermarketProject1
             //then find the reciporacal of the total of all the multipliers 
             double recipMulTotal = 1 / multTotal;
 
-            //use the reciprocal of the total of all the multipliers and multipliy all the seperate multipliers by this value
-            //create a new value for the new balanced multipliers
+            //use the reciprocal of the total of all the multipliers and multipliy all the different supermarket multipliers by this value
+            //create a new value for the new multipliers, which are balanced and will all add up to 1.
             double[] newMults = new double[custMults.Length];
+
+            //with the new balanced multipliers use these multipliers and multiply them seperately by the total customer population
+            //store all the supermarekts customers in this list
+            int[] potentialNumOfCustomers = new int[custMults.Length];
+
             for (int i = 0; i < custMults.Length; i++)
             {
                 newMults[i] = custMults[i] * recipMulTotal;
-            }
 
-            //with the new balanced multipliers use this value as a multiplier and multiply by the total customer population
-            //create a new list of all the new updated number of customers
-            //this is potential beause the supermarket might not have enough
-            //stock for all the customers
-            int[] potentialNumOfCustomers = new int[custMults.Length];
-            // this is the maximum number of customers a supermarket can take
-            for (int i = 0; i < custMults.Length; i++)
-            {
-                //note that here when rounding the number of customers will ignore any decimal points
-                //this means that adding all the user supermarkets together will not lead to an exact
+                //note that the number of customers are all rounded
+                //this means that adding all the users supermarket customers together might not lead to an exact
                 //value of the area customer population
-                //however when dealing with such big number of customers (e.g over 100)
-                //then this little number of customers "dissapearing" seems igsicnificant
+                //however when dealing with a big number of customers, missing 1 or 2 customers is insignificant and can be ignored
                 potentialNumOfCustomers[i] = Convert.ToInt32(Math.Round(newMults[i] * custPop));
             }
+
+
+
             return potentialNumOfCustomers;
         }
 

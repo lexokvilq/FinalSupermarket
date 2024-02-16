@@ -65,10 +65,6 @@ namespace supermarketProject1
         private static int count;
 
 
-        //add this to design
-        //this is the actual number of customers a supermarket gets, this is including both the real and online shop
-        private static int[] actualNumberOfCustomers = new int[Program.NumOfPlayers];
-
         public mainGameScreenInput()
         {
             InitializeComponent();
@@ -426,10 +422,10 @@ namespace supermarketProject1
                 {
                     //caclulating the actual amount of customers
                     //taking into account custoemrs online and not, and if the supermarket has enough stock for the customers
-                    actualNumberOfCustomers[i] = supermarkets[i].calcActualNumOfCustomers(potentialNumberOfRegularCustomers[i], potentialNumberOfOnlineCustomers[i]);
+                    supermarkets[i].calcActualNumOfCustomers(potentialNumberOfRegularCustomers[i], potentialNumberOfOnlineCustomers[i]);
 
                     //this calulates the current funds for every supermarket
-                    supermarkets[i].calcCurrentFunds(actualNumberOfCustomers[i]);
+                    supermarkets[i].calcCurrentFunds();
                     //set the current funds to a save file if it will be used
                     Program.setCurrentFundsForSaveFile(supermarkets[i].CurrentFunds, i);
                     //now calculate the net profit for all the supermarkets
@@ -456,7 +452,7 @@ namespace supermarketProject1
                     Program.setHistoryVariables(Program.HistoryOnlineWorkerWage, i, supermarkets[i].OnlineWorkerWage);
                     Program.setHistoryVariables(Program.HistoryWorkerWage, i, supermarkets[i].WorkerWage);
 
-                    Program.setHistoryVariables(Program.HistoryActualNumberOfCustomers, i, actualNumberOfCustomers[i]);
+                    Program.setHistoryVariables(Program.HistoryActualNumberOfCustomers, i, supermarkets[i].ActualNumberOfCustommers);
                 }
                 //once the turns have finished implement the number of weeks by 1
                 Program.incrementWeekNumber();
@@ -497,51 +493,7 @@ namespace supermarketProject1
             }
         }
 
-            // MOVE THiS  FUNCTION TO PROGRAM
 
-
-        /*
-        //a function that calculates the number of customers
-        public static int[] calcNumOfCustomer(int custPop, double[] custMults)
-        {
-            //calculate the number of customers
-            //Area.customerPopulation or Area.onlineCustomerPopulation
-            //customerMultipliers (double []) or onlineCustomerMultipliers (double [])
-           
-
-            //first add all the multipliers together
-            double multTotal = 0;
-            for (int i = 0; i < custMults.Length; i++)
-            {
-                multTotal = multTotal + custMults[i];
-            }
-
-            //then find the reciporacal of all the multipliers 
-            double recipMulTotal = 1 / multTotal;
-
-            //use the reciprocal of the total of all the multipliers and multipliy all the seperate multipliers by this value
-            //create a new value for the new balanced multipliers
-            double[] newMults = new double[custMults.Length];
-            for (int i = 0; i < custMults.Length; i++)
-            {
-                newMults[i] = custMults[i] * recipMulTotal;
-            }
-
-            //with the new balanced multipliers use this value as a multiplier and multiply by the total customer population
-            //create a new list of all the new updated number of customers
-            int[] numOfCust = new int[custMults.Length];
-            for (int i = 0; i < custMults.Length; i++)
-            {
-                //note that here when rounding the number of customers will ignore any decimal points
-                //this means that adding all the user supermarkets together will not lead to an exact
-                //value of the area customer population
-                //however when dealing with such big number of customers (e.g over 100)
-                //then this little number of customers "dissapearing" seems igsicnificant
-                numOfCust[i] = Convert.ToInt32(Math.Round(newMults[i] * custPop));
-            }
-            return numOfCust;
-        }
-        */
         
         //create a function that sets all the variables to their respective supermarket object
         public static void setVariablesToSupermarkets()

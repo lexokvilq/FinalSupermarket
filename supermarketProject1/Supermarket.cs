@@ -110,6 +110,13 @@ namespace supermarketProject1
             get { return overspent; }
         }
 
+        //add this to desing
+        private int actualNumberOfCustomers;
+        public int ActualNumberOfCustommers
+        {
+            get { return actualNumberOfCustomers; }
+        }
+
         public Supermarket()
         {
 
@@ -122,7 +129,7 @@ namespace supermarketProject1
                 * amountOfWorkersMultiplier * workerWageMultiplier
                 * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier * percentageOfPayingCustomers;
         }
-        public virtual void calcCurrentFunds(int totalCustomers)
+        public virtual void calcCurrentFunds()
         {
             //numOfCustomers, onlineNumOfCustomer
             //stockAmount, supplierCost, itemPrices, 
@@ -131,7 +138,7 @@ namespace supermarketProject1
             //This method calculates the current funds of the supermarket
             //calculate the profits of the supermarket
             //average mass that a customer buys from a supermarket is 21
-            double profit = totalCustomers * itemPrices * AverageShoppingMassKg;
+            double profit = actualNumberOfCustomers * itemPrices * AverageShoppingMassKg;
             //work out all the expenses
             //the workers work 28 hours
             double expenses = workerWage * amountOfWorkers * WorkerHours;
@@ -370,21 +377,6 @@ namespace supermarketProject1
                         case 5:
                             currentFunds = 132530.29;
                             break;
-                        case 6:
-                            currentFunds = 112477.74;
-                            break;
-                        case 7:
-                            currentFunds = 98154.49;
-                            break;
-                        case 8:
-                            currentFunds = 87412.64;
-                            break;
-                        case 9:
-                            currentFunds = 79056.04;
-                            break;
-                        case 10:
-                            currentFunds = 72372.64;
-                            break;
                         default:
                             break;
                     }
@@ -404,21 +396,6 @@ namespace supermarketProject1
                         case 5:
                             currentFunds = 63452.15;
                             break;
-                        case 6:
-                            currentFunds = 54052.15;
-                            break;
-                        case 7:
-                            currentFunds = 47335.85;
-                            break;
-                        case 8:
-                            currentFunds = 42299.8;
-                            break;
-                        case 9:
-                            currentFunds = 38382.35;
-                            break;
-                        case 10:
-                            currentFunds = 35249.8;
-                            break;
                         default:
                             break;
                     }
@@ -437,21 +414,6 @@ namespace supermarketProject1
                             break;
                         case 5:
                             currentFunds = 46788.93;
-                            break;
-                        case 6:
-                            currentFunds = 39614.38;
-                            break;
-                        case 7:
-                            currentFunds = 34489.03;
-                            break;
-                        case 8:
-                            currentFunds = 30644.43;
-                            break;
-                        case 9:
-                            currentFunds = 27655.23;
-                            break;
-                        case 10:
-                            currentFunds = 25262.93;
                             break;
                         default:
                             break;
@@ -526,29 +488,31 @@ namespace supermarketProject1
 
         //add this to design
 
-        public virtual int calcActualNumOfCustomers(int numCust, int onlineNumCust)
+        public virtual void calcActualNumOfCustomers(int potentialNumCust, int potentialOnlineNumCust)
         {
-            //passing the number of customers and online customers
+            //passing in the potential number of regular customers and potential number of online customers
            
             //the total number of customers the supermarket could get
             //potentially if they had the right amount of stock
-            int totalNumOfPotentialCust = numCust + onlineNumCust;
+            int totalNumOfPotentialCust = potentialNumCust + potentialOnlineNumCust;
             //the maximum number of customers the shop could feed based on the stock amount
             int maxNumOfCust = Convert.ToInt32(Math.Round(Convert.ToDouble(stockAmount))/Convert.ToDouble(AverageShoppingMassKg));
 
-
             //if the the potential number of customers is greater than the maximum
-            //return the maximum
+            //set the actual number of customers to the maximum
+            //the supermarket couldn't of fed all the customers they could've potentially got, 
+            //so the the actual number of customers the supermarket gets is the maximum number of customers
+            //that they could've got based on the stock amount
             if (totalNumOfPotentialCust > maxNumOfCust)
             {
-                return maxNumOfCust;
+                actualNumberOfCustomers = maxNumOfCust;
             }
             else
             {
-                //return the number of potential customers
-                //there was less potential customers, than the number of customers that the supermarkte could of
+                //set the actual number of customers to the number of potential customers
+                //there was less potential customers compared to the number of customers that the supermarkte could of
                 //fed
-                return totalNumOfPotentialCust;
+                actualNumberOfCustomers = totalNumOfPotentialCust;
             }
         }
     }
