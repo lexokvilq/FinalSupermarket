@@ -31,7 +31,7 @@ namespace supermarketProject1
         private void buttonSaveQuit_Click(object sender, EventArgs e)
         {
             saveFileName = saveFileName + textBoxSaveFileName.Text;
-            //this function in program will write the data to the save file and return whether it has succedded or not
+            //this function in program will write the data to the save file and return whether it has succedded or not.
             bool programHasBeenSaved = Program.saveFile(saveFileName);
             if (programHasBeenSaved == true)
             {

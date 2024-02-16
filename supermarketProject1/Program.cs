@@ -616,8 +616,6 @@ namespace supermarketProject1
             historyArray[index, weekNumber] = value;
         }
 
-        //currently there is an issue with the setters not working in other classes
-        //made a variable here that will set the appropriate varriable with its appropriate variable
         //set the number of players
         public static void setNumOfPlayers(int n)
         {
@@ -692,7 +690,6 @@ namespace supermarketProject1
             //Area.customerPopulation or Area.onlineCustomerPopulation
             //customerMultipliers (double []) or onlineCustomerMultipliers (double [])
 
-
             //first add all the multipliers together
             double multTotal = 0;
             for (int i = 0; i < custMults.Length; i++)
@@ -700,7 +697,7 @@ namespace supermarketProject1
                 multTotal = multTotal + custMults[i];
             }
 
-            //then find the reciporacal of all the multipliers 
+            //then find the reciporacal of the total of all the multipliers 
             double recipMulTotal = 1 / multTotal;
 
             //use the reciprocal of the total of all the multipliers and multipliy all the seperate multipliers by this value
@@ -717,8 +714,6 @@ namespace supermarketProject1
             //stock for all the customers
             int[] potentialNumOfCustomers = new int[custMults.Length];
             // this is the maximum number of customers a supermarket can take
-            //based on the stock amount.
-            int[] maxNumOfCustomers = new int[custMults.Length];
             for (int i = 0; i < custMults.Length; i++)
             {
                 //note that here when rounding the number of customers will ignore any decimal points

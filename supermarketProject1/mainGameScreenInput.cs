@@ -374,7 +374,8 @@ namespace supermarketProject1
                         //display error message to user
                         labelInvalidFunds.ForeColor = Color.Red;
                         //tell the user how much they have overspent by
-                        labelOverspent.Text = "Overspent by £" + Convert.ToString(supermarkets[count].Overspent);
+                        string overspentOutput = Convert.ToString(Math.Round(supermarkets[count].Overspent, 2));
+                        labelOverspent.Text = "Overspent by £" + overspentOutput;
                         labelOverspent.ForeColor = Color.Red;
                     }
                     else
