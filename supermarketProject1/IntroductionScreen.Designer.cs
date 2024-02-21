@@ -1,6 +1,6 @@
 ﻿namespace supermarketProject1
 {
-    partial class Form1
+    partial class IntroductionScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IntroductionScreen));
             this.labelIntroduction = new System.Windows.Forms.Label();
             this.buttonLoadGame = new System.Windows.Forms.Button();
             this.labelEnterLoadGame = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.buttonLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadGame.Name = "buttonLoadGame";
             this.buttonLoadGame.Size = new System.Drawing.Size(76, 32);
-            this.buttonLoadGame.TabIndex = 1;
+            this.buttonLoadGame.TabIndex = 2;
             this.buttonLoadGame.Text = "Load Game";
             this.buttonLoadGame.UseVisualStyleBackColor = true;
             this.buttonLoadGame.Click += new System.EventHandler(this.buttonLoadGame_Click);
@@ -74,7 +74,7 @@
             this.textBoxLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLoadGame.Name = "textBoxLoadGame";
             this.textBoxLoadGame.Size = new System.Drawing.Size(235, 20);
-            this.textBoxLoadGame.TabIndex = 3;
+            this.textBoxLoadGame.TabIndex = 1;
             this.textBoxLoadGame.TextChanged += new System.EventHandler(this.textBoxLoadGame_TextChanged);
             // 
             // buttonNewGame
@@ -83,7 +83,7 @@
             this.buttonNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNewGame.Name = "buttonNewGame";
             this.buttonNewGame.Size = new System.Drawing.Size(89, 36);
-            this.buttonNewGame.TabIndex = 4;
+            this.buttonNewGame.TabIndex = 0;
             this.buttonNewGame.Text = "New Game";
             this.buttonNewGame.UseVisualStyleBackColor = true;
             this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
@@ -101,7 +101,7 @@
             this.labelInvalidSaveFile.Text = "Invalid Save File!";
             this.labelInvalidSaveFile.Click += new System.EventHandler(this.labelInvalidSaveFile_Click);
             // 
-            // Form1
+            // IntroductionScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,7 @@
             this.Controls.Add(this.buttonLoadGame);
             this.Controls.Add(this.labelIntroduction);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "IntroductionScreen";
             this.Text = "Introduction";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

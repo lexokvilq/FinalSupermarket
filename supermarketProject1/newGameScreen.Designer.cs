@@ -1,6 +1,6 @@
 ﻿namespace supermarketProject1
 {
-    partial class newGameScreen
+    partial class NewGameScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -83,7 +83,7 @@
             this.buttonUrban.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUrban.Name = "buttonUrban";
             this.buttonUrban.Size = new System.Drawing.Size(53, 39);
-            this.buttonUrban.TabIndex = 3;
+            this.buttonUrban.TabIndex = 0;
             this.buttonUrban.Text = "Urban";
             this.buttonUrban.UseVisualStyleBackColor = true;
             this.buttonUrban.Click += new System.EventHandler(this.buttonUrban_Click);
@@ -106,7 +106,7 @@
             this.textBoxNumberOfPlayers.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumberOfPlayers.Name = "textBoxNumberOfPlayers";
             this.textBoxNumberOfPlayers.Size = new System.Drawing.Size(55, 20);
-            this.textBoxNumberOfPlayers.TabIndex = 5;
+            this.textBoxNumberOfPlayers.TabIndex = 3;
             this.textBoxNumberOfPlayers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxNumberOfPlayers.TextChanged += new System.EventHandler(this.textBoxNumberOfPlayers_TextChanged);
             // 
@@ -127,7 +127,7 @@
             this.buttonSubmit.Location = new System.Drawing.Point(238, 340);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(126, 62);
-            this.buttonSubmit.TabIndex = 7;
+            this.buttonSubmit.TabIndex = 5;
             this.buttonSubmit.Text = "Press To Submit Changes";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
@@ -148,7 +148,7 @@
             this.textBoxNumberOfWeeks.Location = new System.Drawing.Point(273, 292);
             this.textBoxNumberOfWeeks.Name = "textBoxNumberOfWeeks";
             this.textBoxNumberOfWeeks.Size = new System.Drawing.Size(55, 20);
-            this.textBoxNumberOfWeeks.TabIndex = 9;
+            this.textBoxNumberOfWeeks.TabIndex = 4;
             this.textBoxNumberOfWeeks.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelInvalidNumOfWeeks
@@ -171,7 +171,7 @@
             this.labelInvalidUserArea.TabIndex = 11;
             this.labelInvalidUserArea.Text = "Need To Choose An Area!";
             // 
-            // newGameScreen
+            // NewGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.buttonSuburb);
             this.Controls.Add(this.labelSelectAreaType);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "newGameScreen";
+            this.Name = "NewGameScreen";
             this.Text = "New Game Screen";
             this.Load += new System.EventHandler(this.newGameScreen_Load);
             this.ResumeLayout(false);

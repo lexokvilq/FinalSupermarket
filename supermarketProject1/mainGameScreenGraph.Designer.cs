@@ -1,6 +1,6 @@
 ﻿namespace supermarketProject1
 {
-    partial class mainGameScreenGraph
+    partial class MainGameScreenGraph
     {
         /// <summary>
         /// Required designer variable.
@@ -164,7 +164,7 @@
             this.buttonContinue.Location = new System.Drawing.Point(906, 381);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(110, 100);
-            this.buttonContinue.TabIndex = 18;
+            this.buttonContinue.TabIndex = 2;
             this.buttonContinue.Text = "Press To Close Graph";
             this.buttonContinue.UseVisualStyleBackColor = true;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
@@ -175,7 +175,7 @@
             this.buttonSaveQuit.Location = new System.Drawing.Point(906, 181);
             this.buttonSaveQuit.Name = "buttonSaveQuit";
             this.buttonSaveQuit.Size = new System.Drawing.Size(110, 100);
-            this.buttonSaveQuit.TabIndex = 19;
+            this.buttonSaveQuit.TabIndex = 1;
             this.buttonSaveQuit.Text = "Press To Save And Quit";
             this.buttonSaveQuit.UseVisualStyleBackColor = true;
             this.buttonSaveQuit.Click += new System.EventHandler(this.buttonSaveQuit_Click);
@@ -249,7 +249,7 @@
             this.buttonNextGraph.Location = new System.Drawing.Point(906, 6);
             this.buttonNextGraph.Name = "buttonNextGraph";
             this.buttonNextGraph.Size = new System.Drawing.Size(110, 100);
-            this.buttonNextGraph.TabIndex = 29;
+            this.buttonNextGraph.TabIndex = 0;
             this.buttonNextGraph.Text = "Press To Go To Next Player\'s Graphs";
             this.buttonNextGraph.UseVisualStyleBackColor = true;
             this.buttonNextGraph.Click += new System.EventHandler(this.buttonNextGraph_Click);
@@ -404,7 +404,7 @@
             this.labelWeekNumberActualNumberOfCustomers.TabIndex = 45;
             this.labelWeekNumberActualNumberOfCustomers.Text = "Week Number";
             // 
-            // mainGameScreenGraph
+            // MainGameScreenGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -447,7 +447,7 @@
             this.Controls.Add(this.labelDeliveryWorkerWage);
             this.Controls.Add(this.labelWorkerWage);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "mainGameScreenGraph";
+            this.Name = "MainGameScreenGraph";
             this.Text = "Graphing Screen";
             this.Load += new System.EventHandler(this.mainGameScreenGraph_Load);
             this.ResumeLayout(false);

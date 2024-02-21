@@ -1,6 +1,6 @@
 ﻿namespace supermarketProject1
 {
-    partial class saveGameScreen
+    partial class SaveGameScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@
             this.textBoxSaveFileName.Location = new System.Drawing.Point(8, 38);
             this.textBoxSaveFileName.Name = "textBoxSaveFileName";
             this.textBoxSaveFileName.Size = new System.Drawing.Size(200, 20);
-            this.textBoxSaveFileName.TabIndex = 1;
+            this.textBoxSaveFileName.TabIndex = 0;
             this.textBoxSaveFileName.TextChanged += new System.EventHandler(this.textBoxSaveFileName_TextChanged);
             // 
             // labelInvalidFileName
@@ -66,15 +66,15 @@
             // buttonSaveQuit
             // 
             this.buttonSaveQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveQuit.Location = new System.Drawing.Point(8, 68);
+            this.buttonSaveQuit.Location = new System.Drawing.Point(12, 64);
             this.buttonSaveQuit.Name = "buttonSaveQuit";
             this.buttonSaveQuit.Size = new System.Drawing.Size(222, 45);
-            this.buttonSaveQuit.TabIndex = 3;
+            this.buttonSaveQuit.TabIndex = 1;
             this.buttonSaveQuit.Text = "Press To Save And Quit";
             this.buttonSaveQuit.UseVisualStyleBackColor = true;
             this.buttonSaveQuit.Click += new System.EventHandler(this.buttonSaveQuit_Click);
             // 
-            // saveGameScreen
+            // SaveGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,7 +83,7 @@
             this.Controls.Add(this.labelInvalidFileName);
             this.Controls.Add(this.textBoxSaveFileName);
             this.Controls.Add(this.labelNameSaveFile);
-            this.Name = "saveGameScreen";
+            this.Name = "SaveGameScreen";
             this.Text = "Save Game Screen";
             this.ResumeLayout(false);
             this.PerformLayout();

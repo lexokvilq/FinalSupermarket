@@ -290,7 +290,6 @@ C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOM
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\bin\Debug\System.ValueTuple.xml
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.AssemblyReference.cache
-C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.Form1.resources
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenGraph.resources
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.mainGameScreenInput.resources
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.newGameScreen.resources
@@ -301,3 +300,4 @@ C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOM
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.csproj.CopyComplete
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.exe
 C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.pdb
+C:\Users\maxle\OneDrive\Documents\Visual Studio 2022\SUPERMARKET PROJECT OLD HOME REAL\FinalSupermarket\supermarketProject1\obj\Debug\supermarketProject1.IntroductionScreen.resources

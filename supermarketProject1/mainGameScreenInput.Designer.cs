@@ -1,6 +1,6 @@
 ﻿namespace supermarketProject1
 {
-    partial class mainGameScreenInput
+    partial class MainGameScreenInput
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,6 @@
             this.labelSecurityInvestment = new System.Windows.Forms.Label();
             this.textBoxSecurityInvestmentInput = new System.Windows.Forms.TextBox();
             this.labelCleanlinessInvestment = new System.Windows.Forms.Label();
-            this.textBoxCleanlinessInvestment = new System.Windows.Forms.TextBox();
             this.labelAmountOfWorkers = new System.Windows.Forms.Label();
             this.textBoxAmountOfWorkersInput = new System.Windows.Forms.TextBox();
             this.labelWorkerWage = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.labelInvalidItemPrices = new System.Windows.Forms.Label();
             this.labelInvalidAdvertisementInvestment = new System.Windows.Forms.Label();
             this.labelInvalidSecurityInvestment = new System.Windows.Forms.Label();
-            this.labelInvalidCleanlinessInvestment = new System.Windows.Forms.Label();
             this.labelInvalidAmountOfWorkers = new System.Windows.Forms.Label();
             this.labelInvalidWorkerWage = new System.Windows.Forms.Label();
             this.labelInvalidAmountOfDeliveryWorkers = new System.Windows.Forms.Label();
@@ -106,7 +104,7 @@
             this.textBoxStockAmountInput.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStockAmountInput.Name = "textBoxStockAmountInput";
             this.textBoxStockAmountInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxStockAmountInput.TabIndex = 1;
+            this.textBoxStockAmountInput.TabIndex = 0;
             this.textBoxStockAmountInput.TextChanged += new System.EventHandler(this.textBoxStockAmountInput_TextChanged);
             // 
             // textBoxItemPricesInput
@@ -115,7 +113,7 @@
             this.textBoxItemPricesInput.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxItemPricesInput.Name = "textBoxItemPricesInput";
             this.textBoxItemPricesInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxItemPricesInput.TabIndex = 2;
+            this.textBoxItemPricesInput.TabIndex = 6;
             // 
             // labelItemPrices
             // 
@@ -146,7 +144,7 @@
             this.buttonExcellent.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcellent.Name = "buttonExcellent";
             this.buttonExcellent.Size = new System.Drawing.Size(76, 24);
-            this.buttonExcellent.TabIndex = 5;
+            this.buttonExcellent.TabIndex = 1;
             this.buttonExcellent.Text = "Excellent";
             this.buttonExcellent.UseVisualStyleBackColor = false;
             this.buttonExcellent.Click += new System.EventHandler(this.buttonExcellent_Click);
@@ -157,7 +155,7 @@
             this.buttonGreat.Location = new System.Drawing.Point(230, 49);
             this.buttonGreat.Name = "buttonGreat";
             this.buttonGreat.Size = new System.Drawing.Size(76, 24);
-            this.buttonGreat.TabIndex = 6;
+            this.buttonGreat.TabIndex = 2;
             this.buttonGreat.Text = "Great";
             this.buttonGreat.UseVisualStyleBackColor = false;
             this.buttonGreat.Click += new System.EventHandler(this.buttonGreat_Click);
@@ -168,7 +166,7 @@
             this.buttonAverage.Location = new System.Drawing.Point(310, 49);
             this.buttonAverage.Name = "buttonAverage";
             this.buttonAverage.Size = new System.Drawing.Size(76, 24);
-            this.buttonAverage.TabIndex = 7;
+            this.buttonAverage.TabIndex = 3;
             this.buttonAverage.Text = "Average";
             this.buttonAverage.UseVisualStyleBackColor = false;
             this.buttonAverage.Click += new System.EventHandler(this.buttonAverage_Click);
@@ -179,7 +177,7 @@
             this.buttonPoor.Location = new System.Drawing.Point(470, 49);
             this.buttonPoor.Name = "buttonPoor";
             this.buttonPoor.Size = new System.Drawing.Size(76, 24);
-            this.buttonPoor.TabIndex = 8;
+            this.buttonPoor.TabIndex = 5;
             this.buttonPoor.Text = "Poor";
             this.buttonPoor.UseVisualStyleBackColor = false;
             this.buttonPoor.Click += new System.EventHandler(this.buttonPoor_Click);
@@ -190,7 +188,7 @@
             this.buttonBad.Location = new System.Drawing.Point(390, 49);
             this.buttonBad.Name = "buttonBad";
             this.buttonBad.Size = new System.Drawing.Size(76, 24);
-            this.buttonBad.TabIndex = 9;
+            this.buttonBad.TabIndex = 4;
             this.buttonBad.Text = "Bad";
             this.buttonBad.UseVisualStyleBackColor = false;
             this.buttonBad.Click += new System.EventHandler(this.buttonBad_Click);
@@ -210,7 +208,7 @@
             this.textBoxAdvertisementInvestmentInput.Location = new System.Drawing.Point(230, 128);
             this.textBoxAdvertisementInvestmentInput.Name = "textBoxAdvertisementInvestmentInput";
             this.textBoxAdvertisementInvestmentInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxAdvertisementInvestmentInput.TabIndex = 13;
+            this.textBoxAdvertisementInvestmentInput.TabIndex = 7;
             // 
             // labelSecurityInvestment
             // 
@@ -227,7 +225,7 @@
             this.textBoxSecurityInvestmentInput.Location = new System.Drawing.Point(230, 169);
             this.textBoxSecurityInvestmentInput.Name = "textBoxSecurityInvestmentInput";
             this.textBoxSecurityInvestmentInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxSecurityInvestmentInput.TabIndex = 15;
+            this.textBoxSecurityInvestmentInput.TabIndex = 8;
             // 
             // labelCleanlinessInvestment
             // 
@@ -238,16 +236,6 @@
             this.labelCleanlinessInvestment.Size = new System.Drawing.Size(0, 20);
             this.labelCleanlinessInvestment.TabIndex = 16;
             this.labelCleanlinessInvestment.Click += new System.EventHandler(this.labelCleanlinessInvestment_Click);
-            // 
-            // textBoxCleanlinessInvestment
-            // 
-            this.textBoxCleanlinessInvestment.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxCleanlinessInvestment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCleanlinessInvestment.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxCleanlinessInvestment.Location = new System.Drawing.Point(49, 212);
-            this.textBoxCleanlinessInvestment.Name = "textBoxCleanlinessInvestment";
-            this.textBoxCleanlinessInvestment.Size = new System.Drawing.Size(10, 13);
-            this.textBoxCleanlinessInvestment.TabIndex = 17;
             // 
             // labelAmountOfWorkers
             // 
@@ -264,7 +252,7 @@
             this.textBoxAmountOfWorkersInput.Location = new System.Drawing.Point(230, 249);
             this.textBoxAmountOfWorkersInput.Name = "textBoxAmountOfWorkersInput";
             this.textBoxAmountOfWorkersInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxAmountOfWorkersInput.TabIndex = 19;
+            this.textBoxAmountOfWorkersInput.TabIndex = 9;
             // 
             // labelWorkerWage
             // 
@@ -281,7 +269,7 @@
             this.textBoxWorkerWageInput.Location = new System.Drawing.Point(150, 289);
             this.textBoxWorkerWageInput.Name = "textBoxWorkerWageInput";
             this.textBoxWorkerWageInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxWorkerWageInput.TabIndex = 21;
+            this.textBoxWorkerWageInput.TabIndex = 10;
             // 
             // labelAmountOfDeliveryWorkers
             // 
@@ -298,7 +286,7 @@
             this.textBoxAmountOfDeliveryWorkersInput.Location = new System.Drawing.Point(230, 329);
             this.textBoxAmountOfDeliveryWorkersInput.Name = "textBoxAmountOfDeliveryWorkersInput";
             this.textBoxAmountOfDeliveryWorkersInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxAmountOfDeliveryWorkersInput.TabIndex = 23;
+            this.textBoxAmountOfDeliveryWorkersInput.TabIndex = 11;
             // 
             // labelDeliveryWorkerWage
             // 
@@ -315,7 +303,7 @@
             this.textBoxDeliveryWorkerWageInput.Location = new System.Drawing.Point(230, 369);
             this.textBoxDeliveryWorkerWageInput.Name = "textBoxDeliveryWorkerWageInput";
             this.textBoxDeliveryWorkerWageInput.Size = new System.Drawing.Size(76, 20);
-            this.textBoxDeliveryWorkerWageInput.TabIndex = 25;
+            this.textBoxDeliveryWorkerWageInput.TabIndex = 12;
             // 
             // labelStockShop
             // 
@@ -333,7 +321,7 @@
             this.buttonVegetables.Location = new System.Drawing.Point(150, 409);
             this.buttonVegetables.Name = "buttonVegetables";
             this.buttonVegetables.Size = new System.Drawing.Size(75, 30);
-            this.buttonVegetables.TabIndex = 27;
+            this.buttonVegetables.TabIndex = 13;
             this.buttonVegetables.Text = "Vegetables";
             this.buttonVegetables.UseVisualStyleBackColor = false;
             this.buttonVegetables.Click += new System.EventHandler(this.buttonVegetables_Click);
@@ -344,7 +332,7 @@
             this.buttonMeat.Location = new System.Drawing.Point(230, 409);
             this.buttonMeat.Name = "buttonMeat";
             this.buttonMeat.Size = new System.Drawing.Size(75, 30);
-            this.buttonMeat.TabIndex = 28;
+            this.buttonMeat.TabIndex = 14;
             this.buttonMeat.Text = "Meat";
             this.buttonMeat.UseVisualStyleBackColor = false;
             this.buttonMeat.Click += new System.EventHandler(this.buttonMeat_Click);
@@ -355,7 +343,7 @@
             this.buttonSnacks.Location = new System.Drawing.Point(310, 409);
             this.buttonSnacks.Name = "buttonSnacks";
             this.buttonSnacks.Size = new System.Drawing.Size(75, 30);
-            this.buttonSnacks.TabIndex = 29;
+            this.buttonSnacks.TabIndex = 15;
             this.buttonSnacks.Text = "Snacks";
             this.buttonSnacks.UseVisualStyleBackColor = false;
             this.buttonSnacks.Click += new System.EventHandler(this.buttonSnacks_Click);
@@ -366,7 +354,7 @@
             this.buttonHousehold.Location = new System.Drawing.Point(390, 409);
             this.buttonHousehold.Name = "buttonHousehold";
             this.buttonHousehold.Size = new System.Drawing.Size(75, 30);
-            this.buttonHousehold.TabIndex = 30;
+            this.buttonHousehold.TabIndex = 16;
             this.buttonHousehold.Text = "Household";
             this.buttonHousehold.UseVisualStyleBackColor = false;
             this.buttonHousehold.Click += new System.EventHandler(this.buttonHousehold_Click);
@@ -420,7 +408,7 @@
             this.buttonSubmitChanges.Location = new System.Drawing.Point(474, 449);
             this.buttonSubmitChanges.Name = "buttonSubmitChanges";
             this.buttonSubmitChanges.Size = new System.Drawing.Size(104, 60);
-            this.buttonSubmitChanges.TabIndex = 35;
+            this.buttonSubmitChanges.TabIndex = 17;
             this.buttonSubmitChanges.Text = "Submit\r\nChanges\r\n";
             this.buttonSubmitChanges.UseVisualStyleBackColor = false;
             this.buttonSubmitChanges.Click += new System.EventHandler(this.buttonSubmitChanges_Click);
@@ -465,15 +453,6 @@
             this.labelInvalidSecurityInvestment.Size = new System.Drawing.Size(137, 13);
             this.labelInvalidSecurityInvestment.TabIndex = 39;
             this.labelInvalidSecurityInvestment.Text = "Invalid Security Investment!";
-            // 
-            // labelInvalidCleanlinessInvestment
-            // 
-            this.labelInvalidCleanlinessInvestment.AutoSize = true;
-            this.labelInvalidCleanlinessInvestment.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.labelInvalidCleanlinessInvestment.Location = new System.Drawing.Point(310, 210);
-            this.labelInvalidCleanlinessInvestment.Name = "labelInvalidCleanlinessInvestment";
-            this.labelInvalidCleanlinessInvestment.Size = new System.Drawing.Size(0, 13);
-            this.labelInvalidCleanlinessInvestment.TabIndex = 40;
             // 
             // labelInvalidAmountOfWorkers
             // 
@@ -532,7 +511,7 @@
             this.buttonReset.Location = new System.Drawing.Point(477, 515);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(101, 23);
-            this.buttonReset.TabIndex = 46;
+            this.buttonReset.TabIndex = 18;
             this.buttonReset.Text = "Reset Changes";
             this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
@@ -554,11 +533,11 @@
             // 
             this.labelCurrentFunds.AutoSize = true;
             this.labelCurrentFunds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentFunds.Location = new System.Drawing.Point(310, 89);
+            this.labelCurrentFunds.Location = new System.Drawing.Point(332, 89);
             this.labelCurrentFunds.Name = "labelCurrentFunds";
-            this.labelCurrentFunds.Size = new System.Drawing.Size(115, 20);
+            this.labelCurrentFunds.Size = new System.Drawing.Size(129, 20);
             this.labelCurrentFunds.TabIndex = 48;
-            this.labelCurrentFunds.Text = "Current Funds:";
+            this.labelCurrentFunds.Text = "Current Funds ->";
             // 
             // labelCurrentFundsText
             // 
@@ -673,7 +652,7 @@
             this.labelItemPricePricePerKg.TabIndex = 60;
             this.labelItemPricePricePerKg.Text = "Price Per Kg";
             // 
-            // mainGameScreenInput
+            // MainGameScreenInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -698,7 +677,6 @@
             this.Controls.Add(this.labelInvalidAmountOfDeliveryWorkers);
             this.Controls.Add(this.labelInvalidWorkerWage);
             this.Controls.Add(this.labelInvalidAmountOfWorkers);
-            this.Controls.Add(this.labelInvalidCleanlinessInvestment);
             this.Controls.Add(this.labelInvalidSecurityInvestment);
             this.Controls.Add(this.labelInvalidAdvertisementInvestment);
             this.Controls.Add(this.labelInvalidItemPrices);
@@ -721,7 +699,6 @@
             this.Controls.Add(this.labelWorkerWage);
             this.Controls.Add(this.textBoxAmountOfWorkersInput);
             this.Controls.Add(this.labelAmountOfWorkers);
-            this.Controls.Add(this.textBoxCleanlinessInvestment);
             this.Controls.Add(this.labelCleanlinessInvestment);
             this.Controls.Add(this.textBoxSecurityInvestmentInput);
             this.Controls.Add(this.labelSecurityInvestment);
@@ -738,7 +715,7 @@
             this.Controls.Add(this.textBoxStockAmountInput);
             this.Controls.Add(this.labelStockAmount);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "mainGameScreenInput";
+            this.Name = "MainGameScreenInput";
             this.Text = "Main Game Screen Input";
             this.Load += new System.EventHandler(this.mainGameScreenInput_Load);
             this.ResumeLayout(false);
@@ -763,7 +740,6 @@
         private System.Windows.Forms.Label labelSecurityInvestment;
         private System.Windows.Forms.TextBox textBoxSecurityInvestmentInput;
         private System.Windows.Forms.Label labelCleanlinessInvestment;
-        private System.Windows.Forms.TextBox textBoxCleanlinessInvestment;
         private System.Windows.Forms.Label labelAmountOfWorkers;
         private System.Windows.Forms.TextBox textBoxAmountOfWorkersInput;
         private System.Windows.Forms.Label labelWorkerWage;
@@ -786,7 +762,6 @@
         private System.Windows.Forms.Label labelInvalidItemPrices;
         private System.Windows.Forms.Label labelInvalidAdvertisementInvestment;
         private System.Windows.Forms.Label labelInvalidSecurityInvestment;
-        private System.Windows.Forms.Label labelInvalidCleanlinessInvestment;
         private System.Windows.Forms.Label labelInvalidAmountOfWorkers;
         private System.Windows.Forms.Label labelInvalidWorkerWage;
         private System.Windows.Forms.Label labelInvalidAmountOfDeliveryWorkers;

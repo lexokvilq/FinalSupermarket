@@ -14,80 +14,77 @@ using System.Windows.Shapes;
 
 namespace supermarketProject1
 {
-    public partial class mainGameScreenGraph : Form
-    {
-        //first i'm going to create two lists
-        //one for the data on the x axis and another for the data on the y axis
+    public partial class MainGameScreenGraph : Form
+    {        
+        //this is the data that will be displayed on the x axis of a graph
         private static double[] dataX;
+        //this is the data that will be displayed on the y axis of a graph
         private static double[] dataY;
-        public mainGameScreenGraph()
+        //both these lists are updated for every graph
+
+        public MainGameScreenGraph()
         {
             InitializeComponent();
 
-            //set the label of the player number
-            //this shows which graph is which player
+            //This shows which screen is displaying which player's graphs by displaying the player number
             labelPlayerNumber.Text = labelPlayerNumber.Text + Convert.ToString(Program.SupermarketIndex+1);
 
-            //set the label end of the game to be invisible
+            //Assume that it is not the end of the game yet, so set the end of the game message to be invisible
             labelEndOfTheGame.ForeColor = Color.WhiteSmoke;
 
-            //set the invalid no more graphs to look at label to be invisible
+            //Set the error message, no more graphs left to look at, to be invisible
             labelNoMoreGraphs.ForeColor = Color.WhiteSmoke;
 
-
-
-
-            //create a function that takes in one of the history values and adds the x data and y data into the dataX and dataY
+            //this function updates the dataX and dataY lists to contain the appropriate data from one of the history variables
+            //this call of the function is setting the dataX and dataY to the values inside of HistoryWorkerWage
             addHistoryValuesToGraph(Program.HistoryWorkerWage);
-            //plot the graph
+            //This plots the line on the graph
             chartWorkerWage.Plot.AddScatter(dataX, dataY);
-            //you need to refresh the graph every time it is plotted
+            //The graph needs to be refreshed everytime it is used
             chartWorkerWage.Refresh();
            
-            
-            //repeat this for every one of the graphs
-
-            //for the online worker wage
+            //The function that adds the history variables to dataX and dataY is called again
+            //HistoryOnlineWorkerWage graph
             addHistoryValuesToGraph(Program.HistoryOnlineWorkerWage);
             chartAmountOfDeliveryWorkers.Plot.AddScatter(dataX, dataY);
             chartAmountOfDeliveryWorkers.Refresh();
 
-            //for amount of workers
+            //HistoryAmountOfWorkers
             addHistoryValuesToGraph(Program.HistoryAmountOfWorkers);
             chartAmountOfWorkers.Plot.AddScatter(dataX, dataY);
             chartAmountOfWorkers.Refresh();
 
-            //for the online amount of workers
+            //HistoryOnlineAmountOfWorkers, amount of delivery workers
             addHistoryValuesToGraph(Program.HistoryOnlineAmountOfWorkers);
             chartDeliveryWorkerWage.Plot.AddScatter(dataX, dataY);  
             chartDeliveryWorkerWage.Refresh();
 
-            //for the item prices
+            //HistoryItemPrices
             addHistoryValuesToGraph(Program.HistoryItemPrices);
             chartItemPrices.Plot.AddScatter(dataX, dataY);
             chartItemPrices.Refresh();
 
-            //for the number of customers
+            //HistoryPotentialNumberOfRegularCustomers
             addHistoryValuesToGraph(Program.HistoryPotentialNumberOfRegularCustomers);
             chartNumberOfCustomers.Plot.AddScatter(dataX, dataY);
             chartNumberOfCustomers.Refresh();
 
-            //for the online number of customers
+            //HistoryPotentialNumberOfOnlineCustomers
             addHistoryValuesToGraph(Program.HistoryPotentialNumberOfOnlineCustomers);
             chartOnlineNumOfCustomers.Plot.AddScatter(dataX, dataY);
             chartOnlineNumOfCustomers.Refresh();
 
-            //for the net profit
+            //HistoryNetProfit
             addHistoryValuesToGraph(Program.HistoryNetProfit);
             chartNetProfit.Plot.AddScatter(dataX, dataY);
             chartNetProfit.Refresh();
 
-            //for the current funds
+            //HistoryCurrentFunds
             addHistoryValuesToGraph(Program.HistoryCurrentFunds);
             chartCurrentFunds.Plot.AddScatter(dataX, dataY);
             chartCurrentFunds.Refresh();
 
-            //for the actual number of customers
+            //HistoryActualNumberOfCustomers
             addHistoryValuesToGraph(Program.HistoryActualNumberOfCustomers);
             chartActualNumberOfCustomres.Plot.AddScatter(dataX, dataY);
             chartActualNumberOfCustomres.Refresh();
@@ -100,31 +97,33 @@ namespace supermarketProject1
                 //set the game to ended
                 Program.setGameEnded(true);
             }
-
-            
         }
         
-        //a function that adds the history values to the dataX and dataY so that the graphs can be updated
-        //note that all the history values need to be a double for the ScottPlot to accept them
+        //This function updates the dataX and dataY variables to contain the values from the history variables
+        //the history variables being graphed is passed in
         public static void addHistoryValuesToGraph(double[,] historyValues)
         {
-
+            //the dataX and dataY need to be initialised and set to the right length, the num of weeks that have passed
             initDataXY();
+
             //create a for loop which will go through the number of weeks that have passed
             for (int i = 0; i < Program.WeekNumber; i++)
             {
                 //then set up the x axis by assigning i to the dataX
+                //the dataX will just go up from 0 to the number of weeks that have passed
                 dataX[i] = i;
 
-                //then get the data from the historyValues, which represents the y axis
-                //then we need to get the supermarket index to check which supermarket to look into
-                //the supermarket index changes everytime that a new graph is made
+                //The data from the historyValues is graphed on the y axis
+               //supermarket index is used to check which supermarekt is currently being looked at
+               //the i represents the week being looked at
                 dataY[i] = historyValues[Program.SupermarketIndex, i];
             }
         }
 
+        //set the dataX and dataY to the right length
         public static void initDataXY()
         {
+            //the dataX and dataY are set to the WeekNumber, representing the number of weeks that have passed
             dataX = new double[Program.WeekNumber];
             dataY = new double[Program.WeekNumber];
         }
@@ -150,30 +149,28 @@ namespace supermarketProject1
                 //if there are more graphs to show then create a new mainGameScreenGraph object
                 //also need to indent the supermarket index
                 Program.incrementSupermarketIndex();
-                mainGameScreenGraph mgsg = new mainGameScreenGraph();
+                MainGameScreenGraph mgsg = new MainGameScreenGraph();
                 mgsg.Show();
             }
             else
             {
                 //display error message
                 labelNoMoreGraphs.ForeColor = Color.Red;
-                //reset the supermarket index
-                Program.resetSupermarketIndex();
             }
         }
 
-        //button to close graph
+        //this button will close graph
         private void buttonContinue_Click(object sender, EventArgs e)
         {
             if (Program.GameEnded == true)
             {
                 //this means that it is the end of the game and there are no more turns left
-                //display error message
+                //close the application
                 Application.Exit();
             }
             else
             {
-                //close the application
+                //close the window
                 this.Close();
                 //reset the supermarket index
                 Program.resetSupermarketIndex();
@@ -181,18 +178,22 @@ namespace supermarketProject1
 
         }
 
+        //button if the user wants to save their progress and quit the game
         private void buttonSaveQuit_Click(object sender, EventArgs e)
         {
+            //check if the game hasnt ended, can only save a game that hasnt ended
             if (Program.GameEnded == false)
             {
                 //show the save game screen
-                saveGameScreen sgs = new saveGameScreen();
+                SaveGameScreen sgs = new SaveGameScreen();
                 sgs.Show();
-
             }
 
+            //check if the game has ended
+            //if the game has ended there is no point saving the game, so not allowed to save an ended game
             else if (Program.GameEnded == true)
             {
+                //display error message to the user
                 labelCantSaveEndedGame.ForeColor = Color.Red;   
             }
 

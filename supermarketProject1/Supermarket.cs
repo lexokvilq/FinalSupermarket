@@ -9,360 +9,441 @@ namespace supermarketProject1
 {
     public class Supermarket
     {
-
+        //The current funds that the supermarket has
         private double currentFunds;
         public double CurrentFunds
         {
             get { return currentFunds; }
         }
+
+        //The previous funds that the supermarket had in the last week
         private double previousFunds;
 
+        //The net profit that the supermarket makes
         private double netProfit;
         public double NetProfit
         {
             get { return netProfit; }
         }
+
+        //The customer multiplier, which represents the percentage (a decimal percentage) of customers that a supermarket will get 
         private double customerMultiplier;
         public double CustomerMultiplier
         {
             get { return customerMultiplier; }
         }
+
+        //This is the amount of stock that a supermarket will buy
         private int stockAmount;
 
+        //This is an array that contains all the types of stock that the supermarket buys
         private string[] stockShop;
 
-        private bool[] stockAvailable = new bool[Program.LenStockRange];
+        //This is an array of boolean values, which show what types of supermarket stock that the supermarket has
+        //by comparing the stock shop with the all the types of stock possible to buy (stock range in Supplier).
+        private bool[] stockAvailable = new bool[Program.LengthOfStockRange];
 
+        //This is a multiplier which shows how the percentage of customers will change as the types of stock available from the supermarket changes
         private double stockAvailableMultiplier;
 
+        //This is the supplier type that the user has chosen
         private string userSupplier;
 
+        //This is a multiplier that shows how different qualities of stock will affect the percentage of customers
         private double qualityMultiplier;
 
+        //This is how much the supermarket spends on buying stock from the supplier
         private double supplierCost;
 
+        //This is the item prices for the supermarket
         private double itemPrices;
         public double ItemPrices
         {
             get { return itemPrices; }
         }
 
+        //This is the old item prices, from the previous week
         private double oldItemPrices;
 
+        //This is a multiplier that shows how changing the item prices can affect the number of customers
         private double itemPricesMultiplier;
 
+        //This is the amount spent into advertisements by the user
         private double advertisementInvestment;
 
+        //This is a multiplier that shows how changing the amount spent on advertising will change the percentage of customers
         private double advertismentMultiplier;
 
+        //This is the amount spent in security for the supermarket
         private double securityInvestment;
 
+        //This is the percentage of paying customers that the supermarket gets
         private double percentageOfPayingCustomers;
 
+        //This is the amount of workers that the supermarket employs
         private int amountOfWorkers;
         public int AmountOfWorkers
         {
             get { return amountOfWorkers; }
         }
+
+        //This is a multiplier that shows how changing the amount of workers in the supermarket, can change the percentage of customers
         private double amountOfWorkersMultiplier;
+
+        //This is the wage of all the workers
         private double workerWage;
         public double WorkerWage
         {
             get { return workerWage; }
         }
 
+        //This is a constant which shows the average wage for a regular supermarket worker
         private const double WorkerWageAverage = 11.36;
 
+        //This is a multiplier which shows how the distance the supermarket's worker wage from the average wage, can effect the productivity of workers,
+        //so will change the percentage of customers 
         private double workerWageMultiplier;
 
+        //The online customer multiplier shows the percentage of online customers that will buy from this supermarket
         private double onlineCustomerMultiplier;
         public double OnlineCustomerMultiplier
         {
             get { return onlineCustomerMultiplier; }
         }
 
+        //This is the amount of online workers that the supermarket will employ (amount of delivery workers)
         private int onlineAmountOfWorkers;
         public int OnlineAmountOfWorkers
         {
             get { return onlineAmountOfWorkers; }
         }
+
+        //This is the wage for all the online workers working in the supermarket (delivery workers)
         private double onlineWorkerWage;
         public double OnlineWorkerWage
         {
             get { return onlineWorkerWage; }
         }
 
+        //This constant is the average wage of a delivery (online) worker
         private const double OnlineWorkerWageAverage = 12.39;
 
+        //This shows how the distance away the supermarket's online worker wage is from the average will affect the percentage of customers
         private double onlineWorkerWageMultiplier;
 
+        //This shows how changing the amount of online workers (delivery workers) will affect the percentage of customers
         private double onlineAmountOfWorkersMultiplier;
 
+        //This constant is the amount of hours that a supermarket worker, works per week
         private const int WorkerHours = 28;
 
+        //This constant is the amount of hours that a delivery worker will work per week
         private const int DeliveryWorkerHours = 31;
 
+        //This constant is the average mass of a customer's shopping
         private const int AverageShoppingMassKg = 21;
 
+        //This is the amount the supermarket has overspent by (if the supermarket has overspent)
         private double overspent;
         public double Overspent
         {
             get { return overspent; }
         }
 
-        //add this to desing
+        //This is the actual number of customers that a supermarket will get
         private int actualNumberOfCustomers;
         public int ActualNumberOfCustommers
         {
             get { return actualNumberOfCustomers; }
         }
 
+        //The supermarket constructor
         public Supermarket()
         {
-
         }
+
+        //This calculates the customers multiplier
         public virtual void calcCustomerMultiplier()
         {
             //multiply all the calculated multipliers together to create a combined multiplier
-            //this combined multiplier used to work out the number of customers
+            //this combined multiplier is used to work out the number of customers that a supermarket will get
             customerMultiplier = stockAvailableMultiplier * qualityMultiplier * itemPricesMultiplier * advertismentMultiplier
                 * amountOfWorkersMultiplier * workerWageMultiplier
                 * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier * percentageOfPayingCustomers;
         }
+
+        //This calculates how much funds the supermarket has left over
         public virtual void calcCurrentFunds()
         {
-            //numOfCustomers, onlineNumOfCustomer
-            //stockAmount, supplierCost, itemPrices, 
-            //workerWage, amountOfWorkers, onlineWorkerWage, onlineAmountOfWorkers
-
-            //This method calculates the current funds of the supermarket
-            //calculate the profits of the supermarket
-            //average mass that a customer buys from a supermarket is 21
+            //The profit is calculated by multiplying the item prices (Per Kg) by the average mass of a customer's shopping (21KG) and
+            //then multiplied by the actual number of customers that a supermarket will get
             double profit = actualNumberOfCustomers * itemPrices * AverageShoppingMassKg;
-            //work out all the expenses
-            //the workers work 28 hours
+            
+            //The expenses is calculated by multiplying the amount of workers by the wage of the workers (per hour), and
+            //then multiplied by the number of hours that they work (28 hours a week)
             double expenses = workerWage * amountOfWorkers * WorkerHours;
-            //the delivery workers work 31 hours
-            expenses = expenses + onlineWorkerWage * onlineAmountOfWorkers * DeliveryWorkerHours;
-            expenses = expenses + supplierCost * stockAmount;
-            expenses = expenses + advertisementInvestment;
-            expenses = expenses + securityInvestment;
 
+            //Then the expenses of all the online workers is calculated
+            expenses = expenses + onlineWorkerWage * onlineAmountOfWorkers * DeliveryWorkerHours;
+
+            //Then the supplier cost, advertisement investment and security investment are all added to the expenses
+            expenses = expenses + supplierCost + advertisementInvestment + securityInvestment;
+
+            //Work out the current funds for the supermarekt by adding the profit and taking away the expenses from the current funds
             currentFunds = currentFunds + profit - expenses;
+        
+            //Round the current funds to the nearest penny, to the nearest 2 decimal places
+            currentFunds = Math.Round(currentFunds, 2);
         }
 
-        //this function calculates the expenses and the current funds that the supermarket can use 
-        //and calculates whether the current funds is negative, meaning the user's turn was invalid
+        //This function checks whether the current funds will be negative after the user's inputs
+        //and returns true if the user has over spent or false if the user hasn't overspent
         public virtual bool checkCurrentFundsNegative()
         {
-            //the workers work 28 hours
+            //The expenses is calculated by multiplying the amount of workers by the wage of the workers (per hour), and
+            //then multiplied by the number of hours that they work (28 hours a week)
             double expenses = workerWage * amountOfWorkers * WorkerHours;
-            //the delivery drivers work 31 hours
-            expenses = expenses + onlineWorkerWage * onlineAmountOfWorkers * DeliveryWorkerHours;
-            expenses = expenses + supplierCost * stockAmount;
-            expenses = expenses + advertisementInvestment;
-            expenses = expenses + securityInvestment;
 
-            //then round the expenses to the nearest penny
+            //Then the expenses of all the online workers is calculated
+            expenses = expenses + onlineWorkerWage * onlineAmountOfWorkers * DeliveryWorkerHours;
+
+            //calculate the supplier cost
+            
+
+            //Then the supplier cost, advertisement investment and security investment are all added to the expenses
+            expenses = expenses + supplierCost + advertisementInvestment + securityInvestment;
+
+            //The expenses are rounded to the nearest penny before it is compared with the current funds (the current funds are also rounded to the nearest penny)
             expenses = Math.Round(expenses, 2);
 
+            //The current funds and expenses are compared
             if (currentFunds < expenses)
             {
-                //this means we can work out the amount that the user has overspent by
+                //The player's supermarket has overspent
+
+                //calculate how much the supermarket has overspent by
                 overspent = expenses - currentFunds;
+
+                //return true, which shows that the player has overspent
                 return true;
             }
             else
             {
+                //The player's supermarket has not overspent
+
+                //return false, showing that the player has not overspent
                 return false;
             }
         }
+
+        //This function calculates the net profit of the supermarket
         public virtual void calcNetProfit()
         {
-            //currentFunds, previousFunds
-            //find the difference between the current funds and the previous funds to work out the net profit
+            //Find the difference between the current funds and the previous funds (funds from the last week)
             netProfit = currentFunds - previousFunds;
         }
+
+        //Check what stock the supermarket has available
+        //Pass in Supplier.stockRange
         public virtual void checkStockAvailable(string[] stRange)
         {
-            //Supplier.stockRange, stockShop
-            //use a for loop to go through the list of all the types of stock checking which ones are available and not
+            //The value passed in is an array of strings which contain all the different types of avaialable stock, to buy
             for (int i = 0; i < stRange.Length; i++)
             {
+                //Compare the stock that the supermarket has with the list of all the avaiable types of stock
+                //Both the Supplier.stockRange and the stockShop are both the same length and store their stocks in the same index
+                //If a stock type is not avaialable in stock shop it will be stored in the array as a null value
                 if (stRange[i] == stockShop[i])
                 {
+                    //The supermarket has the available item so the stockAvailable is set to true for this item
                     stockAvailable[i] = true;
                 }
                 else
                 {
+                    //The supermarket does not have the available item so the stockAvailable is set to false for this item
                     stockAvailable[i] = false;
                 }
             }
         }
+
+        //This function calculates the stock available multiplier
         public virtual void stockAvailableChangeProfit()
         {
-
-            //stockAvailable
-
-            //deafult that they have all the different types of stock and the multiplier is 1 ()
-            //won't change anything if the multiplier is 1
+            //first the stockAvialbleMultiplier is set to 1, the deafult value, which assumes that all the stock avaialble is true
             stockAvailableMultiplier = 1;
-            //count how many types of stock which aren't present in the supermarket
+
+            //This is a count which shows how many unavailable stock types there are
+            //The deafult value is 0 which assumes that all the different types of stock are available
             int numOfUnavailableStock = 0;
+
+            //This for loop will go through all the data items in the stockAvailable list
             for (int i = 0; i < stockAvailable.Length; i++)
             {
+                //This checks if the stock item is not available
                 if (stockAvailable[i] == false)
                 {
+                    //if it is not available then the number of unavialble stock types is incremented by 1
                     numOfUnavailableStock++;
                 }
+
+                //if the stock type is present the number of unavailable stock will stay at its same value
             }
-            //for each unavailables stock the multiplier will shrink by 25%
-            //if there unavailableStock = 0, it show skip this for loop
+
+            //This for loop will repeat for the number of unavailable stock types
+            //if there are no unavialble stock types then the for loop will be skipped and the stock available multiplier will remain at its deafult value 1
             for (int i = 0; i < numOfUnavailableStock; i++)
             {
+                //Decrease the stock available multiplier by 75 percent for each unavailable stock
                 stockAvailableMultiplier = stockAvailableMultiplier * 0.75;
             }
-
         }
+
+        //This function calculates the qualityMultiplier for the supermarket
+        //The Supplier.suppliersQuality and the Supplier.suppliersQualityMultiplier are both passed in
         public virtual void calcQualityMultiplier(string[] supQual, double[] suppQualMult)
         {
-            //userSupplier
-            //Supplier.suppliersQuality, Supplier.suppliersQualityMultiplier
-
-            //go through the list to check the number in the list that the userSupplier refers to in the supplier lists
+            //This for loop goes through all the supplier quality types in the suppliersQuality array
             for (int i = 0; i < supQual.Length; i++)
             {
-                //if statement to check whether the userSupplier is reffering to the right place in the list
+                //Checks to see if the supermarket's supplier is the current supplier quality
                 if (userSupplier == supQual[i])
                 {
-                    //when the if statement is true the i refers to the correct number in the list which user supplier
-                    //refers to
-                    //when i is correct put the supplier quality multiplier[i] into the return variable
-                    //quality multiplier 
+                    //The user's supplier is the current supplier quality so the supplier quality multiplier index can be found
+                    //in the supplierQualityMultipliers list by using the same index that the supplier quality was found in
+                    //The supplierQuality array and the supplierQualityMultipliers array both directly relate to each other, so the indexs in both arrays directly relate to each other
                     qualityMultiplier = suppQualMult[i];
                 }
-
             }
         }
+
+        //The function calculates the supplier cost
+        //The Supplier.suppliersPrices and the Supplier.suppliersQuality are both passed in
         public virtual void calcSupplierCost(double[] suppPrice, string[] suppQual)
         {
-            //userSupplier, Supplier.supplierPrices, stockAmount, Supplier.suppliersQuality
-            //go through list which has names of all the different types of quality
+            //This for loop goes through all the items in the supplier qualities array
             for (int i = 0; i < suppQual.Length; i++)
             {
-                //if the user supplier has the same quality as the supplier quality, then
-                //set the supplier cost to the relevant i
+                //checks if the user supplier is found in the supplier quality
                 if (userSupplier == suppQual[i])
                 {
+                    //The supplier cost can be found by using the index in which the supplier quality was found
+                    //Both the supplierPrices and suppliersQuality arrays directly relate to each other, so the index can be used to link both arrays
                     supplierCost = suppPrice[i];
                 }
             }
+
+            //The supplierPrices list only contains the price per kg, so the price needs to be multiplied by the stock amount that the supermarket bought
+            //in order to work out the actual amount the supermarket has spent on buying stock, supplier cost
+            supplierCost = supplierCost * stockAmount;
         }
+
+        //This function caclualtes the item prices multiplier
         public virtual void calcItemPricesMultiplier()
         {
-            //itemPrices, oldItemPrices
-            //this multiplier works by dividing the new item prices by the old item prices
-            //itemPrices/oldItemPrices
-            if (oldItemPrices > 0)
+            //This checks if the old item prices is its deafult value 0
+            if (oldItemPrices == 0)
             {
-                itemPricesMultiplier = itemPrices / oldItemPrices;
-            }
-            //the old itemPrices will start at 0 so the multiplier shouldn't change the
-            //customerMultiplier in the first turn
-            else
-            {
+                //The old item prices are set to 0 as deafult, so the item prices multiplier should also be its deafult
+                //value, which is 1, a multiplier of 1 will have no effect on the customer multiplier
                 itemPricesMultiplier = 1;
             }
+            //if the old item prices have a value set to them
+            else
+            {
+                //if the new item prices are smaller than the old item prices the multiplier will be bigger than if the old item prices 
+                //were smaller than the item prices
+                itemPricesMultiplier = oldItemPrices / itemPrices;
+            }
         }
+
+        //This function calculates the advertisement multipleir
+        //the average area advertisement investment is passed in
         public virtual void calcAdvertisementMultiplier(double avAdInv)
         {
-            //advertisementInvestment, Area.averageAreaAdvertisementInvestment
-            //this multiplier is calculated by dividing the advertisementInvestment by the 
-            //average area investment
+            //The advertisement investment multiplier is calculated by dividing the advertisement multiplier
+            //by the average area advertisement multiplier
             advertismentMultiplier = advertisementInvestment / avAdInv;
         }
 
-
-        //need to change this name to calculate the number of paying customers
+        //This function calculates the percentage of paying customers
+        //The shoplifting rate for the area and the average security investment for the area is passed in
         public virtual void calcPercentageOfPayingCustomers(double shpLifRat, double avSecInv)
         {
-            //Area.shopliftingRate, Area.averageSecurityInvesmtent
-            //the shoplifting rate is a decimal representation of a percentage
-
-            //first i am going to divide the security investment by the average security investment
-            //if the security investment > average security investment then the answer will be greater
-            //than one 
-            //to show how this will effect the shoplifting rate, we will divide the shoplifting rate by
-            //the (security investmment/average security investment)
-            //multiply this value with the shoplifting rate
-            //This will then cause the new shoplifting rate to decrease if the calculated value is greater than the 
-            //shoplifting rate and will increase if the calculated value is smaller than the shoplifting rate
-            //with the new calculated shoplifting rate the number of customers who have shoplifted
-            //can be calculated and then taken off the number of customers
-
+            //to calculate the percentage of paying customers, the security investment is divided by the average security investment
+            //to see how far away the security investment is away from the average security investment
             percentageOfPayingCustomers = securityInvestment / avSecInv;
+            //Then this value calcualted is multiplied by the shoplifting rate for the area to work out a percentage (decimal) of the number of shoplifting customers
             percentageOfPayingCustomers = percentageOfPayingCustomers * shpLifRat;
-            //these two steps below are to change the calculated value from the number of customers who shoplifted
-            // (as a percentage), to the number of customers who paid (as a decimal percentage)
+
+            //both these lines convert the number of shoplifting customers to the number of paying customers
             percentageOfPayingCustomers = percentageOfPayingCustomers * -1;
             percentageOfPayingCustomers = percentageOfPayingCustomers + 1;
 
+            //check if the user area is rural
             if (Program.UserArea == "Rural")
             {
+                //rural area there is no security or shoplifting, so percentage of paying customers is set to 1, so it doesn't change the overall customer multiplier
                 percentageOfPayingCustomers = 1;
             }
         }
 
+        //This function calculates the worker wage multiplier
         public virtual void calcWorkerWageMultiplier()
         {
-            //for the worker wage multiplier multiply divide the worker wage by the average worker wage
-
+            //The worker wage multiplier is calculated by dividing the supermarket's worker wage by the average wage (constant)
             workerWageMultiplier = workerWage / WorkerWageAverage;
         }
+
+        //This function calculates the amount of worker multiplier
+        //the average amount of workers for an area is passed in
         public virtual void calcAmountOfWorkersMultiplier(int avAmWork)
         {
-            //amountOfWorkers, Area.averageAmountOfWorkers
-            //work out a multiplier by dividing the amountOfWorkers by the average amount of workers in the area
-            amountOfWorkersMultiplier = Convert.ToDouble(amountOfWorkers) / Convert.ToDouble(avAmWork);
+            //the amount of workers multiplier is calculated by dividing the amount of workers to the average amount of workers
+            //to work out how far the amount of workers is from the average
+            //the amount of workers and average amount of workers need to be converted to a double so that the value calculated is also a deimcal and is not rounded
+           amountOfWorkersMultiplier = Convert.ToDouble(amountOfWorkers) / Convert.ToDouble(avAmWork);
         }
+
+        //calculate the online customer multiplier
         public virtual void calcOnlineCustomerMultiplier()
         {
-            //stockAvailableMultiplier, qualityMultiplier, itemPricesMultiplier, advertisementMultiplier
-            //onlineAmountOfWOrkersMultiplier, onlineWorkerWageMultiplier
-            
-            //this is a multiplier representing all the multipliers together for the online shop
-            //it will be used to work out how many customers  the supermarket will have
-            //can be calculated by multiplying all the multipliers together
+            //all the multipliers, that effect the online shop, are multiplied together to make the online customer multiplier
             onlineCustomerMultiplier = stockAvailableMultiplier * qualityMultiplier * itemPricesMultiplier * advertismentMultiplier
                  * onlineAmountOfWorkersMultiplier * onlineWorkerWageMultiplier;
         }
+
+        //Calculate the online amount of workers multiplier
+        //the online average amount of workers is passed in
         public virtual void calcOnlineAmountOfWorkersMultiplier(int areaOnAvAmWork)
         {
-            //onlineAmountOfWorkers, Area.onlineAverageAmountOfWorkers
-            //work out a multiplier by dividing the onlineAmountOfWorkers
-            //by the average amount of delivery workers in the area
+            //the supermarket's online amount of workers is divided by the average amount of online workers (dependent on the area)
+            //to create the onlineAmountOfWorkersMultiplier
+            //both values need to be converted to doubles, so the answer is not rounded to an integer
             onlineAmountOfWorkersMultiplier = Convert.ToDouble(onlineAmountOfWorkers) / Convert.ToDouble(areaOnAvAmWork);
-            //this is a multiplier that represents how a change in the number of delivery workers
         }
+
+        //This function calculates the online worker wage multiplier
         public virtual void calcOnlineWorkerWageMultiplier()
         {
-            //divide the delivery worker wage by the average delivery worker wage to get the online worker wage multiplier
+            //divide the supermarket's delivery worker wage by the average delivery worker wage to get the online worker wage multiplier
             onlineWorkerWageMultiplier = onlineWorkerWage / OnlineWorkerWageAverage;
         }
 
-        //function that sets a value to the supermarket current funds
+        //This function sets the value passed in to the current funds
         public virtual void setValueToCurrentFunds(double currFund)
         {
             currentFunds = currFund;
         }
 
-        //this function sets the current funds when the game is starting
+        //This function sets the current funds for a supermarket, in a new game
+        //The number of players and user area are passed in
         public virtual void setCurrentFunds(int numOfPlay, string area)
         {
+            //for different areas there will be different starting current funds
             switch (area)
             {
                 case "Urban":
-                    //set to the current funds which are dependent on the number of players
+                    //For different numbers of players there will be different starting current funds
                     switch (numOfPlay)
                     {
                         case 2:
@@ -419,99 +500,115 @@ namespace supermarketProject1
                             break;
                     }
                     break;
-
             }
         }
-        
 
-        //sets a value to previous funds
+        //In this function the supermarkets previous funds are set a value
         public virtual void setValueToPrevFunds(double prevFund)
         {
+            //The value passed in is set to the previous funds
             previousFunds = prevFund;
         }
-        //sets the stock amount to a value
+
+        //In this function the stock amount is set a value
         public virtual void setValueToStockAmount(int stAm)
         {
+            //the stock amount is set to the value passed in
             stockAmount = stAm;
         }
-        //sets values to stock shop
+
+        //In this function stock shop array of a supermarket is set a value
         public virtual void setValuesToStockShop(string[] stShop)
         {
+            //The value passed in is set to the supermarket's stock shop
             stockShop = stShop;
         }
 
-        //sets value to user supplier
+        //In this function user supplier is assigned a value 
         public virtual void setValueToUserSupplier(string usSup)
         {
+            //the value passed into the function is set to the user supplier
             userSupplier = usSup;
         }
-        //sets item prices to a value
+
+        //In this function the supermarket's item prices are assigned a value
         public virtual void setValueToItemPrices(double price)
         {
+            //the value passed in is set to item prices
             itemPrices = price;
         }
-        //sets old item prices to a value
+
+        //In this function the supermarket's old item prices are assigned a value
         public virtual void setValueToOldItemPrices(double oldPrice)
         {
+            //the value passed in is set to the old item prices
             oldItemPrices = oldPrice;
         }
-        //sets a value to the advertisement investment
+
+        //In this function advertisement investment is assigned a value 
         public virtual void setValueToAdInvest(double adInvest)
         {
+            //the value passed in is set to advertisement investment
             advertisementInvestment = adInvest;
         }
-        //sets a variable to security investment
+
+        //In this function security investment is assigned a value
         public virtual void setValueToSecInvest(double secInv)
         {
+            //The value passed in is set to the supermarkets security investment
             securityInvestment = secInv;
         }
-        //set a value to amount of workers
+
+        //In this function amount of workers is set a value 
         public virtual void setValueToAmountOfWorkers(int amWork)
         {
+            //the value passed in is set to the amount of workers
             amountOfWorkers = amWork;
         }
-        //set value to worker wage
+
+        //In this function worker wage is set a value 
         public virtual void setValueToWorkerWage(double workWage)
         {
+            //the value passed in is set to worker wage
             workerWage = workWage;
         }
-        //set value to online amount of workers
+
+        //In this function the online amount of workers is set to a value
         public virtual void setValueToOnilneAmountOfWorkers(int onlineAmWork)
         {
+            //the value passed in is set to the online amount of workers
             onlineAmountOfWorkers = onlineAmWork;
         }
-        //set value to online worker wage
+
+        //In this function the online worker wage is set to a value
         public virtual void setValueToOnlineWorkerWage(double onlineWorkWage)
         {
+            //The value passed in is set to the online worker wage
             onlineWorkerWage = onlineWorkWage;
         }
 
-        //add this to design
-
+        //In this function the actual number of customers is calculated
+        //the potential number of customers and the potential number of online customers are passed in
         public virtual void calcActualNumOfCustomers(int potentialNumCust, int potentialOnlineNumCust)
         {
-            //passing in the potential number of regular customers and potential number of online customers
-           
-            //the total number of customers the supermarket could get
-            //potentially if they had the right amount of stock
+            //the total number of potential customers is calculated by adding the potential number of customers with the potential number of online customers
             int totalNumOfPotentialCust = potentialNumCust + potentialOnlineNumCust;
-            //the maximum number of customers the shop could feed based on the stock amount
+
+            //The maximum number of customers the supermarket can supply for, is calulated by dividing the amount of stock bought by
+            //the average shopping mass of a customer, this number is then rounded
             int maxNumOfCust = Convert.ToInt32(Math.Round(Convert.ToDouble(stockAmount))/Convert.ToDouble(AverageShoppingMassKg));
 
-            //if the the potential number of customers is greater than the maximum
-            //set the actual number of customers to the maximum
-            //the supermarket couldn't of fed all the customers they could've potentially got, 
-            //so the the actual number of customers the supermarket gets is the maximum number of customers
-            //that they could've got based on the stock amount
+            //if the total number of potential customers is greater than the maximum number of customers then the supermarket does not
+            //enough stock to feed all the customers that they could potential get
             if (totalNumOfPotentialCust > maxNumOfCust)
             {
+                //The number of customers the supermarket gets is limited by the amount of stock the supermarket bought
                 actualNumberOfCustomers = maxNumOfCust;
             }
+            //The supermarket has enough stock for all the customers they get
             else
             {
-                //set the actual number of customers to the number of potential customers
-                //there was less potential customers compared to the number of customers that the supermarkte could of
-                //fed
+                //the supermarket could supply for all the customers they got
                 actualNumberOfCustomers = totalNumOfPotentialCust;
             }
         }

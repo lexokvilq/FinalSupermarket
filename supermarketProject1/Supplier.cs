@@ -8,30 +8,38 @@ namespace supermarketProject1
 {
     public class Supplier
     {
-        private string[] stockRange = new string[Program.LenStockRange];
+        //this constant is the amount of different suppliers
+        private const int LengthSuppliers = 5;
+        
+        //The stock range is set its size
+        private string[] stockRange = new string[Program.LengthOfStockRange];
         public string[] StockRange
         {
             get { return stockRange; }
         }
 
-        private double[] suppliersPrices = new double[Program.LenSuppliers];
+        //The suppliers prices is set its size
+        private double[] suppliersPrices = new double[LengthSuppliers];
         public double[] SuppliersPrices
         {
             get { return suppliersPrices; }
         }
 
-        private string[] suppliersQuality = new string[Program.LenSuppliers];
+        //the supplier quality is set its size
+        private string[] suppliersQuality = new string[LengthSuppliers];
         public string[] SuppliersQuality
         {
             get { return suppliersQuality; }
         }
 
-        private double[] suppliersQualityMultiplier = new double[Program.LenSuppliers];
+        //The supplier quality multiplier is set its size
+        private double[] suppliersQualityMultiplier = new double[LengthSuppliers];
         public double[] SuppliersQualityMultiplier
         {
             get { return suppliersQualityMultiplier; }
         }
 
+        //the supplier construtor
         public Supplier()
         {
             //set up all the different types of stock
@@ -60,9 +68,6 @@ namespace supermarketProject1
             suppliersQualityMultiplier[2] = 1;
             suppliersQualityMultiplier[3] = 0.75;
             suppliersQualityMultiplier[4] = 0.5;
-
         }
-        
-       
     }
 }
