@@ -158,8 +158,6 @@ namespace supermarketProject1
             get { return gameEnded; }
         }
 
-        //ADD ALL THE PREVIOUS VALUES TO THE DESIGN
-
         //This array has the previous stock amounts for all the supermarkets 
         private static int[] previousStockAmounts;
         public static int[] PreviousStockAmounts
@@ -181,36 +179,39 @@ namespace supermarketProject1
             get { return previousAdInvestment; }
         }
 
-        // ADD ALL THE DEAFULT VALUES TO THE DESIGN
-        
-        private static int deafultStockAmount;
-        public static int DeafultStockAmount
+        //This variable is the default stock amount for a specific area and number of players
+        private static int defaultStockAmount;
+        public static int DefaultStockAmount
         {
-            get { return deafultStockAmount; }
+            get { return defaultStockAmount; }
         }
 
-        private static double deafultAdvertisementInvestment;
-        public static double DeafultAdvertisementInvestment
+        //This is the default advertisement investment for a specific area
+        private static double defaultAdvertisementInvestment;
+        public static double DefaultAdvertisementInvestment
         {
-            get { return deafultAdvertisementInvestment; }
+            get { return defaultAdvertisementInvestment; }
         }
 
-        private static double deafultSecurityInvestment;
-        public static double DeafultSecurityInvestment
+        //This is the default security investment for a specific area
+        private static double defaultSecurityInvestment;
+        public static double DefaultSecurityInvestment
         {
-            get { return deafultSecurityInvestment; }
+            get { return defaultSecurityInvestment; }
         }
 
-        private static int deafultAmountOfWorkers;
-        public static int DeafultAmountOfWorkers
+        //This is the default amount of workers for a specific area
+        private static int defaultAmountOfWorkers;
+        public static int DefaultAmountOfWorkers
         {
-            get { return deafultAmountOfWorkers; }
+            get { return defaultAmountOfWorkers; }
         }
 
-        private static int deafultAmountOfOnlineWorkers;
-        public static int DeafultAmountOfOnlineWorkers
+        //This is the default amount of online workers (delivery workers) for a specific area
+        private static int defaultAmountOfOnlineWorkers;
+        public static int DefaultAmountOfOnlineWorkers
         {
-            get { return deafultAmountOfOnlineWorkers; }
+            get { return defaultAmountOfOnlineWorkers; }
         }
 
         [STAThread]
@@ -223,13 +224,13 @@ namespace supermarketProject1
             //the game has started, it is the first week so weekNumber is 0
             weekNumber = 0;
 
-            //reset the supermarket index to its deafult value, 0
+            //reset the supermarket index to its default value, 0
             supermarketIndex = 0;
 
-            //Set the user loading file to false as deafult
+            //Set the user loading file to false as default
             userLoadedFile = false;
 
-            //Set the game ended to false as deafult
+            //Set the game ended to false as default
             gameEnded = false;
 
             Application.Run(new IntroductionScreen());
@@ -336,7 +337,7 @@ namespace supermarketProject1
             //This for loop goes through the length of the entire save file
             for (int i = 0; i < file.Length; i++)
             {
-                //reset the comma found to deafult value at the start of the loop
+                //reset the comma found to default value at the start of the loop
                 commaFound = false;
 
                 //While the comma has not been found
@@ -906,70 +907,70 @@ namespace supermarketProject1
             previousAdInvestment[index] = adInv;
         }
 
-        //this function sets values to all the deafult values
-        public static void setValuesToDeafultValues()
+        //this function sets values to all the default values
+        public static void setValuesToDefaultValues()
         {
             switch (userArea)
             {
                 case "Urban":
-                    deafultAdvertisementInvestment = 354.58;
-                    deafultSecurityInvestment = 1327.86;
-                    deafultAmountOfWorkers = 15;
-                    deafultAmountOfOnlineWorkers = 15;
+                    defaultAdvertisementInvestment = 354.58;
+                    defaultSecurityInvestment = 1327.86;
+                    defaultAmountOfWorkers = 15;
+                    defaultAmountOfOnlineWorkers = 15;
                     switch (numOfPlayers)
                     {
                         case 2:
-                            deafultStockAmount = 127995;
+                            defaultStockAmount = 127995;
                             break;
                         case 3:
-                            deafultStockAmount = 85330;
+                            defaultStockAmount = 85330;
                             break;
                         case 4:
-                            deafultStockAmount = 63998;
+                            defaultStockAmount = 63998;
                             break;
                         case 5:
-                            deafultStockAmount = 51198;
+                            defaultStockAmount = 51198;
                             break;
                     }
                     break;
                 case "Suburb":
-                    deafultAdvertisementInvestment = 290.55;
-                    deafultSecurityInvestment = 885.12;
-                    deafultAmountOfWorkers = 10;
-                    deafultAmountOfOnlineWorkers = 7;
+                    defaultAdvertisementInvestment = 290.55;
+                    defaultSecurityInvestment = 885.12;
+                    defaultAmountOfWorkers = 10;
+                    defaultAmountOfOnlineWorkers = 7;
                     switch (numOfPlayers)
                     {
                         case 2:
-                            deafultStockAmount = 60008;
+                            defaultStockAmount = 60008;
                             break;
                         case 3:
-                            deafultStockAmount = 40005;
+                            defaultStockAmount = 40005;
                             break;
                         case 4:
-                            deafultStockAmount = 30004;
+                            defaultStockAmount = 30004;
                             break;
                         case 5:
-                            deafultStockAmount = 24003;
+                            defaultStockAmount = 24003;
                             break;
                     }
                     break;
                 case "Rural":
-                    deafultAdvertisementInvestment = 226.08;
-                    deafultAmountOfWorkers = 5;
-                    deafultAmountOfOnlineWorkers = 5;
+                    defaultAdvertisementInvestment = 226.08;
+                    defaultAmountOfWorkers = 5;
+                    defaultAmountOfOnlineWorkers = 5;
                     switch (numOfPlayers)
                     {
                         case 2:
-                            deafultStockAmount = 45801;
+                            defaultStockAmount = 45801;
                             break;
                         case 3:
-                            deafultStockAmount = 30534;
+                            defaultStockAmount = 30534;
                             break;
                         case 4:
-                            deafultStockAmount = 22901;
+                            defaultStockAmount = 22901;
                             break;
                         case 5:
-                            deafultStockAmount = 18320;
+                            defaultStockAmount = 18320;
                             break;
                     }
                     break;

@@ -276,11 +276,11 @@ namespace supermarketProject1
         //This function calculates the stock available multiplier
         public virtual void stockAvailableChangeProfit()
         {
-            //first the stockAvialbleMultiplier is set to 1, the deafult value, which assumes that all the stock avaialble is true
+            //first the stockAvialbleMultiplier is set to 1, the default value, which assumes that all the stock avaialble is true
             stockAvailableMultiplier = 1;
 
             //This is a count which shows how many unavailable stock types there are
-            //The deafult value is 0 which assumes that all the different types of stock are available
+            //The default value is 0 which assumes that all the different types of stock are available
             int numOfUnavailableStock = 0;
 
             //This for loop will go through all the data items in the stockAvailable list
@@ -297,7 +297,7 @@ namespace supermarketProject1
             }
 
             //This for loop will repeat for the number of unavailable stock types
-            //if there are no unavialble stock types then the for loop will be skipped and the stock available multiplier will remain at its deafult value 1
+            //if there are no unavialble stock types then the for loop will be skipped and the stock available multiplier will remain at its default value 1
             for (int i = 0; i < numOfUnavailableStock; i++)
             {
                 //Decrease the stock available multiplier by 75 percent for each unavailable stock
@@ -347,10 +347,10 @@ namespace supermarketProject1
         //This function caclualtes the item prices multiplier
         public virtual void calcItemPricesMultiplier()
         {
-            //This checks if the old item prices is its deafult value 0
+            //This checks if the old item prices is its default value 0
             if (oldItemPrices == 0)
             {
-                //The old item prices are set to 0 as deafult, so the item prices multiplier should also be its deafult
+                //The old item prices are set to 0 as default, so the item prices multiplier should also be its default
                 //value, which is 1, a multiplier of 1 will have no effect on the customer multiplier
                 itemPricesMultiplier = 1;
             }

@@ -172,19 +172,19 @@ namespace supermarketProject1
                 Program.initPreviousVariables();
 
                 //Set up all the default variables
-                Program.setValuesToDeafultValues();
-                textBoxStockAmountInput.Text = Convert.ToString(Program.DeafultStockAmount);
-                textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DeafultAdvertisementInvestment);
+                Program.setValuesToDefaultValues();
+                textBoxStockAmountInput.Text = Convert.ToString(Program.DefaultStockAmount);
+                textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DefaultAdvertisementInvestment);
                 //no security values for the rural area
                 if (Program.UserArea != "Rural")
                 {
-                    textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DeafultSecurityInvestment);
+                    textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DefaultSecurityInvestment);
                 }
-                textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfWorkers);
+                textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DefaultAmountOfWorkers);
                 //doesn't matter which supermarket is chosen from the list
                 textBoxWorkerWageInput.Text = Convert.ToString(supermarkets[count].WorkerWageAverageConstant);
                 //doesn't matter which supermarket is chosen from the list
-                textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfOnlineWorkers);
+                textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DefaultAmountOfOnlineWorkers);
                 textBoxDeliveryWorkerWageInput.Text = Convert.ToString(supermarkets[count].OnlineWorkerWageAverageConstant);
             }
 
@@ -495,19 +495,19 @@ namespace supermarketProject1
                         else
                         {
                             //Set up all the default variables
-                            Program.setValuesToDeafultValues();
-                            textBoxStockAmountInput.Text = Convert.ToString(Program.DeafultStockAmount);
-                            textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DeafultAdvertisementInvestment);
+                            Program.setValuesToDefaultValues();
+                            textBoxStockAmountInput.Text = Convert.ToString(Program.DefaultStockAmount);
+                            textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DefaultAdvertisementInvestment);
                             //no security values for the rural area
                             if (Program.UserArea != "Rural")
                             {
-                                textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DeafultSecurityInvestment);
+                                textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DefaultSecurityInvestment);
                             }
-                            textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfWorkers);
+                            textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DefaultAmountOfWorkers);
                             //count already incremented by 1, so needs to be decremented in case of the final player
                             textBoxWorkerWageInput.Text = Convert.ToString(supermarkets[count-1].WorkerWageAverageConstant);
                             //count already incremented by 1, so needs to be decremented in case of the final player
-                            textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfOnlineWorkers);
+                            textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DefaultAmountOfOnlineWorkers);
                             textBoxDeliveryWorkerWageInput.Text = Convert.ToString(supermarkets[count-1].OnlineWorkerWageAverageConstant);
                         }
                     }
