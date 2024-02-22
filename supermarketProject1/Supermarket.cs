@@ -99,6 +99,10 @@ namespace supermarketProject1
 
         //This is a constant which shows the average wage for a regular supermarket worker
         private const double WorkerWageAverage = 11.36;
+        public  double WorkerWageAverageConstant
+        {
+            get { return WorkerWageAverage; }
+        }
 
         //This is a multiplier which shows how the distance the supermarket's worker wage from the average wage, can effect the productivity of workers,
         //so will change the percentage of customers 
@@ -127,7 +131,10 @@ namespace supermarketProject1
 
         //This constant is the average wage of a delivery (online) worker
         private const double OnlineWorkerWageAverage = 12.39;
-
+        public double OnlineWorkerWageAverageConstant
+        {
+            get { return OnlineWorkerWageAverage; }
+        }
         //This shows how the distance away the supermarket's online worker wage is from the average will affect the percentage of customers
         private double onlineWorkerWageMultiplier;
 

@@ -716,7 +716,7 @@
             this.Controls.Add(this.labelStockAmount);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainGameScreenInput";
-            this.Text = "Main Game Screen Input";
+            this.Text = "The Input Screen";
             this.Load += new System.EventHandler(this.mainGameScreenInput_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

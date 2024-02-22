@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelIntroduction.Text" xml:space="preserve">
-    <value>This game is a simulation of a high street,
-where you, and the other players, are the owners
-of the Supermarkets on the street. You can
-change parts of your Supermarket over the 52
-weeks, each week a turn, in order to get the
-highest net profit.</value>
+    <value>This game takes place on a high street, where
+each player controls their own supermarket. The
+supermarkets will compete for customers and each of the 
+supermarket's profits will be recorded. This game takes 
+place over a certain amount of week, each week in the game
+representing one turn. In a turn the players have the ability
+to change the properties of their supermarket, and at the end
+of a turn each of the supermarket's new values will be graphed.
+</value>
   </data>
 </root>

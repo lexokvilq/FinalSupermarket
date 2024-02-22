@@ -136,7 +136,6 @@ namespace supermarketProject1
 
                     }
                     textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.PreviousAdInvestment[count]);
-
                 }
             }
 
@@ -171,6 +170,22 @@ namespace supermarketProject1
 
                 //initialise all the previous variables
                 Program.initPreviousVariables();
+
+                //Set up all the default variables
+                Program.setValuesToDeafultValues();
+                textBoxStockAmountInput.Text = Convert.ToString(Program.DeafultStockAmount);
+                textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DeafultAdvertisementInvestment);
+                //no security values for the rural area
+                if (Program.UserArea != "Rural")
+                {
+                    textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DeafultSecurityInvestment);
+                }
+                textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfWorkers);
+                //doesn't matter which supermarket is chosen from the list
+                textBoxWorkerWageInput.Text = Convert.ToString(supermarkets[count].WorkerWageAverageConstant);
+                //doesn't matter which supermarket is chosen from the list
+                textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfOnlineWorkers);
+                textBoxDeliveryWorkerWageInput.Text = Convert.ToString(supermarkets[count].OnlineWorkerWageAverageConstant);
             }
 
 
@@ -189,6 +204,13 @@ namespace supermarketProject1
 
             //initialise the current funds for save file to the right lenght
             Program.initCurrentFundsForSaveFile();
+
+            //Check if there is only one week left
+            if (Program.calcNumOfWeeksLeft() == 1)
+            {
+                //If it is the last week, this will be the last turn for all the users
+                labelLastWeek.ForeColor = Color.Red;
+            }
         }
 
         private void mainGameScreenInput_Load(object sender, EventArgs e)
@@ -468,6 +490,25 @@ namespace supermarketProject1
                             {
                                 textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.PreviousSecurityInvestments[count]);
                             }
+                        }
+                        //if it the week number is 0 then the deafult values can be added to the textBoxes
+                        else
+                        {
+                            //Set up all the default variables
+                            Program.setValuesToDeafultValues();
+                            textBoxStockAmountInput.Text = Convert.ToString(Program.DeafultStockAmount);
+                            textBoxAdvertisementInvestmentInput.Text = Convert.ToString(Program.DeafultAdvertisementInvestment);
+                            //no security values for the rural area
+                            if (Program.UserArea != "Rural")
+                            {
+                                textBoxSecurityInvestmentInput.Text = Convert.ToString(Program.DeafultSecurityInvestment);
+                            }
+                            textBoxAmountOfWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfWorkers);
+                            //count already incremented by 1, so needs to be decremented in case of the final player
+                            textBoxWorkerWageInput.Text = Convert.ToString(supermarkets[count-1].WorkerWageAverageConstant);
+                            //count already incremented by 1, so needs to be decremented in case of the final player
+                            textBoxAmountOfDeliveryWorkersInput.Text = Convert.ToString(Program.DeafultAmountOfOnlineWorkers);
+                            textBoxDeliveryWorkerWageInput.Text = Convert.ToString(supermarkets[count-1].OnlineWorkerWageAverageConstant);
                         }
                     }
                 }

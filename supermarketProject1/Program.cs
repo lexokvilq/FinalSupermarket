@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.RightsManagement;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -180,6 +181,37 @@ namespace supermarketProject1
             get { return previousAdInvestment; }
         }
 
+        // ADD ALL THE DEAFULT VALUES TO THE DESIGN
+        
+        private static int deafultStockAmount;
+        public static int DeafultStockAmount
+        {
+            get { return deafultStockAmount; }
+        }
+
+        private static double deafultAdvertisementInvestment;
+        public static double DeafultAdvertisementInvestment
+        {
+            get { return deafultAdvertisementInvestment; }
+        }
+
+        private static double deafultSecurityInvestment;
+        public static double DeafultSecurityInvestment
+        {
+            get { return deafultSecurityInvestment; }
+        }
+
+        private static int deafultAmountOfWorkers;
+        public static int DeafultAmountOfWorkers
+        {
+            get { return deafultAmountOfWorkers; }
+        }
+
+        private static int deafultAmountOfOnlineWorkers;
+        public static int DeafultAmountOfOnlineWorkers
+        {
+            get { return deafultAmountOfOnlineWorkers; }
+        }
 
         [STAThread]
 
@@ -872,6 +904,76 @@ namespace supermarketProject1
             previousStockAmounts[index] = stAm;
             previousSecurityInvestments[index] = secInv;
             previousAdInvestment[index] = adInv;
+        }
+
+        //this function sets values to all the deafult values
+        public static void setValuesToDeafultValues()
+        {
+            switch (userArea)
+            {
+                case "Urban":
+                    deafultAdvertisementInvestment = 354.58;
+                    deafultSecurityInvestment = 1327.86;
+                    deafultAmountOfWorkers = 15;
+                    deafultAmountOfOnlineWorkers = 15;
+                    switch (numOfPlayers)
+                    {
+                        case 2:
+                            deafultStockAmount = 127995;
+                            break;
+                        case 3:
+                            deafultStockAmount = 85330;
+                            break;
+                        case 4:
+                            deafultStockAmount = 63998;
+                            break;
+                        case 5:
+                            deafultStockAmount = 51198;
+                            break;
+                    }
+                    break;
+                case "Suburb":
+                    deafultAdvertisementInvestment = 290.55;
+                    deafultSecurityInvestment = 885.12;
+                    deafultAmountOfWorkers = 10;
+                    deafultAmountOfOnlineWorkers = 7;
+                    switch (numOfPlayers)
+                    {
+                        case 2:
+                            deafultStockAmount = 60008;
+                            break;
+                        case 3:
+                            deafultStockAmount = 40005;
+                            break;
+                        case 4:
+                            deafultStockAmount = 30004;
+                            break;
+                        case 5:
+                            deafultStockAmount = 24003;
+                            break;
+                    }
+                    break;
+                case "Rural":
+                    deafultAdvertisementInvestment = 226.08;
+                    deafultAmountOfWorkers = 5;
+                    deafultAmountOfOnlineWorkers = 5;
+                    switch (numOfPlayers)
+                    {
+                        case 2:
+                            deafultStockAmount = 45801;
+                            break;
+                        case 3:
+                            deafultStockAmount = 30534;
+                            break;
+                        case 4:
+                            deafultStockAmount = 22901;
+                            break;
+                        case 5:
+                            deafultStockAmount = 18320;
+                            break;
+                    }
+                    break;
+            }
         }
     }
 }

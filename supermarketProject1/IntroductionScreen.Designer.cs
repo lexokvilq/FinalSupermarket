@@ -40,16 +40,17 @@
             // labelIntroduction
             // 
             this.labelIntroduction.AutoSize = true;
+            this.labelIntroduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIntroduction.Location = new System.Drawing.Point(8, 6);
             this.labelIntroduction.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelIntroduction.Name = "labelIntroduction";
-            this.labelIntroduction.Size = new System.Drawing.Size(237, 78);
+            this.labelIntroduction.Size = new System.Drawing.Size(406, 136);
             this.labelIntroduction.TabIndex = 0;
             this.labelIntroduction.Text = resources.GetString("labelIntroduction.Text");
             // 
             // buttonLoadGame
             // 
-            this.buttonLoadGame.Location = new System.Drawing.Point(10, 124);
+            this.buttonLoadGame.Location = new System.Drawing.Point(13, 199);
             this.buttonLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadGame.Name = "buttonLoadGame";
             this.buttonLoadGame.Size = new System.Drawing.Size(76, 32);
@@ -61,16 +62,18 @@
             // labelEnterLoadGame
             // 
             this.labelEnterLoadGame.AutoSize = true;
-            this.labelEnterLoadGame.Location = new System.Drawing.Point(8, 190);
+            this.labelEnterLoadGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelEnterLoadGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnterLoadGame.Location = new System.Drawing.Point(9, 238);
             this.labelEnterLoadGame.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEnterLoadGame.Name = "labelEnterLoadGame";
-            this.labelEnterLoadGame.Size = new System.Drawing.Size(157, 13);
+            this.labelEnterLoadGame.Size = new System.Drawing.Size(232, 20);
             this.labelEnterLoadGame.TabIndex = 2;
             this.labelEnterLoadGame.Text = "Enter load game save file below";
             // 
             // textBoxLoadGame
             // 
-            this.textBoxLoadGame.Location = new System.Drawing.Point(10, 214);
+            this.textBoxLoadGame.Location = new System.Drawing.Point(11, 262);
             this.textBoxLoadGame.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLoadGame.Name = "textBoxLoadGame";
             this.textBoxLoadGame.Size = new System.Drawing.Size(235, 20);
@@ -79,7 +82,7 @@
             // 
             // buttonNewGame
             // 
-            this.buttonNewGame.Location = new System.Drawing.Point(272, 39);
+            this.buttonNewGame.Location = new System.Drawing.Point(286, 199);
             this.buttonNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNewGame.Name = "buttonNewGame";
             this.buttonNewGame.Size = new System.Drawing.Size(89, 36);
@@ -93,7 +96,7 @@
             this.labelInvalidSaveFile.AutoSize = true;
             this.labelInvalidSaveFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInvalidSaveFile.ForeColor = System.Drawing.Color.Red;
-            this.labelInvalidSaveFile.Location = new System.Drawing.Point(268, 214);
+            this.labelInvalidSaveFile.Location = new System.Drawing.Point(282, 260);
             this.labelInvalidSaveFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInvalidSaveFile.Name = "labelInvalidSaveFile";
             this.labelInvalidSaveFile.Size = new System.Drawing.Size(127, 20);
@@ -105,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 256);
+            this.ClientSize = new System.Drawing.Size(460, 303);
             this.Controls.Add(this.labelInvalidSaveFile);
             this.Controls.Add(this.buttonNewGame);
             this.Controls.Add(this.textBoxLoadGame);
